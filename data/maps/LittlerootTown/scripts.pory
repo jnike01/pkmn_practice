@@ -1021,3 +1021,10 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "Let's go to my LAB.$"
 
 `
+script testScript{
+	lock 
+	faceplayer
+	msgbox("Hello, World!")
+	release
+	end
+}

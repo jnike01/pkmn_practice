@@ -1018,3 +1018,14 @@ LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "I gave you?\p"
 	.string "I have something to show you.\n"
 	.string "Let's go to my LAB.$"
+
+testScript::
+	lock
+	faceplayer
+	msgbox testScript_Text_0
+	release
+	end
+
+
+testScript_Text_0:
+	.string "Hello, World!$"
