@@ -1,0 +1,25 @@
+raw `
+TestTown_MapScripts::
+	.byte 0
+`
+
+script TestTown_Signscript_Player_House{
+    lock
+    msgbox("{PLAYER}{KUN}'s House")
+    release
+    end
+}
+
+script TestTown_Signscript_Rival_House{
+    lock
+    msgbox("Professor's House")
+    release
+    end
+}
+
+script TestTown_Signscript_Prof_Lab{
+    lock
+    msgbox("Professor's Lab")
+    release
+    end
+}
