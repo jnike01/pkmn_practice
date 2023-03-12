@@ -23,3 +23,26 @@ script TestTown_Signscript_Prof_Lab{
     release
     end
 }
+
+script TestTown_Signscript_Gym{
+    lock
+    msgbox("Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”")
+    release
+    end
+}
+
+script TestTown_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_EVERSTONE, 1)
+    removeobject(3)
+    release
+    end
+}
+
+script TestTown_ItemScript_BallTwo{
+    lock
+    giveitem(ITEM_RARE_CANDY, 1)
+    removeobject(4)
+    release
+    end
+}
