@@ -3031,4 +3031,9 @@ extern const u8 gText_BoxName[];
 extern const u8 gText_PkmnsNickname[];
 extern const u8 gText_TellHimTheWords[];
 
+// Multichoice Starter Selection
+extern const u8 gText_KantoStarter[];
+extern const u8 gText_JohtoStarter[];
+extern const u8 gText_HoennStarter[];
+
 #endif // GUARD_STRINGS_H

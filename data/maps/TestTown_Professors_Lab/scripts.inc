@@ -4,38 +4,55 @@ TestTown_Professors_Lab_MapScripts::
 
 
 TestTown_Professors_Lab_DefaultScript_Ball::
-	setvar VAR_UNUSED_0x40F7, 0
+	setvar VAR_STARTER_REGION, 0
 	return
 
 
 TestTown_Professors_Lab_PersonScript_Professor::
-	lockall
-	faceplayer
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_PersonScript_Professor_2
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2
+	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
 TestTown_Professors_Lab_PersonScript_Professor_1:
-	waitmessage
-	releaseall
 	end
 
 TestTown_Professors_Lab_PersonScript_Professor_2:
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_5
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_1
-	goto TestTown_Professors_Lab_PersonScript_Professor_1
-
+	lock
+	faceplayer
+	message TestTown_Professors_Lab_PersonScript_Professor_Text_0
+	multichoice 25, 5, MULTI_STARTER_CHOICE, 0
+	closemessage
+	compare VAR_RESULT, 0
+	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_6
+	compare VAR_RESULT, 1
+	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_7
+	compare VAR_RESULT, 2
+	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_8
 TestTown_Professors_Lab_PersonScript_Professor_5:
-	compare VAR_UNUSED_0x40F7, 2
-	goto_if_ne TestTown_Professors_Lab_PersonScript_Professor_9
-	setvar VAR_UNUSED_0x40F7, 0
-TestTown_Professors_Lab_PersonScript_Professor_8:
 	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_1
+	waitmessage
+	release
 	goto TestTown_Professors_Lab_PersonScript_Professor_1
 
-TestTown_Professors_Lab_PersonScript_Professor_9:
-	addvar VAR_UNUSED_0x40F7, 1
-	goto TestTown_Professors_Lab_PersonScript_Professor_8
+TestTown_Professors_Lab_PersonScript_Professor_6:
+	call StarterFade
+	setvar VAR_STARTER_REGION, 2
+	goto TestTown_Professors_Lab_PersonScript_Professor_5
+
+TestTown_Professors_Lab_PersonScript_Professor_7:
+	call StarterFade
+	setvar VAR_STARTER_REGION, 1
+	goto TestTown_Professors_Lab_PersonScript_Professor_5
+
+TestTown_Professors_Lab_PersonScript_Professor_8:
+	call StarterFade
+	setvar VAR_STARTER_REGION, 0
+	goto TestTown_Professors_Lab_PersonScript_Professor_5
+
+
+StarterFade::
+	fadescreen FADE_TO_BLACK
+	delay 20
+	fadescreen FADE_FROM_BLACK
+	return
 
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne::
@@ -48,11 +65,11 @@ TestTown_Professors_Lab_ObjectScript_PokeballOne_1:
 	end
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_2:
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_REGION, 0
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballOne_5
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_REGION, 1
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballOne_6
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_REGION, 2
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballOne_7
 	goto TestTown_Professors_Lab_ObjectScript_PokeballOne_1
 
@@ -79,11 +96,11 @@ TestTown_Professors_Lab_ObjectScript_PokeballTwo_1:
 	end
 
 TestTown_Professors_Lab_ObjectScript_PokeballTwo_2:
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_REGION, 0
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballTwo_5
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_REGION, 1
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballTwo_6
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_REGION, 2
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballTwo_7
 	goto TestTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
@@ -110,11 +127,11 @@ TestTown_Professors_Lab_ObjectScript_PokeballThree_1:
 	end
 
 TestTown_Professors_Lab_ObjectScript_PokeballThree_2:
-	compare VAR_UNUSED_0x40F7, 0
+	compare VAR_STARTER_REGION, 0
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballThree_5
-	compare VAR_UNUSED_0x40F7, 1
+	compare VAR_STARTER_REGION, 1
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballThree_6
-	compare VAR_UNUSED_0x40F7, 2
+	compare VAR_STARTER_REGION, 2
 	goto_if_eq TestTown_Professors_Lab_ObjectScript_PokeballThree_7
 	goto TestTown_Professors_Lab_ObjectScript_PokeballThree_1
 
@@ -483,10 +500,10 @@ NicknameBoxMon_2:
 
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_0:
-	.string "Hello, would you like to see more?$"
+	.string "Would you like to see more?$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_1:
-	.string "Choose your Pokemon wisely.$"
+	.string "Choose wisely...$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_2:
 	.string "Take care of your Pokemon.$"
