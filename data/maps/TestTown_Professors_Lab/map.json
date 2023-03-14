@@ -6,7 +6,7 @@
   "region_map_section": "MAPSEC_TEST_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
-  "map_type": "MAP_TYPE_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
   "allow_cycling": false,
   "allow_escaping": false,
   "allow_running": true,
@@ -25,7 +25,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TestTown_Professors_Lab_ObjectScript_PokeballOne",
-      "flag": "FLAG_SYS_POKEMON_GET"
+      "flag": "FLAG_STARTER_BALL_ONE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -38,7 +38,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TestTown_Professors_Lab_ObjectScript_PokeballTwo",
-      "flag": "FLAG_SYS_POKEMON_GET"
+      "flag": "FLAG_STARTER_BALL_TWO"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
@@ -51,7 +51,7 @@
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "TestTown_Professors_Lab_ObjectScript_PokeballThree",
-      "flag": "FLAG_SYS_POKEMON_GET"
+      "flag": "FLAG_STARTER_BALL_THREE"
     },
     {
       "graphics_id": "OBJ_EVENT_GFX_PROF_BIRCH",
@@ -84,7 +84,42 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEST_TOWN_STATE",
+      "var_value": "0",
+      "script": "TestTown_Professors_Lab_TriggerScript_StarterChoose"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEST_TOWN_STATE",
+      "var_value": "0",
+      "script": "TestTown_Professors_Lab_TriggerScript_StarterChoose2"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEST_TOWN_STATE",
+      "var_value": "1",
+      "script": "TestTown_Professors_Lab_TriggerScript_StopLeaving"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEST_TOWN_STATE",
+      "var_value": "1",
+      "script": "TestTown_Professors_Lab_TriggerScript_StopLeaving"
+    }
   ],
   "bg_events": [
 

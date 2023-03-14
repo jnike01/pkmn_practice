@@ -8,6 +8,69 @@ TestTown_Professors_Lab_DefaultScript_Ball::
 	return
 
 
+TestTown_Professors_Lab_TriggerScript_StarterChoose::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf
+	waitmovement 0
+	applymovement 4, TestTown_Professors_Lab_MovementScript_ProfMove
+	waitmovement 0
+	msgbox TestTown_Professors_Lab_TextScript_BeginAdventure
+	waitmessage
+	closemessage
+	applymovement 4, TestTown_Professors_Lab_MovementScript_ProfMove2
+	waitmovement 0
+	setvar VAR_TEST_TOWN_STATE, 1
+	release
+	return
+
+
+TestTown_Professors_Lab_TriggerScript_StarterChoose2::
+	lock
+	applymovement OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf2
+	waitmovement 0
+	goto TestTown_Professors_Lab_TriggerScript_StarterChoose
+	return
+
+
+TestTown_Professors_Lab_MovementScript_MeetProf:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+TestTown_Professors_Lab_MovementScript_MeetProf2:
+	walk_left
+	step_end
+
+TestTown_Professors_Lab_MovementScript_ProfMove:
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+TestTown_Professors_Lab_MovementScript_ProfMove2:
+	walk_up
+	walk_up
+	walk_up
+	walk_left
+	face_down
+	step_end
+
+TestTown_Professors_Lab_TriggerScript_StopLeaving::
+	lockall
+	msgbox TestTown_Professors_Lab_TriggerScript_StopLeaving_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_DoNotLeave
+	waitmovement 0
+	releaseall
+	return
+
+
+TestTown_Professors_Lab_MovementScript_DoNotLeave:
+	walk_up
+	step_end
+
 TestTown_Professors_Lab_PersonScript_Professor::
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_PersonScript_Professor_2
 	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
@@ -33,22 +96,22 @@ TestTown_Professors_Lab_PersonScript_Professor_5:
 	goto TestTown_Professors_Lab_PersonScript_Professor_1
 
 TestTown_Professors_Lab_PersonScript_Professor_6:
-	call StarterFade
+	call TestTown_Professors_Lab_FadeScript_StarterFade
 	setvar VAR_STARTER_REGION, 2
 	goto TestTown_Professors_Lab_PersonScript_Professor_5
 
 TestTown_Professors_Lab_PersonScript_Professor_7:
-	call StarterFade
+	call TestTown_Professors_Lab_FadeScript_StarterFade
 	setvar VAR_STARTER_REGION, 1
 	goto TestTown_Professors_Lab_PersonScript_Professor_5
 
 TestTown_Professors_Lab_PersonScript_Professor_8:
-	call StarterFade
+	call TestTown_Professors_Lab_FadeScript_StarterFade
 	setvar VAR_STARTER_REGION, 0
 	goto TestTown_Professors_Lab_PersonScript_Professor_5
 
 
-StarterFade::
+TestTown_Professors_Lab_FadeScript_StarterFade::
 	fadescreen FADE_TO_BLACK
 	delay 20
 	fadescreen FADE_FROM_BLACK
@@ -57,6 +120,7 @@ StarterFade::
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne::
 	lockall
+	setvar VAR_TEMP_0, 1
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_ObjectScript_PokeballOne_2
 	msgbox TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0
 TestTown_Professors_Lab_ObjectScript_PokeballOne_1:
@@ -74,20 +138,27 @@ TestTown_Professors_Lab_ObjectScript_PokeballOne_2:
 	goto TestTown_Professors_Lab_ObjectScript_PokeballOne_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_5:
-	call TestTown_Professors_Lab_PokemonScript_Mudkip
+	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
+	setvar VAR_STARTER_CHOICE, SPECIES_MUDKIP
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballOne_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_6:
-	call TestTown_Professors_Lab_PokemonScript_Totodile
+	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
+	setvar VAR_STARTER_CHOICE, SPECIES_TOTODILE
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballOne_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_7:
-	call TestTown_Professors_Lab_PokemonScript_Squirtle
+	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
+	setvar VAR_STARTER_CHOICE, SPECIES_SQUIRTLE
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballOne_1
 
 
 TestTown_Professors_Lab_ObjectScript_PokeballTwo::
 	lockall
+	setvar VAR_TEMP_0, 2
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_ObjectScript_PokeballTwo_2
 	msgbox TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0
 TestTown_Professors_Lab_ObjectScript_PokeballTwo_1:
@@ -105,20 +176,27 @@ TestTown_Professors_Lab_ObjectScript_PokeballTwo_2:
 	goto TestTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballTwo_5:
-	call TestTown_Professors_Lab_PokemonScript_Treecko
+	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
+	setvar VAR_STARTER_CHOICE, SPECIES_TREECKO
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballTwo_6:
-	call TestTown_Professors_Lab_PokemonScript_Chikorita
+	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
+	setvar VAR_STARTER_CHOICE, SPECIES_CHIKORITA
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballTwo_7:
-	call TestTown_Professors_Lab_PokemonScript_Bulbasaur
+	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
+	setvar VAR_STARTER_CHOICE, SPECIES_BULBASAUR
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
 
 TestTown_Professors_Lab_ObjectScript_PokeballThree::
 	lockall
+	setvar VAR_TEMP_0, 3
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_ObjectScript_PokeballThree_2
 	msgbox TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0
 TestTown_Professors_Lab_ObjectScript_PokeballThree_1:
@@ -136,368 +214,114 @@ TestTown_Professors_Lab_ObjectScript_PokeballThree_2:
 	goto TestTown_Professors_Lab_ObjectScript_PokeballThree_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballThree_5:
-	call TestTown_Professors_Lab_PokemonScript_Torchic
+	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
+	setvar VAR_STARTER_CHOICE, SPECIES_TORCHIC
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballThree_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballThree_6:
-	call TestTown_Professors_Lab_PokemonScript_Cyndaquil
+	bufferspeciesname STR_VAR_1, SPECIES_CYNDAQUIL
+	setvar VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballThree_1
 
 TestTown_Professors_Lab_ObjectScript_PokeballThree_7:
-	call TestTown_Professors_Lab_PokemonScript_Charmander
+	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
+	setvar VAR_STARTER_CHOICE, SPECIES_CHARMANDER
+	call TestTown_Professors_Lab_PokemonScript_GiveStarter
 	goto TestTown_Professors_Lab_ObjectScript_PokeballThree_1
 
 
-TestTown_Professors_Lab_PokemonScript_Mudkip::
-	showmonpic SPECIES_MUDKIP, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_0, MSGBOX_YESNO
+TestTown_Professors_Lab_PokemonScript_GiveStarter::
+	showmonpic VAR_STARTER_CHOICE, 10, 3
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_0, MSGBOX_YESNO
 	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Mudkip_1
+	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_1
 	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
+	msgbox TestTown_Professors_Lab_TextScript_NotChosen
 	return
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_1:
-	givemon SPECIES_MUDKIP, 5, ITEM_ORAN_BERRY
+TestTown_Professors_Lab_PokemonScript_GiveStarter_1:
+	setflag FLAG_SYS_POKEMON_GET
+	setvar VAR_TEST_TOWN_STATE, 2
+	givemon VAR_STARTER_CHOICE, 5, ITEM_ORAN_BERRY
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Mudkip_4
+	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_4
 	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Mudkip_5
+	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_5
 	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_3
 	return
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_4:
+TestTown_Professors_Lab_PokemonScript_GiveStarter_4:
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1
+	removeobject VAR_TEMP_0
+	call TestTown_Professors_Lab_FlagScript_SetBallFlag
+	call TestTown_Professors_Lab_SequenceScript_NicknamePartyMon
 	return
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_5:
+TestTown_Professors_Lab_PokemonScript_GiveStarter_5:
 	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1
+	removeobject VAR_TEMP_0
+	call TestTown_Professors_Lab_FlagScript_SetBallFlag
+	call TestTown_Professors_Lab_SequenceScript_NicknameBoxMon
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_2
 	return
 
 
-TestTown_Professors_Lab_PokemonScript_Totodile::
-	showmonpic SPECIES_TOTODILE, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Totodile_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Totodile_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
+TestTown_Professors_Lab_FlagScript_SetBallFlag::
+	compare VAR_TEMP_0, 1
+	goto_if_eq TestTown_Professors_Lab_FlagScript_SetBallFlag_2
+	compare VAR_TEMP_0, 2
+	goto_if_eq TestTown_Professors_Lab_FlagScript_SetBallFlag_5
+	compare VAR_TEMP_0, 3
+	goto_if_eq TestTown_Professors_Lab_FlagScript_SetBallFlag_7
 	return
 
-TestTown_Professors_Lab_PokemonScript_Totodile_1:
-	givemon SPECIES_TOTODILE, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Totodile_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Totodile_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
+TestTown_Professors_Lab_FlagScript_SetBallFlag_2:
+	setflag FLAG_STARTER_BALL_ONE
 	return
 
-TestTown_Professors_Lab_PokemonScript_Totodile_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Totodile_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
+TestTown_Professors_Lab_FlagScript_SetBallFlag_5:
+	setflag FLAG_STARTER_BALL_TWO
 	return
 
-TestTown_Professors_Lab_PokemonScript_Totodile_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Totodile_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
+TestTown_Professors_Lab_FlagScript_SetBallFlag_7:
+	setflag FLAG_STARTER_BALL_THREE
 	return
 
 
-TestTown_Professors_Lab_PokemonScript_Squirtle::
-	showmonpic SPECIES_SQUIRTLE, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Squirtle_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Squirtle_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Squirtle_1:
-	givemon SPECIES_SQUIRTLE, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Squirtle_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Squirtle_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Squirtle_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Squirtle_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Squirtle_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Squirtle_Text_1
-	removeobject 1
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Treecko::
-	showmonpic SPECIES_TREECKO, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Treecko_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Treecko_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Treecko_1:
-	givemon SPECIES_TREECKO, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Treecko_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Treecko_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Treecko_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Treecko_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Treecko_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Treecko_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Chikorita::
-	showmonpic SPECIES_CHIKORITA, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Chikorita_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Chikorita_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Chikorita_1:
-	givemon SPECIES_CHIKORITA, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Chikorita_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Chikorita_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Chikorita_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Chikorita_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Chikorita_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Chikorita_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur::
-	showmonpic SPECIES_BULBASAUR, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Bulbasaur_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Bulbasaur_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur_1:
-	givemon SPECIES_BULBASAUR, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Bulbasaur_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Bulbasaur_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Bulbasaur_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Bulbasaur_Text_1
-	removeobject 2
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Torchic::
-	showmonpic SPECIES_TORCHIC, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Torchic_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Torchic_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Torchic_1:
-	givemon SPECIES_TORCHIC, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Torchic_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Torchic_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Torchic_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Torchic_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Torchic_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Torchic_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil::
-	showmonpic SPECIES_CYNDAQUIL, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Cyndaquil_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Cyndaquil_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil_1:
-	givemon SPECIES_CYNDAQUIL, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Cyndaquil_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Cyndaquil_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Cyndaquil_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Cyndaquil_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-TestTown_Professors_Lab_PokemonScript_Charmander::
-	showmonpic SPECIES_CHARMANDER, 10, 3
-	msgbox TestTown_Professors_Lab_PokemonScript_Charmander_Text_0, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Charmander_1
-	hidemonpic
-	msgbox TestTown_Professors_Lab_NotChosen
-	return
-
-TestTown_Professors_Lab_PokemonScript_Charmander_1:
-	givemon SPECIES_CHARMANDER, 5, ITEM_ORAN_BERRY
-	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Charmander_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_Charmander_5
-	hidemonpic
-	msgbox TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2
-	return
-
-TestTown_Professors_Lab_PokemonScript_Charmander_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Charmander_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknamePartyMon
-	return
-
-TestTown_Professors_Lab_PokemonScript_Charmander_5:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_Charmander_Text_1
-	removeobject 3
-	setflag FLAG_SYS_POKEMON_GET
-	call NicknameBoxMon
-	return
-
-
-NicknamePartyMon::
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+TestTown_Professors_Lab_SequenceScript_NicknamePartyMon::
+	msgbox TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0, MSGBOX_YESNO
 	hidemonpic
 	compare VAR_RESULT, YES
-	goto_if_eq NicknamePartyMon_1
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_1
 	return
 
-NicknamePartyMon_1:
+TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_1:
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	return
 
 
-NicknameBoxMon::
-	msgbox NicknamePartyMon_Text_0, MSGBOX_YESNO
+TestTown_Professors_Lab_SequenceScript_NicknameBoxMon::
+	msgbox TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0, MSGBOX_YESNO
 	hidemonpic
 	compare VAR_RESULT, YES
-	goto_if_eq NicknameBoxMon_2
-NicknameBoxMon_1:
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_2
+TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_1:
 	call Common_EventScript_TransferredToPC
 	return
 
-NicknameBoxMon_2:
+TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_2:
 	call Common_EventScript_NameReceivedBoxMon
-	goto NicknameBoxMon_1
+	goto TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_1
 
+
+TestTown_Professors_Lab_TriggerScript_StopLeaving_Text_0:
+	.string "You need to choose a Pokemon.$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_0:
 	.string "Would you like to see more?$"
@@ -511,65 +335,28 @@ TestTown_Professors_Lab_PersonScript_Professor_Text_2:
 TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0:
 	.string "Don't take another!$"
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_Text_0:
-	.string "Do you want to choose Mudkip?$"
+TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_0:
+	.string "Do you want to choose {STR_VAR_1}?$"
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_Text_1:
-	.string "Received Mudkip$"
+TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1:
+	.string "You have received {STR_VAR_1}.$"
 
-TestTown_Professors_Lab_PokemonScript_Mudkip_Text_2:
-	.string "No more room.$"
+TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_2:
+	.string "Transferred {STR_VAR_1} to PC.$"
 
-TestTown_Professors_Lab_PokemonScript_Totodile_Text_0:
-	.string "Do you want to choose Totodile?$"
+TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_3:
+	.string "No more room for Pokemon.$"
 
-TestTown_Professors_Lab_PokemonScript_Totodile_Text_1:
-	.string "Received Totodile$"
-
-TestTown_Professors_Lab_PokemonScript_Squirtle_Text_0:
-	.string "Do you want to choose Squirtle?$"
-
-TestTown_Professors_Lab_PokemonScript_Squirtle_Text_1:
-	.string "Received Squirtle$"
-
-TestTown_Professors_Lab_PokemonScript_Treecko_Text_0:
-	.string "Do you want to choose Treecko?$"
-
-TestTown_Professors_Lab_PokemonScript_Treecko_Text_1:
-	.string "Received Treecko$"
-
-TestTown_Professors_Lab_PokemonScript_Chikorita_Text_0:
-	.string "Do you want to choose Chikorita?$"
-
-TestTown_Professors_Lab_PokemonScript_Chikorita_Text_1:
-	.string "Received Chikorita$"
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur_Text_0:
-	.string "Do you want to choose Bulbasaur?$"
-
-TestTown_Professors_Lab_PokemonScript_Bulbasaur_Text_1:
-	.string "Received Bulbasaur$"
-
-TestTown_Professors_Lab_PokemonScript_Torchic_Text_0:
-	.string "Do you want to choose Torchic?$"
-
-TestTown_Professors_Lab_PokemonScript_Torchic_Text_1:
-	.string "Received Torchic$"
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil_Text_0:
-	.string "Do you want to choose Cyndaquil?$"
-
-TestTown_Professors_Lab_PokemonScript_Cyndaquil_Text_1:
-	.string "Received Cyndaquil$"
-
-TestTown_Professors_Lab_PokemonScript_Charmander_Text_0:
-	.string "Do you want to choose Charmander?$"
-
-TestTown_Professors_Lab_PokemonScript_Charmander_Text_1:
-	.string "Received Charmander$"
-
-NicknamePartyMon_Text_0:
+TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0:
 	.string "Give it a nickname?$"
 
-TestTown_Professors_Lab_NotChosen::
+TestTown_Professors_Lab_TextScript_BeginAdventure::
+	.string "Welcome to my lab!\p"
+	.string "Thanks for stopping by and\n"
+	.string "participating in our annual Pokemon\l"
+	.string "giveaway for new Trainers.\p"
+	.string "If you want more options\n"
+	.string "come let me know!\n$"
+
+TestTown_Professors_Lab_TextScript_NotChosen::
 	.string "You did not choose the Pokemon$"

@@ -1,7 +1,12 @@
-raw `
-TestTown_MapScripts::
-	.byte 0
-`
+mapscripts TestTown_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: TestTown_DefaultScript_DefaultState
+}
+
+script TestTown_DefaultScript_DefaultState{
+    if(!(flag(FLAG_SYS_POKEMON_GET))){
+        setvar(VAR_TEST_TOWN_STATE, 0)
+    }
+}
 
 script TestTown_Signscript_Player_House{
     lock
@@ -45,4 +50,16 @@ script TestTown_ItemScript_BallTwo{
     removeobject(4)
     release
     end
+}
+
+script TestTown_TriggerScript_BlockPath{
+    lockall
+    msgbox("Mother said to visit the Professor\nbefore heading out!")
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_MovementScript_StopPlayer)
+    waitmovement(0)
+    releaseall
+}
+
+movement TestTown_MovementScript_StopPlayer{
+    walk_up
 }

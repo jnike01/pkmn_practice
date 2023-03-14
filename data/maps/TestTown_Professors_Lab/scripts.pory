@@ -6,6 +6,68 @@ script TestTown_Professors_Lab_DefaultScript_Ball{
     setvar(VAR_STARTER_REGION, 0)
 }
 
+script TestTown_Professors_Lab_TriggerScript_StarterChoose{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf)
+    waitmovement(0)
+    applymovement(4, TestTown_Professors_Lab_MovementScript_ProfMove)
+    waitmovement(0)
+    msgbox(TestTown_Professors_Lab_TextScript_BeginAdventure)
+    waitmessage
+    closemessage
+    applymovement(4, TestTown_Professors_Lab_MovementScript_ProfMove2)
+    waitmovement(0)
+    setvar(VAR_TEST_TOWN_STATE, 1)
+    release
+}
+
+script TestTown_Professors_Lab_TriggerScript_StarterChoose2{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf2)
+    waitmovement(0)
+    goto(TestTown_Professors_Lab_TriggerScript_StarterChoose)
+}
+
+movement TestTown_Professors_Lab_MovementScript_MeetProf{
+    walk_up * 4
+}
+
+movement TestTown_Professors_Lab_MovementScript_MeetProf2{
+    walk_left
+}
+
+movement TestTown_Professors_Lab_MovementScript_ProfMove{
+    walk_right
+    walk_down * 3
+}
+
+movement TestTown_Professors_Lab_MovementScript_ProfMove2{
+    walk_up * 3
+    walk_left
+    face_down
+}
+
+text TestTown_Professors_Lab_TextScript_BeginAdventure{
+    "Welcome to my lab!\p"
+    "Thanks for stopping by and\n"
+    "participating in our annual Pokemon\l"
+    "giveaway for new Trainers.\p"
+    "If you want more options\n" 
+    "come let me know!\n"
+}
+
+script TestTown_Professors_Lab_TriggerScript_StopLeaving{
+    lockall
+    msgbox("You need to choose a Pokemon.")
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_DoNotLeave)
+    waitmovement(0)
+    releaseall
+}
+
+movement TestTown_Professors_Lab_MovementScript_DoNotLeave{
+    walk_up
+}
+
 script TestTown_Professors_Lab_PersonScript_Professor{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         lock
@@ -14,15 +76,15 @@ script TestTown_Professors_Lab_PersonScript_Professor{
         multichoice(25, 5, MULTI_STARTER_CHOICE, 0)
         closemessage
         if(var(VAR_RESULT) == 0){
-            call(StarterFade)
+            call(TestTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 2)
         }
         elif(var(VAR_RESULT) == 1){
-            call(StarterFade)
+            call(TestTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 1)
         }
         elif(var(VAR_RESULT) == 2){
-            call(StarterFade)
+            call(TestTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 0)
         }
         msgbox("Choose wisely...")
@@ -35,7 +97,7 @@ script TestTown_Professors_Lab_PersonScript_Professor{
     end
 }
 
-script StarterFade{
+script TestTown_Professors_Lab_FadeScript_StarterFade{
     fadescreen(FADE_TO_BLACK)
     delay(20)
     fadescreen(FADE_FROM_BLACK)
@@ -44,15 +106,22 @@ script StarterFade{
 
 script TestTown_Professors_Lab_ObjectScript_PokeballOne{
     lockall
+    setvar(VAR_TEMP_0, 1)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(TestTown_Professors_Lab_PokemonScript_Mudkip)
+            bufferspeciesname(STR_VAR_1, SPECIES_MUDKIP)
+            setvar(VAR_STARTER_CHOICE, SPECIES_MUDKIP)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(TestTown_Professors_Lab_PokemonScript_Totodile)
+            bufferspeciesname(STR_VAR_1, SPECIES_TOTODILE)
+            setvar(VAR_STARTER_CHOICE, SPECIES_TOTODILE)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(TestTown_Professors_Lab_PokemonScript_Squirtle)
+            bufferspeciesname(STR_VAR_1, SPECIES_SQUIRTLE)
+            setvar(VAR_STARTER_CHOICE, SPECIES_SQUIRTLE)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -65,15 +134,22 @@ script TestTown_Professors_Lab_ObjectScript_PokeballOne{
 
 script TestTown_Professors_Lab_ObjectScript_PokeballTwo{
     lockall
+    setvar(VAR_TEMP_0, 2)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(TestTown_Professors_Lab_PokemonScript_Treecko)
+            bufferspeciesname(STR_VAR_1, SPECIES_TREECKO)
+            setvar(VAR_STARTER_CHOICE, SPECIES_TREECKO)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(TestTown_Professors_Lab_PokemonScript_Chikorita)
+            bufferspeciesname(STR_VAR_1, SPECIES_CHIKORITA)
+            setvar(VAR_STARTER_CHOICE, SPECIES_CHIKORITA)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(TestTown_Professors_Lab_PokemonScript_Bulbasaur)
+            bufferspeciesname(STR_VAR_1, SPECIES_BULBASAUR)
+            setvar(VAR_STARTER_CHOICE, SPECIES_BULBASAUR)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -86,15 +162,22 @@ script TestTown_Professors_Lab_ObjectScript_PokeballTwo{
 
 script TestTown_Professors_Lab_ObjectScript_PokeballThree{
     lockall
+    setvar(VAR_TEMP_0, 3)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
-            call(TestTown_Professors_Lab_PokemonScript_Torchic)
+            bufferspeciesname(STR_VAR_1, SPECIES_TORCHIC)
+            setvar(VAR_STARTER_CHOICE, SPECIES_TORCHIC)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
-            call(TestTown_Professors_Lab_PokemonScript_Cyndaquil)
+            bufferspeciesname(STR_VAR_1, SPECIES_CYNDAQUIL)
+            setvar(VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
-            call(TestTown_Professors_Lab_PokemonScript_Charmander)
+            bufferspeciesname(STR_VAR_1, SPECIES_CHARMANDER)
+            setvar(VAR_STARTER_CHOICE, SPECIES_CHARMANDER)
+            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -105,277 +188,55 @@ script TestTown_Professors_Lab_ObjectScript_PokeballThree{
     end
 }
 
-script TestTown_Professors_Lab_PokemonScript_Mudkip{
-    showmonpic(SPECIES_MUDKIP, 10, 3)
-    msgbox("Do you want to choose Mudkip?", MSGBOX_YESNO)
+script TestTown_Professors_Lab_PokemonScript_GiveStarter{
+    showmonpic(VAR_STARTER_CHOICE, 10, 3)
+    msgbox("Do you want to choose {STR_VAR_1}?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_MUDKIP, 5, ITEM_ORAN_BERRY)
+        setflag(FLAG_SYS_POKEMON_GET)
+        setvar(VAR_TEST_TOWN_STATE, 2)
+        givemon(VAR_STARTER_CHOICE, 5, ITEM_ORAN_BERRY)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Mudkip")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
+            msgbox("You have received {STR_VAR_1}.")
+            removeobject(VAR_TEMP_0)
+            call(TestTown_Professors_Lab_FlagScript_SetBallFlag)
+            call(TestTown_Professors_Lab_SequenceScript_NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Mudkip")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
+            msgbox("You have received {STR_VAR_1}.")
+            removeobject(VAR_TEMP_0)
+            call(TestTown_Professors_Lab_FlagScript_SetBallFlag)
+            call(TestTown_Professors_Lab_SequenceScript_NicknameBoxMon)
+            msgbox("Transferred {STR_VAR_1} to PC.")
         }
         else{
             hidemonpic
-            msgbox("No more room.")
+            msgbox("No more room for Pokemon.")
         }
     }
     else{
         hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
+        msgbox(TestTown_Professors_Lab_TextScript_NotChosen)
     }
 }
 
-script TestTown_Professors_Lab_PokemonScript_Totodile{
-    showmonpic(SPECIES_TOTODILE, 10, 3)
-    msgbox("Do you want to choose Totodile?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_TOTODILE, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Totodile")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Totodile")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
+script TestTown_Professors_Lab_FlagScript_SetBallFlag{
+    if(var(VAR_TEMP_0) == 1){
+        setflag(FLAG_STARTER_BALL_ONE)
+        return
     }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
+    if(var(VAR_TEMP_0) == 2){
+        setflag(FLAG_STARTER_BALL_TWO)
+        return
+    }
+    if(var(VAR_TEMP_0) == 3){
+        setflag(FLAG_STARTER_BALL_THREE)
+        return
     }
 }
 
-script TestTown_Professors_Lab_PokemonScript_Squirtle{
-    showmonpic(SPECIES_SQUIRTLE, 10, 3)
-    msgbox("Do you want to choose Squirtle?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_SQUIRTLE, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Squirtle")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Squirtle")
-            removeobject(1)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Treecko{
-    showmonpic(SPECIES_TREECKO, 10, 3)
-    msgbox("Do you want to choose Treecko?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_TREECKO, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Treecko")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Treecko")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Chikorita{
-    showmonpic(SPECIES_CHIKORITA, 10, 3)
-    msgbox("Do you want to choose Chikorita?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_CHIKORITA, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Chikorita")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Chikorita")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Bulbasaur{
-    showmonpic(SPECIES_BULBASAUR, 10, 3)
-    msgbox("Do you want to choose Bulbasaur?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_BULBASAUR, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Bulbasaur")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Bulbasaur")
-            removeobject(2)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Torchic{
-    showmonpic(SPECIES_TORCHIC, 10, 3)
-    msgbox("Do you want to choose Torchic?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_TORCHIC, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Torchic")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Torchic")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Cyndaquil{
-    showmonpic(SPECIES_CYNDAQUIL, 10, 3)
-    msgbox("Do you want to choose Cyndaquil?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_CYNDAQUIL, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Cyndaquil")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Cyndaquil")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script TestTown_Professors_Lab_PokemonScript_Charmander{
-    showmonpic(SPECIES_CHARMANDER, 10, 3)
-    msgbox("Do you want to choose Charmander?", MSGBOX_YESNO)
-    if(var(VAR_RESULT) == YES){
-        givemon(SPECIES_CHARMANDER, 5, ITEM_ORAN_BERRY)
-        if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Charmander")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknamePartyMon)
-        }
-        elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
-            playfanfare(MUS_OBTAIN_ITEM)
-            msgbox("Received Charmander")
-            removeobject(3)
-            setflag(FLAG_SYS_POKEMON_GET)
-            call(NicknameBoxMon)
-        }
-        else{
-            hidemonpic
-            msgbox("No more room.")
-        }
-    }
-    else{
-        hidemonpic
-        msgbox(TestTown_Professors_Lab_NotChosen)
-    }
-}
-
-script NicknamePartyMon{
+script TestTown_Professors_Lab_SequenceScript_NicknamePartyMon{
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
@@ -384,7 +245,7 @@ script NicknamePartyMon{
     }
 }
 
-script NicknameBoxMon{
+script TestTown_Professors_Lab_SequenceScript_NicknameBoxMon{
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
@@ -393,6 +254,6 @@ script NicknameBoxMon{
     call(Common_EventScript_TransferredToPC)
 }
 
-text TestTown_Professors_Lab_NotChosen{
+text TestTown_Professors_Lab_TextScript_NotChosen{
     "You did not choose the Pokemon"
 }
