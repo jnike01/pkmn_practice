@@ -68,6 +68,22 @@ movement TestTown_Professors_Lab_MovementScript_DoNotLeave{
     walk_up
 }
 
+script TestTown_Professors_Lab_PersonScript_Aide1{
+    lock
+    faceplayer
+    msgbox("The Professor has assigned me\nthe task of researching ancient\lhistory. There are so many wonders and\lmuch to learn!")
+    release
+    end
+}
+
+script TestTown_Professors_Lab_PersonScript_Aide2{
+    lock 
+    faceplayer
+    msgbox("I'm so lucky to have been hired\nby the Professsor to help him in\lhis research!")
+    release 
+    end
+}
+
 script TestTown_Professors_Lab_PersonScript_Professor{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         lock
@@ -236,6 +252,28 @@ script TestTown_Professors_Lab_FlagScript_SetBallFlag{
     }
 }
 
+script TestTown_Professors_Lab_SequenceScript_HealMachine{
+    lockall
+    if(!(flag(FLAG_SYS_POKEMON_GET))){
+        msgbox("Please come back when you have\na Pokemon to heal.")
+    }
+    else{
+        msgbox("Do you want to heal your Pokemon?", MSGBOX_YESNO)
+        if(var(VAR_RESULT) == YES){
+            special(HealPlayerParty)
+            fadescreen(FADE_TO_BLACK)
+            delay(30)
+            fadescreen(FADE_FROM_BLACK)
+            msgbox("Your Pokemon are now healthy!")
+        }
+        else{
+            msgbox("Come back when you need healing.")
+        }
+    }
+    releaseall
+    end
+}
+
 script TestTown_Professors_Lab_SequenceScript_NicknamePartyMon{
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
@@ -252,6 +290,13 @@ script TestTown_Professors_Lab_SequenceScript_NicknameBoxMon{
         call(Common_EventScript_NameReceivedBoxMon)
     }
     call(Common_EventScript_TransferredToPC)
+}
+
+script TestTown_Professors_Lab_SignScript_HealMachine{
+    lock
+    msgbox("This is a complex machine. It might be\nused for healing?")
+    release
+    end
 }
 
 text TestTown_Professors_Lab_TextScript_NotChosen{

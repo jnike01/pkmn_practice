@@ -71,6 +71,22 @@ TestTown_Professors_Lab_MovementScript_DoNotLeave:
 	walk_up
 	step_end
 
+TestTown_Professors_Lab_PersonScript_Aide1::
+	lock
+	faceplayer
+	msgbox TestTown_Professors_Lab_PersonScript_Aide1_Text_0
+	release
+	end
+
+
+TestTown_Professors_Lab_PersonScript_Aide2::
+	lock
+	faceplayer
+	msgbox TestTown_Professors_Lab_PersonScript_Aide2_Text_0
+	release
+	end
+
+
 TestTown_Professors_Lab_PersonScript_Professor::
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_PersonScript_Professor_2
 	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
@@ -293,6 +309,30 @@ TestTown_Professors_Lab_FlagScript_SetBallFlag_7:
 	return
 
 
+TestTown_Professors_Lab_SequenceScript_HealMachine::
+	lockall
+	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_SequenceScript_HealMachine_2
+	msgbox TestTown_Professors_Lab_SequenceScript_HealMachine_Text_1, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_HealMachine_5
+	msgbox TestTown_Professors_Lab_SequenceScript_HealMachine_Text_3
+TestTown_Professors_Lab_SequenceScript_HealMachine_1:
+	releaseall
+	end
+
+TestTown_Professors_Lab_SequenceScript_HealMachine_2:
+	msgbox TestTown_Professors_Lab_SequenceScript_HealMachine_Text_0
+	goto TestTown_Professors_Lab_SequenceScript_HealMachine_1
+
+TestTown_Professors_Lab_SequenceScript_HealMachine_5:
+	special HealPlayerParty
+	fadescreen FADE_TO_BLACK
+	delay 30
+	fadescreen FADE_FROM_BLACK
+	msgbox TestTown_Professors_Lab_SequenceScript_HealMachine_Text_2
+	goto TestTown_Professors_Lab_SequenceScript_HealMachine_1
+
+
 TestTown_Professors_Lab_SequenceScript_NicknamePartyMon::
 	msgbox TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0, MSGBOX_YESNO
 	hidemonpic
@@ -320,8 +360,21 @@ TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_2:
 	goto TestTown_Professors_Lab_SequenceScript_NicknameBoxMon_1
 
 
+TestTown_Professors_Lab_SignScript_HealMachine::
+	lock
+	msgbox TestTown_Professors_Lab_SignScript_HealMachine_Text_0
+	release
+	end
+
+
 TestTown_Professors_Lab_TriggerScript_StopLeaving_Text_0:
 	.string "You need to choose a Pokemon.$"
+
+TestTown_Professors_Lab_PersonScript_Aide1_Text_0:
+	.string "The Professor has assigned me\nthe task of researching ancient\lhistory. There are so many wonders and\lmuch to learn!$"
+
+TestTown_Professors_Lab_PersonScript_Aide2_Text_0:
+	.string "I'm so lucky to have been hired\nby the Professsor to help him in\lhis research!$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_0:
 	.string "Would you like to see more?$"
@@ -347,8 +400,23 @@ TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_2:
 TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_3:
 	.string "No more room for Pokemon.$"
 
+TestTown_Professors_Lab_SequenceScript_HealMachine_Text_0:
+	.string "Please come back when you have\na Pokemon to heal.$"
+
+TestTown_Professors_Lab_SequenceScript_HealMachine_Text_1:
+	.string "Do you want to heal your Pokemon?$"
+
+TestTown_Professors_Lab_SequenceScript_HealMachine_Text_2:
+	.string "Your Pokemon are now healthy!$"
+
+TestTown_Professors_Lab_SequenceScript_HealMachine_Text_3:
+	.string "Come back when you need healing.$"
+
 TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0:
 	.string "Give it a nickname?$"
+
+TestTown_Professors_Lab_SignScript_HealMachine_Text_0:
+	.string "This is a complex machine. It might be\nused for healing?$"
 
 TestTown_Professors_Lab_TextScript_BeginAdventure::
 	.string "Welcome to my lab!\p"
