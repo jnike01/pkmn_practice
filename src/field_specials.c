@@ -1559,23 +1559,6 @@ void TryInitBattleTowerAwardManObjectEvent(void)
     //TryInitLocalObjectEvent(6);
 }
 
-u16 GetDaysUntilPacifidlogTMAvailable(void)
-{
-    u16 tmReceivedDay = VarGet(VAR_PACIFIDLOG_TM_RECEIVED_DAY);
-    if (gLocalTime.days - tmReceivedDay >= 7)
-        return 0;
-    else if (gLocalTime.days < 0)
-        return 8;
-
-    return 7 - (gLocalTime.days - tmReceivedDay);
-}
-
-u16 SetPacifidlogTMReceivedDay(void)
-{
-    VarSet(VAR_PACIFIDLOG_TM_RECEIVED_DAY, gLocalTime.days);
-    return gLocalTime.days;
-}
-
 bool8 MonOTNameNotPlayer(void)
 {
     if (GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_LANGUAGE) != GAME_LANGUAGE)
@@ -2021,7 +2004,6 @@ bool8 UsedPokemonCenterWarp(void)
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
         MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
@@ -3831,7 +3813,6 @@ bool8 InPokemonCenter(void)
         MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
         MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
         MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
         MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
         MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
         MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
