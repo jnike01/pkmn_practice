@@ -9116,40 +9116,6 @@
           }
         },
         {
-          "map": "MAP_UNDERWATER_ROUTE124",
-          "base_label": "gUnderwater_Route124",
-          "water_mons": {
-            "encounter_rate": 4,
-            "mons": [
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_CLAMPERL"
-              },
-              {
-                "min_level": 20,
-                "max_level": 30,
-                "species": "SPECIES_CHINCHOU"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_CLAMPERL"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_RELICANTH"
-              },
-              {
-                "min_level": 30,
-                "max_level": 35,
-                "species": "SPECIES_RELICANTH"
-              }
-            ]
-          }
-        },
-        {
           "map": "MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM",
           "base_label": "gShoalCave_LowTideIceRoom",
           "land_mons": {
