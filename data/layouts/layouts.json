@@ -4434,8 +4434,8 @@
     {
       "id": "LAYOUT_TEST_TOWN_YOUR_HOUSE",
       "name": "TestTown_Your_House_Layout",
-      "width": 13,
-      "height": 13,
+      "width": 11,
+      "height": 9,
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TestTown_Your_House/border.bin",
