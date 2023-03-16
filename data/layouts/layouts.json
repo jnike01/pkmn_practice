@@ -4440,6 +4440,16 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TestTown_Your_House/border.bin",
       "blockdata_filepath": "data/layouts/TestTown_Your_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_TOWN_YOUR_HOUSE_2F",
+      "name": "TestTown_Your_House_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TestTown_Your_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/TestTown_Your_House_2F/map.bin"
     }
   ]
 }

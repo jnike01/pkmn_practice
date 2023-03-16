@@ -2,7 +2,15 @@ mapscripts TestTown_Your_House_MapScripts{}
 
 script TestTown_Your_House_SignScript_TV{
     lock
-    msgbox("Breaking Bad seems to be on, that\nshow is great!")
+    msgbox("Breaking Bad seems to be on, that show\n is great!")
+    release
+    end
+}
+
+script TestTown_Your_House_PersonScript_Mom{
+    lock
+    faceplayer
+    msgbox("Mom placeholder text")
     release
     end
 }

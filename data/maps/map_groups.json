@@ -625,6 +625,7 @@
   ],
   "gMapGroup_IndoorTestTown": [
     "TestTown_Professors_Lab",
-    "TestTown_Your_House"
+    "TestTown_Your_House",
+    "TestTown_Your_House_2F"
   ]
 }

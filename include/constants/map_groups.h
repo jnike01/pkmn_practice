@@ -595,6 +595,7 @@
 // gMapGroup_IndoorTestTown
 #define MAP_TEST_TOWN_PROFESSORS_LAB (0 | (34 << 8))
 #define MAP_TEST_TOWN_YOUR_HOUSE     (1 | (34 << 8))
+#define MAP_TEST_TOWN_YOUR_HOUSE_2F  (2 | (34 << 8))
 
 #define MAP_GROUPS_COUNT 35
 

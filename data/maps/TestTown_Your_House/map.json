@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "TestTown_Your_House_PersonScript_Mom",
       "flag": "0"
     }
   ],
@@ -42,6 +42,13 @@
       "elevation": 0,
       "dest_map": "MAP_TEST_TOWN",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 8,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_TEST_TOWN_YOUR_HOUSE_2F",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
