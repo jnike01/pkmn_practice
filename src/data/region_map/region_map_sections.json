@@ -393,46 +393,6 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_UNDERWATER_124",
-      "name": "UNDERWATER",
-      "x": 20,
-      "y": 3,
-      "width": 4,
-      "height": 3
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_126",
-      "name": "UNDERWATER",
-      "x": 20,
-      "y": 6,
-      "width": 3,
-      "height": 3
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_127",
-      "name": "UNDERWATER",
-      "x": 23,
-      "y": 6,
-      "width": 3,
-      "height": 3
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_128",
-      "name": "UNDERWATER",
-      "x": 23,
-      "y": 9,
-      "width": 4,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_SOOTOPOLIS",
-      "name": "UNDERWATER",
-      "x": 21,
-      "y": 7,
-      "width": 1,
-      "height": 1
-    },
-    {
       "map_section": "MAPSEC_GRANITE_CAVE",
       "name": "GRANITE CAVE",
       "x": 1,
@@ -546,14 +506,6 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_UNDERWATER_SEAFLOOR_CAVERN",
-      "name": "UNDERWATER",
-      "x": 24,
-      "y": 9,
-      "width": 1,
-      "height": 1
-    },
-    {
       "map_section": "MAPSEC_VICTORY_ROAD",
       "name": "VICTORY ROAD",
       "x": 27,
@@ -620,14 +572,6 @@
     {
       "map_section": "MAPSEC_SEALED_CHAMBER",
       "name": "SEALED CHAMBER",
-      "x": 11,
-      "y": 10,
-      "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_SEALED_CHAMBER",
-      "name": "UNDERWATER",
       "x": 11,
       "y": 10,
       "width": 1,
@@ -1632,43 +1576,11 @@
       "height": 1
     },
     {
-      "map_section": "MAPSEC_UNDERWATER_MARINE_CAVE",
-      "name": "UNDERWATER",
-      "x": 0,
-      "y": 0,
-      "width": 1,
-      "height": 1
-    },
-    {
       "map_section": "MAPSEC_TERRA_CAVE",
       "name": "TERRA CAVE",
       "x": 0,
       "y": 0,
       "width": 1,
-      "height": 1
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_105",
-      "name": "UNDERWATER",
-      "x": 0,
-      "y": 10,
-      "width": 1,
-      "height": 3
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_125",
-      "name": "UNDERWATER",
-      "x": 24,
-      "y": 3,
-      "width": 2,
-      "height": 2
-    },
-    {
-      "map_section": "MAPSEC_UNDERWATER_129",
-      "name": "UNDERWATER",
-      "x": 24,
-      "y": 10,
-      "width": 2,
       "height": 1
     },
     {

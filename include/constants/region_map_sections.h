@@ -50,11 +50,6 @@
 #define MAPSEC_ROUTE_132                    0x2F
 #define MAPSEC_ROUTE_133                    0x30
 #define MAPSEC_ROUTE_134                    0x31
-#define MAPSEC_UNDERWATER_124               0x32
-#define MAPSEC_UNDERWATER_126               0x33
-#define MAPSEC_UNDERWATER_127               0x34
-#define MAPSEC_UNDERWATER_128               0x35
-#define MAPSEC_UNDERWATER_SOOTOPOLIS        0x36
 #define MAPSEC_GRANITE_CAVE                 0x37
 #define MAPSEC_MT_CHIMNEY                   0x38
 #define MAPSEC_SAFARI_ZONE                  0x39
@@ -69,7 +64,6 @@
 #define MAPSEC_AQUA_HIDEOUT_OLD             0x42
 #define MAPSEC_SHOAL_CAVE                   0x43
 #define MAPSEC_SEAFLOOR_CAVERN              0x44
-#define MAPSEC_UNDERWATER_SEAFLOOR_CAVERN   0x45
 #define MAPSEC_VICTORY_ROAD                 0x46
 #define MAPSEC_MIRAGE_ISLAND                0x47
 #define MAPSEC_CAVE_OF_ORIGIN               0x48
@@ -79,7 +73,6 @@
 #define MAPSEC_JAGGED_PASS                  0x4C
 #define MAPSEC_JAGGED_PASS2                 0x4D
 #define MAPSEC_SEALED_CHAMBER               0x4E
-#define MAPSEC_UNDERWATER_SEALED_CHAMBER    0x4F
 #define MAPSEC_SCORCHED_SLAB                0x50
 #define MAPSEC_ISLAND_CAVE                  0x51
 #define MAPSEC_DESERT_RUINS                 0x52
@@ -204,11 +197,7 @@
 #define MAPSEC_FARAWAY_ISLAND               0xC9
 #define MAPSEC_ARTISAN_CAVE                 0xCA
 #define MAPSEC_MARINE_CAVE                  0xCB
-#define MAPSEC_UNDERWATER_MARINE_CAVE       0xCC
 #define MAPSEC_TERRA_CAVE                   0xCD
-#define MAPSEC_UNDERWATER_105               0xCE
-#define MAPSEC_UNDERWATER_125               0xCF
-#define MAPSEC_UNDERWATER_129               0xD0
 #define MAPSEC_DESERT_UNDERPASS             0xD1
 #define MAPSEC_ALTERING_CAVE                0xD2
 #define MAPSEC_NAVEL_ROCK                   0xD3

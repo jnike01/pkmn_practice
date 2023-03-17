@@ -1,11 +1,3 @@
-Route134_MapScripts::
-	map_script MAP_SCRIPT_ON_RESUME, Route134_OnResume
-	.byte 0
-
-Route134_OnResume:
-	setdivewarp MAP_UNDERWATER_ROUTE134, 8, 6
-	end
-
 Route134_EventScript_Jack::
 	trainerbattle_single TRAINER_JACK, Route134_Text_JackIntro, Route134_Text_JackDefeat
 	msgbox Route134_Text_JackPostBattle, MSGBOX_AUTOCLOSE
@@ -50,3 +42,7 @@ Route134_EventScript_Kelvin::
 	trainerbattle_single TRAINER_KELVIN, Route134_Text_KelvinIntro, Route134_Text_KelvinDefeat
 	msgbox Route134_Text_KelvinPostBattle, MSGBOX_AUTOCLOSE
 	end
+
+Route134_MapScripts::
+	.byte 0
+
