@@ -3037,4 +3037,7 @@ extern const u8 gText_KantoStarter[];
 extern const u8 gText_JohtoStarter[];
 extern const u8 gText_HoennStarter[];
 
+// Move Relearner in Party Menu
+extern const u8 gText_Moves_Menu[];
+
 #endif // GUARD_STRINGS_H

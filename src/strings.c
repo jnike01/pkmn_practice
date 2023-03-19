@@ -1829,3 +1829,5 @@ const u8 gText_Nickname[] = _("NICKNAME");
 const u8 gText_KantoStarter[] = _("Kanto");
 const u8 gText_JohtoStarter[] = _("Johto");
 const u8 gText_HoennStarter[] = _("Hoenn");
+
+const u8 gText_Moves_Menu[] = _("CHANGE MOVES");
