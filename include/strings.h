@@ -3040,4 +3040,7 @@ extern const u8 gText_HoennStarter[];
 // Move Relearner in Party Menu
 extern const u8 gText_Moves_Menu[];
 
+// TMs Already Obtained
+extern const u8 gText_YouAlreadyHaveThis[];
+
 #endif // GUARD_STRINGS_H

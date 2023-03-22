@@ -1831,3 +1831,5 @@ const u8 gText_JohtoStarter[] = _("Johto");
 const u8 gText_HoennStarter[] = _("Hoenn");
 
 const u8 gText_Moves_Menu[] = _("CHANGE MOVES");
+
+const u8 gText_YouAlreadyHaveThis[] = _("You already have this item.{PAUSE_UNTIL_PRESS}");
