@@ -66,6 +66,13 @@ TestTown_Your_House_2F_SignScript_PCOff::
 	end
 
 
+TestTown_Your_House_2F_SignScript_Notebook::
+	lock
+	msgbox TextTown_Your_House_2F_TextScript_Notebook
+	release
+	end
+
+
 TestTown_Your_House_2F_MovementScript_TurnTowardsDoor:
 	face_right
 	step_end
@@ -78,3 +85,11 @@ TestTown_Your_House_2F_SignScript_Gamecube_Text_0:
 
 TestTown_Your_House_2F_SignScript_TV_Text_0:
 	.string "The Legend of Zelda: The Wind Waker\nis on the TV. So nostalgic!$"
+
+TextTown_Your_House_2F_TextScript_Notebook::
+	.string "{PLAYER} flipped open the notebook.\p"
+	.string "ADVENTURE RULE NO. 1\n"
+	.string "Open the MENU with START.\p"
+	.string "ADVENTURE RULE NO. 2\n"
+	.string "Record your progress with SAVE.\p"
+	.string "The remaining pages are blank…$"

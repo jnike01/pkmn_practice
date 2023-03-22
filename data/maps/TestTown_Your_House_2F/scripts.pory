@@ -60,6 +60,22 @@ script TestTown_Your_House_2F_SignScript_PCOff{
     end
 }
 
+script TestTown_Your_House_2F_SignScript_Notebook{
+    lock
+    msgbox(TextTown_Your_House_2F_TextScript_Notebook)
+    release
+    end
+}
+
 movement TestTown_Your_House_2F_MovementScript_TurnTowardsDoor{
     face_right
+}
+
+text TextTown_Your_House_2F_TextScript_Notebook{
+    "{PLAYER} flipped open the notebook.\p"
+	"ADVENTURE RULE NO. 1\n"
+	"Open the MENU with START.\p"
+	"ADVENTURE RULE NO. 2\n"
+	"Record your progress with SAVE.\p"
+	"The remaining pages are blank…$"
 }
