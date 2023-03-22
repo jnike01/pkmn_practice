@@ -26,9 +26,49 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 2,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_YOUR_HOUSE_STATE",
+      "var_value": "0",
+      "script": "TestTown_Your_House_2F_TriggerScript_GotoMom"
+    },
+    {
+      "type": "trigger",
+      "x": 0,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_YOUR_HOUSE_STATE",
+      "var_value": "0",
+      "script": "TestTown_Your_House_2F_TriggerScript_GotoMom2"
+    }
   ],
   "bg_events": [
-
+    {
+      "type": "sign",
+      "x": 3,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "TestTown_Your_House_2F_SignScript_Gamecube"
+    },
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "TestTown_Your_House_2F_SignScript_TV"
+    },
+    {
+      "type": "sign",
+      "x": 0,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "TestTown_Your_House_2F_SignScript_PC"
+    }
   ]
 }

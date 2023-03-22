@@ -1,0 +1,65 @@
+mapscripts TestTown_Your_House_2F_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: TestTown_Your_House_2F_DefaultScript_DefaultState
+}
+
+script TestTown_Your_House_2F_DefaultScript_DefaultState{
+    if(!(var(VAR_YOUR_HOUSE_STATE))){
+        setvar(VAR_YOUR_HOUSE_STATE, 0)
+    }
+}
+
+script TestTown_Your_House_2F_TriggerScript_GotoMom{
+    setvar(VAR_YOUR_HOUSE_STATE, 1)
+    lock
+    msgbox("Mom said to visit her downstairs to\ndiscuss something, so better go see her.")
+    release
+    end
+}
+
+script TestTown_Your_House_2F_TriggerScript_GotoMom2{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Your_House_2F_MovementScript_TurnTowardsDoor)
+    waitmovement(0)
+    goto(TestTown_Your_House_2F_TriggerScript_GotoMom)
+}
+
+script TestTown_Your_House_2F_SignScript_Gamecube{
+    lock 
+    msgbox("This Gamecube is in such good condition!")
+    release
+    end
+}
+
+script TestTown_Your_House_2F_SignScript_TV{
+    lock
+    special(TurnOnTVScreen)
+    msgbox("The Legend of Zelda: The Wind Waker\nis on the TV. So nostalgic!")
+    special(TurnOffTVScreen)
+    release
+    end
+}
+
+script TestTown_Your_House_2F_SignScript_PC{
+    lockall
+    setvar(VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE)
+    special(DoPCTurnOnEffect)
+    playse(SE_PC_ON)
+    msgbox(gText_PlayerHouseBootPC)
+    special(BedroomPC)
+    waitstate
+    releaseall
+    end
+}
+
+script TestTown_Your_House_2F_SignScript_PCOff{
+    lockall
+    setvar(VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE)
+    playse(SE_PC_OFF)
+    special(DoPCTurnOffEffect)
+    releaseall
+    end
+}
+
+movement TestTown_Your_House_2F_MovementScript_TurnTowardsDoor{
+    face_right
+}
