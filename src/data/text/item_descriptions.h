@@ -3021,9 +3021,9 @@ static const u8 sTM02Desc[] = _(
     "sharp claws.");
 
 static const u8 sTM03Desc[] = _(
-    "The user launches\n" 
-    "an odd psychic wave\n" 
-    "to deal phys dmg.");
+    "Sends a psychic\n" 
+    "wave to inflict\n" 
+    "physical damage.");
 
 static const u8 sTM04Desc[] = _(
     "Raises Sp. Atk and\n"
@@ -3121,9 +3121,9 @@ static const u8 sTM22Desc[] = _(
     "attacks next turn.");
 
 static const u8 sTM23Desc[] = _(
-    "Slams the foe with\n"
-    "a hard tail. It may\n"
-    "lower Defense.");
+    "The user lands and\n"
+    "rests, restoring up\n"
+    "to half its max HP.");
 
 static const u8 sTM24Desc[] = _(
     "A powerful electric\n"
