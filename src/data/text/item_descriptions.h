@@ -3011,9 +3011,9 @@ static const u8 sEnigmaBerryEReaderDesc[] = _(
 
 // TMs/HMs
 static const u8 sTM01Desc[] = _(
-    "Powerful, but makes\n"
-    "the user flinch if\n"
-    "hit by the foe.");
+    "The user sharpens\n" 
+    "its claws to boost\n" 
+    "Atk and Accuracy.");
 
 static const u8 sTM02Desc[] = _(
     "Hooks and slashes\n"
