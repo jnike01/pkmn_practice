@@ -3251,9 +3251,9 @@ static const u8 sTM48Desc[] = _(
     "turn this is used.");
 
 static const u8 sTM49Desc[] = _(
-    "Steals the effects\n"
-    "of the move the foe\n"
-    "is trying to use.");
+    "Swiftly attacks\n"
+    "foe's legs. Lowers\n" 
+    "foe's Speed stat.");
 
 static const u8 sTM50Desc[] = _(
     "Enables full-power\n"
