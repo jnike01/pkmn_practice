@@ -3146,9 +3146,9 @@ static const u8 sTM27Desc[] = _(
     "powerful this move.");
 
 static const u8 sTM28Desc[] = _(
-    "Digs underground\n"
-    "the 1st turn, then\n"
-    "strikes next turn.");
+    "Recovers half the\n"
+    "HP of the damage \n"
+    "this move inflicts.");
 
 static const u8 sTM29Desc[] = _(
     "A powerful psychic\n"
