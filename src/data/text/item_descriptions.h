@@ -3260,8 +3260,10 @@ static const u8 sTM50Desc[] = _(
     "attack, but sharply\n"
     "lowers Sp. Atk.");
 
-static const u8 sTM51Desc[] = _( // Todo
-    "?????");
+static const u8 sTM51Desc[] = _(
+    "Swamps the area\n"
+    "with a sludge wave.\n" 
+    "May also poison foe.");
 
 static const u8 sTM52Desc[] = _( // Todo
     "?????");
