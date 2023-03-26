@@ -52,7 +52,33 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "var": "VAR_YOUR_HOUSE_STATE",
+      "var_value": "1",
+      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionOne"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_YOUR_HOUSE_STATE",
+      "var_value": "1",
+      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionTwo"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_YOUR_HOUSE_STATE",
+      "var_value": "1",
+      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionThree"
+    }
   ],
   "bg_events": [
     {
