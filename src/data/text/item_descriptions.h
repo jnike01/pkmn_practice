@@ -3270,14 +3270,20 @@ static const u8 sTM52Desc[] = _(
     "power. May also\n"
     "lower Sp Def.");
 
-static const u8 sTM53Desc[] = _( // Todo
-    "?????");
+static const u8 sTM53Desc[] = _( 
+    "Fires power from\n"
+    "nature at foe. May\n" 
+    "lower foe's Sp. Def.");
 
-static const u8 sTM54Desc[] = _( // Todo
-    "?????");
+static const u8 sTM54Desc[] = _(
+    "A restrained attack\n" 
+    "that prevents foe\n" 
+    "from fainting.");
 
-static const u8 sTM55Desc[] = _( // Todo
-    "?????");
+static const u8 sTM55Desc[] = _( 
+    "Shoots boiling hot\n" 
+    "water at foe. May\n" 
+    "also burn foe.");
 
 static const u8 sTM56Desc[] = _( // Todo
     "?????");
