@@ -4,7 +4,9 @@ TestTown_Your_House_MapScripts::
 
 TestTown_Your_House_SignScript_TV::
 	lock
+	special TurnOnTVScreen
 	msgbox TestTown_Your_House_SignScript_TV_Text_0
+	special TurnOffTVScreen
 	release
 	end
 

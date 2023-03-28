@@ -2,7 +2,9 @@ mapscripts TestTown_Your_House_MapScripts{}
 
 script TestTown_Your_House_SignScript_TV{
     lock
+    special(TurnOnTVScreen)
     msgbox("Breaking Bad seems to be on, that show\n is great!")
+    special(TurnOffTVScreen)
     release
     end
 }
