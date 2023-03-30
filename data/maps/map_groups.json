@@ -601,6 +601,8 @@
   "gMapGroup_IndoorTestTown": [
     "TestTown_Professors_Lab",
     "TestTown_Your_House",
-    "TestTown_Your_House_2F"
+    "TestTown_Your_House_2F",
+    "TestTown_Rival_House",
+    "TestTown_Rival_House_2F"
   ]
 }

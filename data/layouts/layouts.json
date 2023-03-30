@@ -4280,6 +4280,26 @@
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/TestTown_Your_House_2F/border.bin",
       "blockdata_filepath": "data/layouts/TestTown_Your_House_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_TOWN_RIVAL_HOUSE",
+      "name": "TestTown_Rival_House_Layout",
+      "width": 11,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TestTown_Rival_House/border.bin",
+      "blockdata_filepath": "data/layouts/TestTown_Rival_House/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_TOWN_RIVAL_HOUSE_2F",
+      "name": "TestTown_Rival_House_2F_Layout",
+      "width": 9,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BrendansMaysHouse",
+      "border_filepath": "data/layouts/TestTown_Rival_House_2F/border.bin",
+      "blockdata_filepath": "data/layouts/TestTown_Rival_House_2F/map.bin"
     }
   ]
 }

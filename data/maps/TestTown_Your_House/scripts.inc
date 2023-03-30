@@ -107,13 +107,13 @@ TestTown_Your_House_MovementScript_PlayerFaceMomTwo:
 	step_end
 
 TestTown_Your_House_SignScript_TV_Text_0:
-	.string "Breaking Bad seems to be on, that show\n is great!$"
+	.string "Breaking Bad seems to be on, that show\nis great!$"
 
 TestTown_Your_House_PersonScript_Mom_Text_0:
 	.string "Mom placeholder text$"
 
 TestTown_Your_House_ControlScript_MomDialogueInit_Text_0:
-	.string "Hello, {PLAYER}{KUN}! Please come over\nand see me please.$"
+	.string "Hello, {PLAYER}{KUN}! Please come over and see me\nplease.$"
 
 TestTown_Your_House_TextScript_MomDialogueOne::
 	.string "The Professor came by this morning and\n"
@@ -121,4 +121,6 @@ TestTown_Your_House_TextScript_MomDialogueOne::
 	.string "and see him to get your Starter and\l"
 	.string "pokedex.\p"
 	.string "Please be safe doing so and I love you\n"
-	.string "{PLAYER}{KUN}. Have fun!$"
+	.string "{PLAYER}{KUN}. Also, make sure to see your friend\l"
+	.string "beforehand like you said! I love you and\l"
+	.string "be safe!$"

@@ -3,7 +3,7 @@ mapscripts TestTown_Your_House_MapScripts{}
 script TestTown_Your_House_SignScript_TV{
     lock
     special(TurnOnTVScreen)
-    msgbox("Breaking Bad seems to be on, that show\n is great!")
+    msgbox("Breaking Bad seems to be on, that show\nis great!")
     special(TurnOffTVScreen)
     release
     end
@@ -61,7 +61,7 @@ script TestTown_Your_House_ControlScript_MomDialogueInit{
     setvar(VAR_YOUR_HOUSE_STATE, 2)
     applymovement(1, TestTown_Your_House_MovementScript_MomFaceRight)
     waitmovement(0)
-    msgbox("Hello, {PLAYER}{KUN}! Please come over\nand see me please.")
+    msgbox("Hello, {PLAYER}{KUN}! Please come over and see me\nplease.")
     return
 }
 
@@ -102,5 +102,7 @@ text TestTown_Your_House_TextScript_MomDialogueOne{
     "and see him to get your Starter and\l"
     "pokedex.\p"
     "Please be safe doing so and I love you\n"
-    "{PLAYER}{KUN}. Have fun!"
+    "{PLAYER}{KUN}. Also, make sure to see your friend\l"
+    "beforehand like you said! I love you and\l"
+    "be safe!"
 }

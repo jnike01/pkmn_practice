@@ -60,6 +60,18 @@ script TestTown_TriggerScript_BlockPath{
     releaseall
 }
 
+script TestTown_TriggerScript_GotoRival{
+    lockall
+    msgbox("You should go visit your rival first!")
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_MovementScript_StopPlayerLab)
+    waitmovement(0)
+    releaseall
+}
+
 movement TestTown_MovementScript_StopPlayer{
     walk_up
+}
+
+movement TestTown_MovementScript_StopPlayerLab{
+    walk_right
 }

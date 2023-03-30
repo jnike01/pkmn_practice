@@ -1045,3 +1045,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/TestTown_Your_House/scripts.inc"
 
 	.include "data/maps/TestTown_Your_House_2F/scripts.inc"
+
+	.include "data/maps/TestTown_Rival_House/scripts.inc"
+
+	.include "data/maps/TestTown_Rival_House_2F/scripts.inc"

@@ -1,0 +1,18 @@
+mapscripts TestTown_Rival_House_MapScripts{}
+
+script TestTown_Rival_House_PersonScript_RivalGrandma{
+    lock
+    faceplayer
+    msgbox("Hello, {PLAYER}{KUN}! I'm so proud of my\ngrandson and you for growing up so well!")
+    release
+    end
+}
+
+script TestTown_Rival_House_SignScript_TV{
+    lock
+    special(TurnOnTVScreen)
+    msgbox("It's the original Wizard of Oz! Now that's an oldie.")
+    special(TurnOffTVScreen)
+    release
+    end
+}
