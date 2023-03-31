@@ -48,6 +48,8 @@
 #include "constants/rgb.h"
 #include "constants/songs.h"
 
+extern u8 PCMenu[];
+
 // Menu actions
 enum
 {
@@ -64,6 +66,7 @@ enum
     MENU_ACTION_REST_FRONTIER,
     MENU_ACTION_RETIRE_FRONTIER,
     MENU_ACTION_PYRAMID_BAG,
+    MENU_ACTION_PSS,
     MENU_ACTION_DEBUG,
 };
 
@@ -105,6 +108,7 @@ static bool8 StartMenuSafariZoneRetireCallback(void);
 static bool8 StartMenuLinkModePlayerNameCallback(void);
 static bool8 StartMenuBattlePyramidRetireCallback(void);
 static bool8 StartMenuBattlePyramidBagCallback(void);
+static bool8 StartMenuPSSCallback(void);
 static bool8 StartMenuDebugCallback(void);
 
 // Menu callbacks
@@ -158,6 +162,7 @@ static const struct WindowTemplate sPyramidFloorWindowTemplate_2 = {0, 1, 1, 0xA
 static const struct WindowTemplate sPyramidFloorWindowTemplate_1 = {0, 1, 1, 0xC, 4, 0xF, 8};
 
 static const u8 gText_MenuDebug[] = _("DEBUG");
+static const u8 gText_MenuPSS[] = _("PSS");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -174,6 +179,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_REST_FRONTIER]   = {gText_MenuRest,    {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_RETIRE_FRONTIER] = {gText_MenuRetire,  {.u8_void = StartMenuBattlePyramidRetireCallback}},
     [MENU_ACTION_PYRAMID_BAG]     = {gText_MenuBag,     {.u8_void = StartMenuBattlePyramidBagCallback}},
+    [MENU_ACTION_PSS]             = {gText_MenuPSS,     {.u8_void = StartMenuPSSCallback}},
     [MENU_ACTION_DEBUG]           = {gText_MenuDebug,   {.u8_void = StartMenuDebugCallback}},
 };
 
@@ -308,6 +314,7 @@ static void BuildNormalStartMenu(void)
     if (FlagGet(FLAG_SYS_POKEMON_GET) == TRUE)
     {
         AddStartMenuAction(MENU_ACTION_POKEMON);
+        AddStartMenuAction(MENU_ACTION_PSS);
     }
 
     AddStartMenuAction(MENU_ACTION_BAG);
@@ -619,6 +626,7 @@ static bool8 HandleStartMenuInput(void)
 
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
+            && gMenuCallback != StartMenuPSSCallback
             && gMenuCallback != StartMenuDebugCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
@@ -766,6 +774,20 @@ static bool8 StartMenuDebugCallback(void)
 #endif
 
 return TRUE;
+}
+
+static bool8 StartMenuPSSCallback(void)
+{
+    if (!gPaletteFade.active)
+    {
+        RemoveExtraStartMenuWindows();
+        HideStartMenu(); // Hide start menu
+		ScriptContext_SetupScript(PCMenu);
+        
+        return TRUE;
+    }
+
+    return FALSE;
 }
 
 static bool8 StartMenuSafariZoneRetireCallback(void)
