@@ -89,7 +89,9 @@ TestTown_Professors_Lab_PersonScript_Aide2::
 
 TestTown_Professors_Lab_PersonScript_Professor::
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_PersonScript_Professor_2
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
+	goto_if_set FLAG_SYS_POKEDEX_GET, TestTown_Professors_Lab_PersonScript_Professor_14
+TestTown_Professors_Lab_PersonScript_Professor_13:
+	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_4, MSGBOX_NPC
 TestTown_Professors_Lab_PersonScript_Professor_1:
 	end
 
@@ -125,6 +127,21 @@ TestTown_Professors_Lab_PersonScript_Professor_8:
 	call TestTown_Professors_Lab_FadeScript_StarterFade
 	setvar VAR_STARTER_REGION, 0
 	goto TestTown_Professors_Lab_PersonScript_Professor_5
+
+TestTown_Professors_Lab_PersonScript_Professor_12:
+	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_YESNO
+	compare VAR_RESULT, YES
+	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_17
+	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_3, MSGBOX_NPC
+	goto TestTown_Professors_Lab_PersonScript_Professor_1
+
+TestTown_Professors_Lab_PersonScript_Professor_14:
+	goto_if_unset FLAG_SYS_NATIONAL_DEX, TestTown_Professors_Lab_PersonScript_Professor_12
+	goto TestTown_Professors_Lab_PersonScript_Professor_13
+
+TestTown_Professors_Lab_PersonScript_Professor_17:
+	call TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex
+	goto TestTown_Professors_Lab_PersonScript_Professor_1
 
 
 TestTown_Professors_Lab_FadeScript_StarterFade::
@@ -262,19 +279,14 @@ TestTown_Professors_Lab_PokemonScript_GiveStarter_1:
 	setvar VAR_TEST_TOWN_STATE, 2
 	givemon VAR_STARTER_CHOICE, 5, ITEM_ORAN_BERRY
 	compare VAR_RESULT, MON_GIVEN_TO_PARTY
-	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_4
-	compare VAR_RESULT, MON_GIVEN_TO_PC
 	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_5
+	compare VAR_RESULT, MON_GIVEN_TO_PC
+	goto_if_eq TestTown_Professors_Lab_PokemonScript_GiveStarter_6
 	hidemonpic
 	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_3
-	return
-
 TestTown_Professors_Lab_PokemonScript_GiveStarter_4:
-	playfanfare MUS_OBTAIN_ITEM
-	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1
-	removeobject VAR_TEMP_0
-	call TestTown_Professors_Lab_FlagScript_SetBallFlag
-	call TestTown_Professors_Lab_SequenceScript_NicknamePartyMon
+	closemessage
+	call TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence
 	return
 
 TestTown_Professors_Lab_PokemonScript_GiveStarter_5:
@@ -282,9 +294,17 @@ TestTown_Professors_Lab_PokemonScript_GiveStarter_5:
 	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1
 	removeobject VAR_TEMP_0
 	call TestTown_Professors_Lab_FlagScript_SetBallFlag
+	call TestTown_Professors_Lab_SequenceScript_NicknamePartyMon
+	goto TestTown_Professors_Lab_PokemonScript_GiveStarter_4
+
+TestTown_Professors_Lab_PokemonScript_GiveStarter_6:
+	playfanfare MUS_OBTAIN_ITEM
+	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_1
+	removeobject VAR_TEMP_0
+	call TestTown_Professors_Lab_FlagScript_SetBallFlag
 	call TestTown_Professors_Lab_SequenceScript_NicknameBoxMon
 	msgbox TestTown_Professors_Lab_PokemonScript_GiveStarter_Text_2
-	return
+	goto TestTown_Professors_Lab_PokemonScript_GiveStarter_4
 
 
 TestTown_Professors_Lab_FlagScript_SetBallFlag::
@@ -367,6 +387,89 @@ TestTown_Professors_Lab_SignScript_HealMachine::
 	end
 
 
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence::
+	lock
+	delay 20
+	applymovement OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_TurnToProf
+	compare VAR_TEMP_0, 1
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_2
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_1:
+	compare VAR_TEMP_0, 2
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_5
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_4:
+	compare VAR_TEMP_0, 3
+	goto_if_eq TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_8
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_7:
+	waitmovement 0
+	delay 20
+	call TestTown_Professors_Lab_SequenceScript_GivePokedex
+	release
+	return
+
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_2:
+	applymovement 4, TestTown_Professors_Lab_MovementScript_MoveBallOne
+	goto TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_1
+
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_5:
+	applymovement 4, TestTown_Professors_Lab_MovementScript_MoveBallTwo
+	goto TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_4
+
+TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_8:
+	applymovement 4, TestTown_Professors_Lab_MovementScript_MoveBallThree
+	goto TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence_7
+
+
+TestTown_Professors_Lab_SequenceScript_GivePokedex::
+	lock
+	msgbox TestTown_Professors_Lab_TextScript_TakePokedex
+	playfanfare MUS_OBTAIN_ITEM
+	message TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_0
+	waitfanfare
+	closemessage
+	setflag FLAG_SYS_POKEDEX_GET
+	setflag FLAG_ADVENTURE_STARTED
+	special SetUnlockedPokedexFlags
+	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
+	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	msgbox TestTown_Professors_Lab_TextScript_ExplainPokedex
+	msgbox TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_1
+	giveitem ITEM_POKE_BALL, 5
+	msgbox TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_2
+	waitmessage
+	release
+	end
+
+
+TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex::
+	lock
+	playfanfare MUS_OBTAIN_ITEM
+	message TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational
+	waitmessage
+	waitfanfare
+	setflag FLAG_SYS_NATIONAL_DEX
+	special EnableNationalPokedex
+	closemessage
+	release
+	return
+
+
+TestTown_Professors_Lab_MovementScript_MoveBallOne:
+	walk_left
+	walk_left
+	step_end
+
+TestTown_Professors_Lab_MovementScript_MoveBallTwo:
+	walk_left
+	step_end
+
+TestTown_Professors_Lab_MovementScript_MoveBallThree:
+	face_left
+	step_end
+
+TestTown_Professors_Lab_MovementScript_TurnToProf:
+	face_right
+	step_end
+
 TestTown_Professors_Lab_TriggerScript_StopLeaving_Text_0:
 	.string "You need to choose a Pokemon.$"
 
@@ -383,6 +486,13 @@ TestTown_Professors_Lab_PersonScript_Professor_Text_1:
 	.string "Choose wisely...$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_2:
+	.string "Do you want to upgrade to the National\n"
+	.string "Dex?$"
+
+TestTown_Professors_Lab_PersonScript_Professor_Text_3:
+	.string "Take care of your Pokemon$"
+
+TestTown_Professors_Lab_PersonScript_Professor_Text_4:
 	.string "Take care of your Pokemon.$"
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0:
@@ -418,6 +528,17 @@ TestTown_Professors_Lab_SequenceScript_NicknamePartyMon_Text_0:
 TestTown_Professors_Lab_SignScript_HealMachine_Text_0:
 	.string "This is a complex machine. It might be\nused for healing?$"
 
+TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_0:
+	.string "{PLAYER}{KUN} received the Pokedex!$"
+
+TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_1:
+	.string "Also, take these with you.$"
+
+TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_2:
+	.string "These allow you to catch your own\n"
+	.string "Pokemon in tall grass so you can\l"
+	.string "collect research for the Pokedex$"
+
 TestTown_Professors_Lab_TextScript_BeginAdventure::
 	.string "Welcome to my lab!\p"
 	.string "Thanks for stopping by and\n"
@@ -428,3 +549,17 @@ TestTown_Professors_Lab_TextScript_BeginAdventure::
 
 TestTown_Professors_Lab_TextScript_NotChosen::
 	.string "You did not choose the Pokemon$"
+
+TestTown_Professors_Lab_TextScript_ExplainPokedex::
+	.string "Professor: The Pokedex is a high-tech\n"
+	.string "tool that automatically makes a record\l"
+	.string "of any Pokemon you meet or catch.\p$"
+
+TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational::
+	.string "{PLAYER}'s Pokedex was upgraded\n"
+	.string "to the National Mode!$"
+
+TestTown_Professors_Lab_TextScript_TakePokedex::
+	.string "Here, {PLAYER}, I ordered this for my\n"
+	.string "research, but I think you should have\l"
+	.string "this Pokedex.$"
