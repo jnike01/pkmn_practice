@@ -89,9 +89,7 @@ TestTown_Professors_Lab_PersonScript_Aide2::
 
 TestTown_Professors_Lab_PersonScript_Professor::
 	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_Professors_Lab_PersonScript_Professor_2
-	goto_if_set FLAG_SYS_POKEDEX_GET, TestTown_Professors_Lab_PersonScript_Professor_14
-TestTown_Professors_Lab_PersonScript_Professor_13:
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_4, MSGBOX_NPC
+	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
 TestTown_Professors_Lab_PersonScript_Professor_1:
 	end
 
@@ -127,21 +125,6 @@ TestTown_Professors_Lab_PersonScript_Professor_8:
 	call TestTown_Professors_Lab_FadeScript_StarterFade
 	setvar VAR_STARTER_REGION, 0
 	goto TestTown_Professors_Lab_PersonScript_Professor_5
-
-TestTown_Professors_Lab_PersonScript_Professor_12:
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_YESNO
-	compare VAR_RESULT, YES
-	goto_if_eq TestTown_Professors_Lab_PersonScript_Professor_17
-	msgbox TestTown_Professors_Lab_PersonScript_Professor_Text_3, MSGBOX_NPC
-	goto TestTown_Professors_Lab_PersonScript_Professor_1
-
-TestTown_Professors_Lab_PersonScript_Professor_14:
-	goto_if_unset FLAG_SYS_NATIONAL_DEX, TestTown_Professors_Lab_PersonScript_Professor_12
-	goto TestTown_Professors_Lab_PersonScript_Professor_13
-
-TestTown_Professors_Lab_PersonScript_Professor_17:
-	call TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex
-	goto TestTown_Professors_Lab_PersonScript_Professor_1
 
 
 TestTown_Professors_Lab_FadeScript_StarterFade::
@@ -432,6 +415,8 @@ TestTown_Professors_Lab_SequenceScript_GivePokedex::
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	msgbox TestTown_Professors_Lab_TextScript_ExplainPokedex
+	msgbox TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade
+	call TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex
 	msgbox TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_1
 	giveitem ITEM_POKE_BALL, 5
 	msgbox TestTown_Professors_Lab_SequenceScript_GivePokedex_Text_2
@@ -486,13 +471,6 @@ TestTown_Professors_Lab_PersonScript_Professor_Text_1:
 	.string "Choose wisely...$"
 
 TestTown_Professors_Lab_PersonScript_Professor_Text_2:
-	.string "Do you want to upgrade to the National\n"
-	.string "Dex?$"
-
-TestTown_Professors_Lab_PersonScript_Professor_Text_3:
-	.string "Take care of your Pokemon$"
-
-TestTown_Professors_Lab_PersonScript_Professor_Text_4:
 	.string "Take care of your Pokemon.$"
 
 TestTown_Professors_Lab_ObjectScript_PokeballOne_Text_0:
@@ -558,6 +536,9 @@ TestTown_Professors_Lab_TextScript_ExplainPokedex::
 TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational::
 	.string "{PLAYER}'s Pokedex was upgraded\n"
 	.string "to the National Mode!$"
+
+TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade::
+	.string "Let me upgrade it as well...$"
 
 TestTown_Professors_Lab_TextScript_TakePokedex::
 	.string "Here, {PLAYER}, I ordered this for my\n"

@@ -108,19 +108,8 @@ script TestTown_Professors_Lab_PersonScript_Professor{
         release
     } 
     else{
-        if(flag(FLAG_SYS_POKEDEX_GET) && !(flag(FLAG_SYS_NATIONAL_DEX))){
-            msgbox(format("Do you want to upgrade to the National Dex?"), MSGBOX_YESNO)
-            if(var(VAR_RESULT) == YES){
-                call(TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex)
-            }
-            else{
-                msgbox("Take care of your Pokemon", MSGBOX_NPC)
-            }
-        }
-        else{
-            msgbox("Take care of your Pokemon.", MSGBOX_NPC)
-        }  
-    } 
+        msgbox("Take care of your Pokemon.", MSGBOX_NPC)
+    }   
     end
 }
 
@@ -349,6 +338,8 @@ script TestTown_Professors_Lab_SequenceScript_GivePokedex{
     setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
     setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
     msgbox(TestTown_Professors_Lab_TextScript_ExplainPokedex)
+    msgbox(TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade)
+    call(TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex)
     msgbox("Also, take these with you.")
     giveitem(ITEM_POKE_BALL, 5)
     msgbox(format("These allow you to catch your own Pokemon in tall grass so you can collect research for the Pokedex"))
@@ -395,6 +386,10 @@ text TestTown_Professors_Lab_TextScript_ExplainPokedex{
 text TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational{
     "{PLAYER}'s Pokedex was upgraded\n"
 	"to the National Mode!$"
+}
+
+text TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade{
+    "Let me upgrade it as well..."
 }
 
 text TestTown_Professors_Lab_TextScript_TakePokedex{
