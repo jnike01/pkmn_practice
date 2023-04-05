@@ -54,7 +54,7 @@ script TestTown_ItemScript_BallTwo{
 
 script TestTown_TriggerScript_BlockPath{
     lockall
-    msgbox("Mother said to visit the Professor\nbefore heading out!")
+    msgbox("Mother said to visit the Professor and\nyour Rival before heading out!")
     applymovement(OBJ_EVENT_ID_PLAYER, TestTown_MovementScript_StopPlayer)
     waitmovement(0)
     releaseall

@@ -95,7 +95,7 @@ TestTown_Signscript_Gym_Text_0:
 	.string "Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”$"
 
 TestTown_TriggerScript_BlockPath_Text_0:
-	.string "Mother said to visit the Professor\nbefore heading out!$"
+	.string "Mother said to visit the Professor and\nyour Rival before heading out!$"
 
 TestTown_TriggerScript_GotoRival_Text_0:
 	.string "You should go visit your rival first!$"
