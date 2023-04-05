@@ -268,7 +268,7 @@
 #define VAR_STARTER_CHOICE                               0x40F9
 #define VAR_YOUR_HOUSE_STATE                             0x40FA
 #define VAR_RIVAL_STATE                                  0x40FB
-#define VAR_UNUSED_0x40FC                                0x40FC // Unused Var
+#define VAR_RIVAL_HOUSE_STATE                            0x40FC
 #define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var

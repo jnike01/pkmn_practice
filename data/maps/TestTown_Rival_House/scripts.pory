@@ -1,4 +1,12 @@
-mapscripts TestTown_Rival_House_MapScripts{}
+mapscripts TestTown_Rival_House_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: TestTown_Rival_House_DefaultScript_DefaultState
+}
+
+script TestTown_Rival_House_DefaultScript_DefaultState{
+    if(!(var(VAR_RIVAL_HOUSE_STATE))){
+        setvar(VAR_RIVAL_HOUSE_STATE, 0)
+    }
+}
 
 script TestTown_Rival_House_PersonScript_RivalGrandma{
     lock
@@ -15,4 +23,108 @@ script TestTown_Rival_House_SignScript_TV{
     special(TurnOffTVScreen)
     release
     end
+}
+
+script TestTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionOne{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(TestTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_ToGrandmaOne)
+    waitmovement(0)
+    msgbox(TestTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, TestTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script TestTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionTwo{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(TestTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_ToGrandmaTwo)
+    waitmovement(0)
+    msgbox(TestTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, TestTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script TestTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionThree{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(TestTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_ToGrandmaThree)
+    waitmovement(0)
+    msgbox(TestTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, TestTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script TestTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionFour{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_FaceGrandmaTwo)
+    waitmovement(0)
+    call(TestTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_MovementScript_ToGrandmaFour)
+    waitmovement(0)
+    msgbox(TestTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, TestTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script TestTown_Rival_House_ControlScript_GrandmaDialogueInit{
+    setvar(VAR_RIVAL_HOUSE_STATE, 1)
+    applymovement(1, TestTown_Rival_House_MovementScript_GrandmaFaceDoor)
+    waitmovement(0)
+    msgbox("Hey, {PLAYER}{KUN}!")
+    return    
+}
+
+movement TestTown_Rival_House_MovementScript_GrandmaFaceDoor{
+    face_left
+}
+
+movement TestTown_Rival_House_MovementScript_GrandmaFaceTable{
+    face_right
+}
+
+movement TestTown_Rival_House_MovementScript_FaceGrandma{
+    face_right
+}
+
+movement TestTown_Rival_House_MovementScript_FaceGrandmaTwo{
+    face_up
+}
+
+movement TestTown_Rival_House_MovementScript_ToGrandmaOne{
+    walk_up * 2
+    walk_right * 4
+}
+
+movement TestTown_Rival_House_MovementScript_ToGrandmaTwo{
+    walk_up
+    walk_right * 3
+}
+
+movement TestTown_Rival_House_MovementScript_ToGrandmaThree{
+    walk_up
+    walk_right * 2
+}
+
+movement TestTown_Rival_House_MovementScript_ToGrandmaFour{
+    walk_up * 2
+    walk_right
+}
+
+text TestTown_Rival_House_TextScript_GrandmaDialogue{
+    "Placeholder Text"
 }
