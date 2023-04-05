@@ -56,6 +56,14 @@ TestTown_ItemScript_BallTwo::
 	end
 
 
+TestTown_PersonScript_NPC1::
+	lock
+	faceplayer
+	msgbox TestTown_PersonScript_NPC1_Text_0
+	release
+	end
+
+
 TestTown_TriggerScript_BlockPath::
 	lockall
 	msgbox TestTown_TriggerScript_BlockPath_Text_0
@@ -93,6 +101,12 @@ TestTown_Signscript_Prof_Lab_Text_0:
 
 TestTown_Signscript_Gym_Text_0:
 	.string "Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”$"
+
+TestTown_PersonScript_NPC1_Text_0:
+	.string "This town is so beautiful and calming.\n"
+	.string "I'm visiting from out of town and this\l"
+	.string "place is great. I might want to move\l"
+	.string "here!$"
 
 TestTown_TriggerScript_BlockPath_Text_0:
 	.string "Mother said to visit the Professor and\nyour Rival before heading out!$"

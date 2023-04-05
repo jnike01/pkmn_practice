@@ -52,6 +52,14 @@ script TestTown_ItemScript_BallTwo{
     end
 }
 
+script TestTown_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("This town is so beautiful and calming. I'm visiting from out of town and this place is great. I might want to move here!"))
+    release
+    end
+}
+
 script TestTown_TriggerScript_BlockPath{
     lockall
     msgbox("Mother said to visit the Professor and\nyour Rival before heading out!")
