@@ -4,12 +4,14 @@ TestTown_MapScripts::
 
 
 TestTown_DefaultScript_DefaultState::
-	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_DefaultScript_DefaultState_1
+	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_DefaultScript_DefaultState_2
+TestTown_DefaultScript_DefaultState_1:
+	call_if_unset FLAG_RIVAL_BATTLE_CONTROL, TestTown_ControlScript_RivalBattleSetup
 	return
 
-TestTown_DefaultScript_DefaultState_1:
+TestTown_DefaultScript_DefaultState_2:
 	setvar VAR_TEST_TOWN_STATE, 0
-	return
+	goto TestTown_DefaultScript_DefaultState_1
 
 
 TestTown_Signscript_Player_House::
@@ -64,6 +66,23 @@ TestTown_PersonScript_NPC1::
 	end
 
 
+TestTown_ControlScript_RivalBattleSetup::
+	goto_if_unset FLAG_SYS_POKEMON_GET, TestTown_ControlScript_RivalBattleSetup_1
+	clearflag FLAG_RIVAL_BATTLE_ONE
+	return
+
+TestTown_ControlScript_RivalBattleSetup_1:
+	setflag FLAG_RIVAL_BATTLE_ONE
+	return
+
+
+TestTown_TrainerScript_RivalBattleOne::
+	trainerbattle_single TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro
+	msgbox TestTown_TextScript_RivalBattleAftermath
+	closemessage
+	end
+
+
 TestTown_TriggerScript_BlockPath::
 	lockall
 	msgbox TestTown_TriggerScript_BlockPath_Text_0
@@ -113,3 +132,12 @@ TestTown_TriggerScript_BlockPath_Text_0:
 
 TestTown_TriggerScript_GotoRival_Text_0:
 	.string "You should go visit your rival first!$"
+
+TestTown_TextScript_RivalIntro::
+	.string "Placeholder text$"
+
+TestTown_TextScript_RivalOutro::
+	.string "Placeholder text$"
+
+TestTown_TextScript_RivalBattleAftermath::
+	.string "Placeholder text$"

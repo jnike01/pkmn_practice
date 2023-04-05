@@ -6,6 +6,8 @@ script TestTown_DefaultScript_DefaultState{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         setvar(VAR_TEST_TOWN_STATE, 0)
     }
+
+    call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, TestTown_ControlScript_RivalBattleSetup)
 }
 
 script TestTown_Signscript_Player_House{
@@ -60,6 +62,22 @@ script TestTown_PersonScript_NPC1{
     end
 }
 
+script TestTown_ControlScript_RivalBattleSetup{
+    if(!(flag(FLAG_SYS_POKEMON_GET))){
+        setflag(FLAG_RIVAL_BATTLE_ONE)
+    }
+    else{
+        clearflag(FLAG_RIVAL_BATTLE_ONE)
+    }
+}
+
+script TestTown_TrainerScript_RivalBattleOne{
+    trainerbattle_single(TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro)
+    msgbox(TestTown_TextScript_RivalBattleAftermath)
+    closemessage
+    end
+}
+
 script TestTown_TriggerScript_BlockPath{
     lockall
     msgbox("Mother said to visit the Professor and\nyour Rival before heading out!")
@@ -82,4 +100,16 @@ movement TestTown_MovementScript_StopPlayer{
 
 movement TestTown_MovementScript_StopPlayerLab{
     walk_right
+}
+
+text TestTown_TextScript_RivalIntro{
+    "Placeholder text"
+}
+
+text TestTown_TextScript_RivalOutro{
+    "Placeholder text"
+}
+
+text TestTown_TextScript_RivalBattleAftermath{
+    "Placeholder text"
 }
