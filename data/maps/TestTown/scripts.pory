@@ -72,10 +72,19 @@ script TestTown_ControlScript_RivalBattleSetup{
 }
 
 script TestTown_TrainerScript_RivalBattleOne{
-    trainerbattle_single(TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro)
+    trainerbattle_single(TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro, TestTown_SequenceScript_RivalLeave)
+    end
+}
+
+script TestTown_SequenceScript_RivalLeave{
     msgbox(TestTown_TextScript_RivalBattleAftermath)
     closemessage
-    end
+    lockall
+    applymovement(6, TestTown_MovementScript_RivalLeaveAfterBattle)
+    waitmovement(0)
+    removeobject(6)
+    setflag(FLAG_RIVAL_BATTLE_ONE)
+    releaseall
 }
 
 script TestTown_TriggerScript_BlockPath{
@@ -100,6 +109,11 @@ movement TestTown_MovementScript_StopPlayer{
 
 movement TestTown_MovementScript_StopPlayerLab{
     walk_right
+}
+
+movement TestTown_MovementScript_RivalLeaveAfterBattle{
+    walk_right * 6
+    walk_down * 7
 }
 
 text TestTown_TextScript_RivalIntro{

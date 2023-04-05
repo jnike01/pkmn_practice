@@ -77,10 +77,20 @@ TestTown_ControlScript_RivalBattleSetup_1:
 
 
 TestTown_TrainerScript_RivalBattleOne::
-	trainerbattle_single TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro
+	trainerbattle_single TRAINER_RED, TestTown_TextScript_RivalIntro, TestTown_TextScript_RivalOutro, TestTown_SequenceScript_RivalLeave
+	end
+
+
+TestTown_SequenceScript_RivalLeave::
 	msgbox TestTown_TextScript_RivalBattleAftermath
 	closemessage
-	end
+	lockall
+	applymovement 6, TestTown_MovementScript_RivalLeaveAfterBattle
+	waitmovement 0
+	removeobject 6
+	setflag FLAG_RIVAL_BATTLE_ONE
+	releaseall
+	return
 
 
 TestTown_TriggerScript_BlockPath::
@@ -107,6 +117,22 @@ TestTown_MovementScript_StopPlayer:
 
 TestTown_MovementScript_StopPlayerLab:
 	walk_right
+	step_end
+
+TestTown_MovementScript_RivalLeaveAfterBattle:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 TestTown_Signscript_Player_House_Text_0:
