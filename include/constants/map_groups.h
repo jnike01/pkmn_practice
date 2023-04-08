@@ -56,6 +56,7 @@
 #define MAP_ROUTE133         (47 | (0 << 8))
 #define MAP_ROUTE134         (48 | (0 << 8))
 #define MAP_TEST_TOWN        (49 | (0 << 8))
+#define MAP_ROUTE1           (50 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))
