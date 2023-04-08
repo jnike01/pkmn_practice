@@ -55,7 +55,7 @@
 #define MAP_ROUTE132         (46 | (0 << 8))
 #define MAP_ROUTE133         (47 | (0 << 8))
 #define MAP_ROUTE134         (48 | (0 << 8))
-#define MAP_TEST_TOWN        (49 | (0 << 8))
+#define MAP_GLORIA_TOWN      (49 | (0 << 8))
 #define MAP_ROUTE1           (50 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
@@ -569,12 +569,12 @@
 // gMapGroup_IndoorRoute124
 #define MAP_ROUTE124_DIVING_TREASURE_HUNTERS_HOUSE (0 | (32 << 8))
 
-// gMapGroup_IndoorTestTown
-#define MAP_TEST_TOWN_PROFESSORS_LAB (0 | (33 << 8))
-#define MAP_TEST_TOWN_YOUR_HOUSE     (1 | (33 << 8))
-#define MAP_TEST_TOWN_YOUR_HOUSE_2F  (2 | (33 << 8))
-#define MAP_TEST_TOWN_RIVAL_HOUSE    (3 | (33 << 8))
-#define MAP_TEST_TOWN_RIVAL_HOUSE_2F (4 | (33 << 8))
+// gMapGroup_IndoorGloriaTown
+#define MAP_GLORIA_TOWN_PROFESSORS_LAB (0 | (33 << 8))
+#define MAP_GLORIA_TOWN_YOUR_HOUSE     (1 | (33 << 8))
+#define MAP_GLORIA_TOWN_YOUR_HOUSE_2F  (2 | (33 << 8))
+#define MAP_GLORIA_TOWN_RIVAL_HOUSE    (3 | (33 << 8))
+#define MAP_GLORIA_TOWN_RIVAL_HOUSE_2F (4 | (33 << 8))
 
 #define MAP_GROUPS_COUNT 34
 

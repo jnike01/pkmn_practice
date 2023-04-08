@@ -1,0 +1,130 @@
+mapscripts GloriaTown_Rival_House_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: GloriaTown_Rival_House_DefaultScript_DefaultState
+}
+
+script GloriaTown_Rival_House_DefaultScript_DefaultState{
+    if(!(var(VAR_RIVAL_HOUSE_STATE))){
+        setvar(VAR_RIVAL_HOUSE_STATE, 0)
+    }
+}
+
+script GloriaTown_Rival_House_PersonScript_RivalGrandma{
+    lock
+    faceplayer
+    msgbox("Hello, {PLAYER}{KUN}! I'm so proud of my\ngrandson and you for growing up so well!")
+    release
+    end
+}
+
+script GloriaTown_Rival_House_SignScript_TV{
+    lock
+    special(TurnOnTVScreen)
+    msgbox("It's the original Wizard of Oz! Now that's an oldie.")
+    special(TurnOffTVScreen)
+    release
+    end
+}
+
+script GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionOne{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaOne)
+    waitmovement(0)
+    msgbox(GloriaTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionTwo{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaTwo)
+    waitmovement(0)
+    msgbox(GloriaTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionThree{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma)
+    waitmovement(0)
+    call(GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaThree)
+    waitmovement(0)
+    msgbox(GloriaTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionFour{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandmaTwo)
+    waitmovement(0)
+    call(GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaFour)
+    waitmovement(0)
+    msgbox(GloriaTown_Rival_House_TextScript_GrandmaDialogue)
+    applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable)
+    waitmovement(0)
+    release
+    end
+}
+
+script GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit{
+    setvar(VAR_RIVAL_HOUSE_STATE, 1)
+    applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceDoor)
+    waitmovement(0)
+    msgbox("Hey, {PLAYER}{KUN}!")
+    return    
+}
+
+movement GloriaTown_Rival_House_MovementScript_GrandmaFaceDoor{
+    face_left
+}
+
+movement GloriaTown_Rival_House_MovementScript_GrandmaFaceTable{
+    face_right
+}
+
+movement GloriaTown_Rival_House_MovementScript_FaceGrandma{
+    face_right
+}
+
+movement GloriaTown_Rival_House_MovementScript_FaceGrandmaTwo{
+    face_up
+}
+
+movement GloriaTown_Rival_House_MovementScript_ToGrandmaOne{
+    walk_up * 2
+    walk_right * 4
+}
+
+movement GloriaTown_Rival_House_MovementScript_ToGrandmaTwo{
+    walk_up
+    walk_right * 3
+}
+
+movement GloriaTown_Rival_House_MovementScript_ToGrandmaThree{
+    walk_up
+    walk_right * 2
+}
+
+movement GloriaTown_Rival_House_MovementScript_ToGrandmaFour{
+    walk_up * 2
+    walk_right
+}
+
+text GloriaTown_Rival_House_TextScript_GrandmaDialogue{
+    "Placeholder Text"
+}

@@ -1,9 +1,9 @@
 {
-  "id": "MAP_TEST_TOWN_YOUR_HOUSE_2F",
-  "name": "TestTown_Your_House_2F",
-  "layout": "LAYOUT_TEST_TOWN_YOUR_HOUSE_2F",
+  "id": "MAP_GLORIA_TOWN_YOUR_HOUSE_2F",
+  "name": "GloriaTown_Your_House_2F",
+  "layout": "LAYOUT_GLORIA_TOWN_YOUR_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_TEST_TOWN",
+  "region_map_section": "MAPSEC_GLORIA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -21,7 +21,7 @@
       "x": 7,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN_YOUR_HOUSE",
+      "dest_map": "MAP_GLORIA_TOWN_YOUR_HOUSE",
       "dest_warp_id": "2"
     }
   ],
@@ -33,7 +33,7 @@
       "elevation": 0,
       "var": "VAR_YOUR_HOUSE_STATE",
       "var_value": "0",
-      "script": "TestTown_Your_House_2F_TriggerScript_GotoMom"
+      "script": "GloriaTown_Your_House_2F_TriggerScript_GotoMom"
     },
     {
       "type": "trigger",
@@ -42,7 +42,7 @@
       "elevation": 0,
       "var": "VAR_YOUR_HOUSE_STATE",
       "var_value": "0",
-      "script": "TestTown_Your_House_2F_TriggerScript_GotoMom2"
+      "script": "GloriaTown_Your_House_2F_TriggerScript_GotoMom2"
     }
   ],
   "bg_events": [
@@ -52,7 +52,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Your_House_2F_SignScript_Gamecube"
+      "script": "GloriaTown_Your_House_2F_SignScript_Gamecube"
     },
     {
       "type": "sign",
@@ -60,7 +60,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Your_House_2F_SignScript_TV"
+      "script": "GloriaTown_Your_House_2F_SignScript_TV"
     },
     {
       "type": "sign",
@@ -68,7 +68,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Your_House_2F_SignScript_PC"
+      "script": "GloriaTown_Your_House_2F_SignScript_PC"
     },
     {
       "type": "sign",
@@ -76,7 +76,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TestTown_Your_House_2F_SignScript_Notebook"
+      "script": "GloriaTown_Your_House_2F_SignScript_Notebook"
     }
   ]
 }

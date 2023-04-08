@@ -11336,8 +11336,8 @@
           }
         },
         {
-          "map": "MAP_TEST_TOWN",
-          "base_label": "gTestTown0",
+          "map": "MAP_GLORIA_TOWN",
+          "base_label": "gGloriaTown0",
           "land_mons": {
             "encounter_rate": 10,
             "mons": [

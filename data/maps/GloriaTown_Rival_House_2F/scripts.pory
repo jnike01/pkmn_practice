@@ -1,6 +1,6 @@
-mapscripts TestTown_Rival_House_2F_MapScripts{}
+mapscripts GloriaTown_Rival_House_2F_MapScripts{}
 
-script TestTown_Rival_House_2F_ControlScript_RivalFirstDialogueSetup{
+script GloriaTown_Rival_House_2F_ControlScript_RivalFirstDialogueSetup{
     if(var(VAR_RIVAL_STATE) == 0){
         setflag(FLAG_RIVAL_INTRO)
     }
@@ -9,19 +9,19 @@ script TestTown_Rival_House_2F_ControlScript_RivalFirstDialogueSetup{
     }
 }
 
-script TestTown_Rival_House_2F_PersonScript_RivalIntro{
+script GloriaTown_Rival_House_2F_PersonScript_RivalIntro{
     lock
     faceplayer
     msgbox("Placeholder Text")
-    call(TestTown_Rival_House_2F_SequenceScript_RivalIntroFinish)
+    call(GloriaTown_Rival_House_2F_SequenceScript_RivalIntroFinish)
     release
     end
 }
 
-script TestTown_Rival_House_2F_SequenceScript_RivalIntroFinish{
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Rival_House_2F_MovementScript_PlayerOutOfWay)
+script GloriaTown_Rival_House_2F_SequenceScript_RivalIntroFinish{
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_2F_MovementScript_PlayerOutOfWay)
     waitmovement(0)
-    applymovement(1, TestTown_Rival_House_2F_MovementScript_RivalLeaveRoom)
+    applymovement(1, GloriaTown_Rival_House_2F_MovementScript_RivalLeaveRoom)
     waitmovement(0)
     removeobject(1)
     playse(SE_EXIT)
@@ -29,7 +29,7 @@ script TestTown_Rival_House_2F_SequenceScript_RivalIntroFinish{
     return
 }
 
-script TestTown_Rival_House_2F_SignScript_TV{
+script GloriaTown_Rival_House_2F_SignScript_TV{
     lock
     special(TurnOnTVScreen)
     msgbox(format("Wow! It's Super Mario Sunshine! This game was pretty solid."))
@@ -38,33 +38,33 @@ script TestTown_Rival_House_2F_SignScript_TV{
     end
 }
 
-script TestTown_Rival_House_2F_SignScript_Gamecube{
+script GloriaTown_Rival_House_2F_SignScript_Gamecube{
     lock 
     msgbox("This Gamecube is in such good condition!")
     release
     end
 }
 
-script TestTown_Rival_House_2F_SignScript_Notebook{
+script GloriaTown_Rival_House_2F_SignScript_Notebook{
     lock
     msgbox(TextTown_Rival_House_2F_TextScript_Notebook)
     release
     end
 }
 
-script TestTown_Rival_House_2F_SignScript_PC{
+script GloriaTown_Rival_House_2F_SignScript_PC{
     lock
     msgbox("The computer is locked.")
     release
     end
 }
 
-movement TestTown_Rival_House_2F_MovementScript_RivalLeaveRoom{
+movement GloriaTown_Rival_House_2F_MovementScript_RivalLeaveRoom{
     walk_left * 7
     walk_up
 }
 
-movement TestTown_Rival_House_2F_MovementScript_PlayerOutOfWay{
+movement GloriaTown_Rival_House_2F_MovementScript_PlayerOutOfWay{
     walk_down
     face_up
 }

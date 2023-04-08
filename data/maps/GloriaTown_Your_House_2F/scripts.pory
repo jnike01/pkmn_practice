@@ -1,14 +1,14 @@
-mapscripts TestTown_Your_House_2F_MapScripts{
-    MAP_SCRIPT_ON_TRANSITION: TestTown_Your_House_2F_DefaultScript_DefaultState
+mapscripts GloriaTown_Your_House_2F_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: GloriaTown_Your_House_2F_DefaultScript_DefaultState
 }
 
-script TestTown_Your_House_2F_DefaultScript_DefaultState{
+script GloriaTown_Your_House_2F_DefaultScript_DefaultState{
     if(!(var(VAR_YOUR_HOUSE_STATE))){
         setvar(VAR_YOUR_HOUSE_STATE, 0)
     }
 }
 
-script TestTown_Your_House_2F_TriggerScript_GotoMom{
+script GloriaTown_Your_House_2F_TriggerScript_GotoMom{
     setvar(VAR_YOUR_HOUSE_STATE, 1)
     lock
     msgbox("Mom said to visit her downstairs to\ndiscuss something, so better go see her.")
@@ -16,21 +16,21 @@ script TestTown_Your_House_2F_TriggerScript_GotoMom{
     end
 }
 
-script TestTown_Your_House_2F_TriggerScript_GotoMom2{
+script GloriaTown_Your_House_2F_TriggerScript_GotoMom2{
     lock
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Your_House_2F_MovementScript_TurnTowardsDoor)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_2F_MovementScript_TurnTowardsDoor)
     waitmovement(0)
-    goto(TestTown_Your_House_2F_TriggerScript_GotoMom)
+    goto(GloriaTown_Your_House_2F_TriggerScript_GotoMom)
 }
 
-script TestTown_Your_House_2F_SignScript_Gamecube{
+script GloriaTown_Your_House_2F_SignScript_Gamecube{
     lock 
     msgbox("This Gamecube is in such good condition!")
     release
     end
 }
 
-script TestTown_Your_House_2F_SignScript_TV{
+script GloriaTown_Your_House_2F_SignScript_TV{
     lock
     special(TurnOnTVScreen)
     msgbox("The Legend of Zelda: The Wind Waker\nis on the TV. So nostalgic!")
@@ -39,7 +39,7 @@ script TestTown_Your_House_2F_SignScript_TV{
     end
 }
 
-script TestTown_Your_House_2F_SignScript_PC{
+script GloriaTown_Your_House_2F_SignScript_PC{
     lockall
     setvar(VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE)
     special(DoPCTurnOnEffect)
@@ -51,7 +51,7 @@ script TestTown_Your_House_2F_SignScript_PC{
     end
 }
 
-script TestTown_Your_House_2F_SignScript_PCOff{
+script GloriaTown_Your_House_2F_SignScript_PCOff{
     lockall
     setvar(VAR_0x8004, PC_LOCATION_BRENDANS_HOUSE)
     playse(SE_PC_OFF)
@@ -60,14 +60,14 @@ script TestTown_Your_House_2F_SignScript_PCOff{
     end
 }
 
-script TestTown_Your_House_2F_SignScript_Notebook{
+script GloriaTown_Your_House_2F_SignScript_Notebook{
     lock
     msgbox(TextTown_Your_House_2F_TextScript_Notebook)
     release
     end
 }
 
-movement TestTown_Your_House_2F_MovementScript_TurnTowardsDoor{
+movement GloriaTown_Your_House_2F_MovementScript_TurnTowardsDoor{
     face_right
 }
 

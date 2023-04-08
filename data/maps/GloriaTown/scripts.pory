@@ -1,0 +1,129 @@
+mapscripts GloriaTown_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: GloriaTown_DefaultScript_DefaultState
+}
+
+script GloriaTown_DefaultScript_DefaultState{
+    if(!(flag(FLAG_SYS_POKEMON_GET))){
+        setvar(VAR_GLORIA_TOWN_STATE, 0)
+    }
+
+    call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, GloriaTown_ControlScript_RivalBattleSetup)
+}
+
+script GloriaTown_Signscript_Player_House{
+    lock
+    msgbox("{PLAYER}{KUN}'s House")
+    release
+    end
+}
+
+script GloriaTown_Signscript_Rival_House{
+    lock
+    msgbox("Professor's House")
+    release
+    end
+}
+
+script GloriaTown_Signscript_Prof_Lab{
+    lock
+    msgbox("Professor's Lab")
+    release
+    end
+}
+
+script GloriaTown_Signscript_Gym{
+    lock
+    msgbox("Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”")
+    release
+    end
+}
+
+script GloriaTown_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_EVERSTONE, 1)
+    removeobject(3)
+    release
+    end
+}
+
+script GloriaTown_ItemScript_BallTwo{
+    lock
+    giveitem(ITEM_RARE_CANDY, 1)
+    removeobject(4)
+    release
+    end
+}
+
+script GloriaTown_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("This town is so beautiful and calming. I'm visiting from out of town and this place is great. I might want to move here!"))
+    release
+    end
+}
+
+script GloriaTown_ControlScript_RivalBattleSetup{
+    if(!(flag(FLAG_SYS_POKEMON_GET))){
+        setflag(FLAG_RIVAL_BATTLE_ONE)
+    }
+    else{
+        clearflag(FLAG_RIVAL_BATTLE_ONE)
+    }
+}
+
+script GloriaTown_TrainerScript_RivalBattleOne{
+    trainerbattle_single(TRAINER_RED, GloriaTown_TextScript_RivalIntro, GloriaTown_TextScript_RivalOutro, GloriaTown_SequenceScript_RivalLeave)
+    end
+}
+
+script GloriaTown_SequenceScript_RivalLeave{
+    msgbox(GloriaTown_TextScript_RivalBattleAftermath)
+    closemessage
+    lockall
+    applymovement(6, GloriaTown_MovementScript_RivalLeaveAfterBattle)
+    waitmovement(0)
+    removeobject(6)
+    setflag(FLAG_RIVAL_BATTLE_ONE)
+    releaseall
+}
+
+script GloriaTown_TriggerScript_BlockPath{
+    lockall
+    msgbox("Mother said to visit the Professor and\nyour Rival before heading out!")
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_StopPlayer)
+    waitmovement(0)
+    releaseall
+}
+
+script GloriaTown_TriggerScript_GotoRival{
+    lockall
+    msgbox("You should go visit your rival first!")
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_StopPlayerLab)
+    waitmovement(0)
+    releaseall
+}
+
+movement GloriaTown_MovementScript_StopPlayer{
+    walk_up
+}
+
+movement GloriaTown_MovementScript_StopPlayerLab{
+    walk_right
+}
+
+movement GloriaTown_MovementScript_RivalLeaveAfterBattle{
+    walk_right * 6
+    walk_down * 7
+}
+
+text GloriaTown_TextScript_RivalIntro{
+    "Placeholder text"
+}
+
+text GloriaTown_TextScript_RivalOutro{
+    "Placeholder text"
+}
+
+text GloriaTown_TextScript_RivalBattleAftermath{
+    "Placeholder text"
+}

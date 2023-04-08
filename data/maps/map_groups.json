@@ -33,7 +33,7 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_IndoorTestTown"
+    "gMapGroup_IndoorGloriaTown"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -85,7 +85,7 @@
     "Route132",
     "Route133",
     "Route134",
-    "TestTown",
+    "GloriaTown",
     "Route1"
   ],
   "gMapGroup_IndoorLittleroot": [
@@ -599,11 +599,11 @@
   "gMapGroup_IndoorRoute124": [
     "Route124_DivingTreasureHuntersHouse"
   ],
-  "gMapGroup_IndoorTestTown": [
-    "TestTown_Professors_Lab",
-    "TestTown_Your_House",
-    "TestTown_Your_House_2F",
-    "TestTown_Rival_House",
-    "TestTown_Rival_House_2F"
+  "gMapGroup_IndoorGloriaTown": [
+    "GloriaTown_Professors_Lab",
+    "GloriaTown_Your_House",
+    "GloriaTown_Your_House_2F",
+    "GloriaTown_Rival_House",
+    "GloriaTown_Rival_House_2F"
   ]
 }

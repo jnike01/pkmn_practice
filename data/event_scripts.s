@@ -1039,16 +1039,16 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/text/birch_speech.inc"
 	.include "data/scripts/pc_start_menu.inc"
 
-	.include "data/maps/TestTown/scripts.inc"
+	.include "data/maps/GloriaTown/scripts.inc"
 
-	.include "data/maps/TestTown_Professors_Lab/scripts.inc"
+	.include "data/maps/GloriaTown_Professors_Lab/scripts.inc"
 
-	.include "data/maps/TestTown_Your_House/scripts.inc"
+	.include "data/maps/GloriaTown_Your_House/scripts.inc"
 
-	.include "data/maps/TestTown_Your_House_2F/scripts.inc"
+	.include "data/maps/GloriaTown_Your_House_2F/scripts.inc"
 
-	.include "data/maps/TestTown_Rival_House/scripts.inc"
+	.include "data/maps/GloriaTown_Rival_House/scripts.inc"
 
-	.include "data/maps/TestTown_Rival_House_2F/scripts.inc"
+	.include "data/maps/GloriaTown_Rival_House_2F/scripts.inc"
 
 	.include "data/maps/Route1/scripts.inc"

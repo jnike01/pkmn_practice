@@ -264,7 +264,7 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_STARTER_REGION                               0x40F7
-#define VAR_TEST_TOWN_STATE                              0x40F8
+#define VAR_GLORIA_TOWN_STATE                              0x40F8
 #define VAR_STARTER_CHOICE                               0x40F9
 #define VAR_YOUR_HOUSE_STATE                             0x40FA
 #define VAR_RIVAL_STATE                                  0x40FB

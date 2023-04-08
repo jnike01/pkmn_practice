@@ -1,53 +1,53 @@
-mapscripts TestTown_Professors_Lab_MapScripts{
-    MAP_SCRIPT_ON_TRANSITION: TestTown_Professors_Lab_DefaultScript_Ball
+mapscripts GloriaTown_Professors_Lab_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: GloriaTown_Professors_Lab_DefaultScript_Ball
 }
 
-script TestTown_Professors_Lab_DefaultScript_Ball{
+script GloriaTown_Professors_Lab_DefaultScript_Ball{
     setvar(VAR_STARTER_REGION, 0)
 }
 
-script TestTown_Professors_Lab_TriggerScript_StarterChoose{
+script GloriaTown_Professors_Lab_TriggerScript_StarterChoose{
     lock
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_MeetProf)
     waitmovement(0)
-    applymovement(4, TestTown_Professors_Lab_MovementScript_ProfMove)
+    applymovement(4, GloriaTown_Professors_Lab_MovementScript_ProfMove)
     waitmovement(0)
-    msgbox(TestTown_Professors_Lab_TextScript_BeginAdventure)
+    msgbox(GloriaTown_Professors_Lab_TextScript_BeginAdventure)
     waitmessage
     closemessage
-    applymovement(4, TestTown_Professors_Lab_MovementScript_ProfMove2)
+    applymovement(4, GloriaTown_Professors_Lab_MovementScript_ProfMove2)
     waitmovement(0)
-    setvar(VAR_TEST_TOWN_STATE, 1)
+    setvar(VAR_GLORIA_TOWN_STATE, 1)
     release
 }
 
-script TestTown_Professors_Lab_TriggerScript_StarterChoose2{
+script GloriaTown_Professors_Lab_TriggerScript_StarterChoose2{
     lock
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_MeetProf2)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_MeetProf2)
     waitmovement(0)
-    goto(TestTown_Professors_Lab_TriggerScript_StarterChoose)
+    goto(GloriaTown_Professors_Lab_TriggerScript_StarterChoose)
 }
 
-movement TestTown_Professors_Lab_MovementScript_MeetProf{
+movement GloriaTown_Professors_Lab_MovementScript_MeetProf{
     walk_up * 4
 }
 
-movement TestTown_Professors_Lab_MovementScript_MeetProf2{
+movement GloriaTown_Professors_Lab_MovementScript_MeetProf2{
     walk_left
 }
 
-movement TestTown_Professors_Lab_MovementScript_ProfMove{
+movement GloriaTown_Professors_Lab_MovementScript_ProfMove{
     walk_right
     walk_down * 3
 }
 
-movement TestTown_Professors_Lab_MovementScript_ProfMove2{
+movement GloriaTown_Professors_Lab_MovementScript_ProfMove2{
     walk_up * 3
     walk_left
     face_down
 }
 
-text TestTown_Professors_Lab_TextScript_BeginAdventure{
+text GloriaTown_Professors_Lab_TextScript_BeginAdventure{
     "Welcome to my lab!\p"
     "Thanks for stopping by and\n"
     "participating in our annual Pokemon\l"
@@ -56,19 +56,19 @@ text TestTown_Professors_Lab_TextScript_BeginAdventure{
     "come let me know!\n"
 }
 
-script TestTown_Professors_Lab_TriggerScript_StopLeaving{
+script GloriaTown_Professors_Lab_TriggerScript_StopLeaving{
     lockall
     msgbox("You need to choose a Pokemon.")
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_DoNotLeave)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_DoNotLeave)
     waitmovement(0)
     releaseall
 }
 
-movement TestTown_Professors_Lab_MovementScript_DoNotLeave{
+movement GloriaTown_Professors_Lab_MovementScript_DoNotLeave{
     walk_up
 }
 
-script TestTown_Professors_Lab_PersonScript_Aide1{
+script GloriaTown_Professors_Lab_PersonScript_Aide1{
     lock
     faceplayer
     msgbox("The Professor has assigned me\nthe task of researching ancient\lhistory. There are so many wonders and\lmuch to learn!")
@@ -76,7 +76,7 @@ script TestTown_Professors_Lab_PersonScript_Aide1{
     end
 }
 
-script TestTown_Professors_Lab_PersonScript_Aide2{
+script GloriaTown_Professors_Lab_PersonScript_Aide2{
     lock 
     faceplayer
     msgbox("I'm so lucky to have been hired\nby the Professsor to help him in\lhis research!")
@@ -84,7 +84,7 @@ script TestTown_Professors_Lab_PersonScript_Aide2{
     end
 }
 
-script TestTown_Professors_Lab_PersonScript_Professor{
+script GloriaTown_Professors_Lab_PersonScript_Professor{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         lock
         faceplayer
@@ -92,15 +92,15 @@ script TestTown_Professors_Lab_PersonScript_Professor{
         multichoice(25, 5, MULTI_STARTER_CHOICE, 0)
         closemessage
         if(var(VAR_RESULT) == 0){
-            call(TestTown_Professors_Lab_FadeScript_StarterFade)
+            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 2)
         }
         elif(var(VAR_RESULT) == 1){
-            call(TestTown_Professors_Lab_FadeScript_StarterFade)
+            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 1)
         }
         elif(var(VAR_RESULT) == 2){
-            call(TestTown_Professors_Lab_FadeScript_StarterFade)
+            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
             setvar(VAR_STARTER_REGION, 0)
         }
         msgbox("Choose wisely...")
@@ -113,31 +113,31 @@ script TestTown_Professors_Lab_PersonScript_Professor{
     end
 }
 
-script TestTown_Professors_Lab_FadeScript_StarterFade{
+script GloriaTown_Professors_Lab_FadeScript_StarterFade{
     fadescreen(FADE_TO_BLACK)
     delay(20)
     fadescreen(FADE_FROM_BLACK)
     return
 }
 
-script TestTown_Professors_Lab_ObjectScript_PokeballOne{
+script GloriaTown_Professors_Lab_ObjectScript_PokeballOne{
     lockall
     setvar(VAR_TEMP_0, 1)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
             bufferspeciesname(STR_VAR_1, SPECIES_MUDKIP)
             setvar(VAR_STARTER_CHOICE, SPECIES_MUDKIP)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
             bufferspeciesname(STR_VAR_1, SPECIES_TOTODILE)
             setvar(VAR_STARTER_CHOICE, SPECIES_TOTODILE)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
             bufferspeciesname(STR_VAR_1, SPECIES_SQUIRTLE)
             setvar(VAR_STARTER_CHOICE, SPECIES_SQUIRTLE)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -148,24 +148,24 @@ script TestTown_Professors_Lab_ObjectScript_PokeballOne{
     end
 }
 
-script TestTown_Professors_Lab_ObjectScript_PokeballTwo{
+script GloriaTown_Professors_Lab_ObjectScript_PokeballTwo{
     lockall
     setvar(VAR_TEMP_0, 2)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
             bufferspeciesname(STR_VAR_1, SPECIES_TREECKO)
             setvar(VAR_STARTER_CHOICE, SPECIES_TREECKO)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
             bufferspeciesname(STR_VAR_1, SPECIES_CHIKORITA)
             setvar(VAR_STARTER_CHOICE, SPECIES_CHIKORITA)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
             bufferspeciesname(STR_VAR_1, SPECIES_BULBASAUR)
             setvar(VAR_STARTER_CHOICE, SPECIES_BULBASAUR)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -176,24 +176,24 @@ script TestTown_Professors_Lab_ObjectScript_PokeballTwo{
     end
 }
 
-script TestTown_Professors_Lab_ObjectScript_PokeballThree{
+script GloriaTown_Professors_Lab_ObjectScript_PokeballThree{
     lockall
     setvar(VAR_TEMP_0, 3)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         if(var(VAR_STARTER_REGION) == 0){
             bufferspeciesname(STR_VAR_1, SPECIES_TORCHIC)
             setvar(VAR_STARTER_CHOICE, SPECIES_TORCHIC)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 1){
             bufferspeciesname(STR_VAR_1, SPECIES_CYNDAQUIL)
             setvar(VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
         elif(var(VAR_STARTER_REGION) == 2){
             bufferspeciesname(STR_VAR_1, SPECIES_CHARMANDER)
             setvar(VAR_STARTER_CHOICE, SPECIES_CHARMANDER)
-            call(TestTown_Professors_Lab_PokemonScript_GiveStarter)
+            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
         }
     }
     else{
@@ -204,26 +204,26 @@ script TestTown_Professors_Lab_ObjectScript_PokeballThree{
     end
 }
 
-script TestTown_Professors_Lab_PokemonScript_GiveStarter{
+script GloriaTown_Professors_Lab_PokemonScript_GiveStarter{
     showmonpic(VAR_STARTER_CHOICE, 10, 3)
     msgbox("Do you want to choose {STR_VAR_1}?", MSGBOX_YESNO)
     if(var(VAR_RESULT) == YES){
         setflag(FLAG_SYS_POKEMON_GET)
-        setvar(VAR_TEST_TOWN_STATE, 2)
+        setvar(VAR_GLORIA_TOWN_STATE, 2)
         givemon(VAR_STARTER_CHOICE, 5, ITEM_ORAN_BERRY)
         if(var(VAR_RESULT) == MON_GIVEN_TO_PARTY){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You have received {STR_VAR_1}.")
             removeobject(VAR_TEMP_0)
-            call(TestTown_Professors_Lab_FlagScript_SetBallFlag)
-            call(TestTown_Professors_Lab_SequenceScript_NicknamePartyMon)
+            call(GloriaTown_Professors_Lab_FlagScript_SetBallFlag)
+            call(GloriaTown_Professors_Lab_SequenceScript_NicknamePartyMon)
         }
         elif(var(VAR_RESULT) == MON_GIVEN_TO_PC){
             playfanfare(MUS_OBTAIN_ITEM)
             msgbox("You have received {STR_VAR_1}.")
             removeobject(VAR_TEMP_0)
-            call(TestTown_Professors_Lab_FlagScript_SetBallFlag)
-            call(TestTown_Professors_Lab_SequenceScript_NicknameBoxMon)
+            call(GloriaTown_Professors_Lab_FlagScript_SetBallFlag)
+            call(GloriaTown_Professors_Lab_SequenceScript_NicknameBoxMon)
             msgbox("Transferred {STR_VAR_1} to PC.")
         }
         else{
@@ -231,15 +231,15 @@ script TestTown_Professors_Lab_PokemonScript_GiveStarter{
             msgbox("No more room for Pokemon.")
         }
         closemessage
-        call(TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence)
+        call(GloriaTown_Professors_Lab_SequenceScript_InitiatePokedexSequence)
     }
     else{
         hidemonpic
-        msgbox(TestTown_Professors_Lab_TextScript_NotChosen)
+        msgbox(GloriaTown_Professors_Lab_TextScript_NotChosen)
     }
 }
 
-script TestTown_Professors_Lab_FlagScript_SetBallFlag{
+script GloriaTown_Professors_Lab_FlagScript_SetBallFlag{
     if(var(VAR_TEMP_0) == 1){
         setflag(FLAG_STARTER_BALL_ONE)
         return
@@ -254,7 +254,7 @@ script TestTown_Professors_Lab_FlagScript_SetBallFlag{
     }
 }
 
-script TestTown_Professors_Lab_SequenceScript_HealMachine{
+script GloriaTown_Professors_Lab_SequenceScript_HealMachine{
     lockall
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         msgbox("Please come back when you have\na Pokemon to heal.")
@@ -276,7 +276,7 @@ script TestTown_Professors_Lab_SequenceScript_HealMachine{
     end
 }
 
-script TestTown_Professors_Lab_SequenceScript_NicknamePartyMon{
+script GloriaTown_Professors_Lab_SequenceScript_NicknamePartyMon{
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
@@ -285,7 +285,7 @@ script TestTown_Professors_Lab_SequenceScript_NicknamePartyMon{
     }
 }
 
-script TestTown_Professors_Lab_SequenceScript_NicknameBoxMon{
+script GloriaTown_Professors_Lab_SequenceScript_NicknameBoxMon{
     msgbox("Give it a nickname?", MSGBOX_YESNO)
     hidemonpic
     if(var(VAR_RESULT) == YES){
@@ -294,40 +294,40 @@ script TestTown_Professors_Lab_SequenceScript_NicknameBoxMon{
     call(Common_EventScript_TransferredToPC)
 }
 
-script TestTown_Professors_Lab_SignScript_HealMachine{
+script GloriaTown_Professors_Lab_SignScript_HealMachine{
     lock
     msgbox("This is a complex machine. It might be\nused for healing?")
     release
     end
 }
 
-text TestTown_Professors_Lab_TextScript_NotChosen{
+text GloriaTown_Professors_Lab_TextScript_NotChosen{
     "You did not choose the Pokemon"
 }
 
-script TestTown_Professors_Lab_SequenceScript_InitiatePokedexSequence{
+script GloriaTown_Professors_Lab_SequenceScript_InitiatePokedexSequence{
     lock
     delay(20)
-    applymovement(OBJ_EVENT_ID_PLAYER, TestTown_Professors_Lab_MovementScript_TurnToProf)
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_TurnToProf)
     if(var(VAR_TEMP_0) == 1){
-        applymovement(4, TestTown_Professors_Lab_MovementScript_MoveBallOne)
+        applymovement(4, GloriaTown_Professors_Lab_MovementScript_MoveBallOne)
     }
     if(var(VAR_TEMP_0) == 2){
-        applymovement(4, TestTown_Professors_Lab_MovementScript_MoveBallTwo)
+        applymovement(4, GloriaTown_Professors_Lab_MovementScript_MoveBallTwo)
     }
     if(var(VAR_TEMP_0) == 3){
-        applymovement(4, TestTown_Professors_Lab_MovementScript_MoveBallThree)
+        applymovement(4, GloriaTown_Professors_Lab_MovementScript_MoveBallThree)
     }
     waitmovement(0)
     delay(20)
-    call(TestTown_Professors_Lab_SequenceScript_GivePokedex)
+    call(GloriaTown_Professors_Lab_SequenceScript_GivePokedex)
     release
     return
 }
 
-script TestTown_Professors_Lab_SequenceScript_GivePokedex{
+script GloriaTown_Professors_Lab_SequenceScript_GivePokedex{
     lock
-    msgbox(TestTown_Professors_Lab_TextScript_TakePokedex)
+    msgbox(GloriaTown_Professors_Lab_TextScript_TakePokedex)
     playfanfare(MUS_OBTAIN_ITEM)
     message("{PLAYER}{KUN} received the Pokedex!$")
     waitfanfare
@@ -337,9 +337,9 @@ script TestTown_Professors_Lab_SequenceScript_GivePokedex{
     special(SetUnlockedPokedexFlags)
     setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
     setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
-    msgbox(TestTown_Professors_Lab_TextScript_ExplainPokedex)
-    msgbox(TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade)
-    call(TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex)
+    msgbox(GloriaTown_Professors_Lab_TextScript_ExplainPokedex)
+    msgbox(GloriaTown_Professors_Lab_TextScript_ExplainPokedexUpgrade)
+    call(GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex)
     msgbox("Also, take these with you.")
     giveitem(ITEM_POKE_BALL, 5)
     msgbox(format("These allow you to catch your own Pokemon in tall grass so you can collect research for the Pokedex"))
@@ -348,10 +348,10 @@ script TestTown_Professors_Lab_SequenceScript_GivePokedex{
     end
 }
 
-script TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex{
+script GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex{
     lock
     playfanfare(MUS_OBTAIN_ITEM)
-    message(TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational)
+    message(GloriaTown_Professors_Lab_TextScript_PokedexUpgradedToNational)
     waitmessage
     waitfanfare
     setflag(FLAG_SYS_NATIONAL_DEX)
@@ -361,38 +361,38 @@ script TestTown_Professors_Lab_SequenceScript_UpgradeNationalDex{
     return
 }
 
-movement TestTown_Professors_Lab_MovementScript_MoveBallOne{
+movement GloriaTown_Professors_Lab_MovementScript_MoveBallOne{
     walk_left * 2
 }
 
-movement TestTown_Professors_Lab_MovementScript_MoveBallTwo{
+movement GloriaTown_Professors_Lab_MovementScript_MoveBallTwo{
     walk_left
 }
 
-movement TestTown_Professors_Lab_MovementScript_MoveBallThree{
+movement GloriaTown_Professors_Lab_MovementScript_MoveBallThree{
     face_left
 }
 
-movement TestTown_Professors_Lab_MovementScript_TurnToProf{
+movement GloriaTown_Professors_Lab_MovementScript_TurnToProf{
     face_right
 }
 
-text TestTown_Professors_Lab_TextScript_ExplainPokedex{
+text GloriaTown_Professors_Lab_TextScript_ExplainPokedex{
     "Professor: The Pokedex is a high-tech\n"
 	"tool that automatically makes a record\l"
 	"of any Pokemon you meet or catch.\p"
 }
 
-text TestTown_Professors_Lab_TextScript_PokedexUpgradedToNational{
+text GloriaTown_Professors_Lab_TextScript_PokedexUpgradedToNational{
     "{PLAYER}'s Pokedex was upgraded\n"
 	"to the National Mode!$"
 }
 
-text TestTown_Professors_Lab_TextScript_ExplainPokedexUpgrade{
+text GloriaTown_Professors_Lab_TextScript_ExplainPokedexUpgrade{
     "Let me upgrade it as well..."
 }
 
-text TestTown_Professors_Lab_TextScript_TakePokedex{
+text GloriaTown_Professors_Lab_TextScript_TakePokedex{
     "Here, {PLAYER}, I ordered this for my\n"
 	"research, but I think you should have\l"
 	"this Pokedex."

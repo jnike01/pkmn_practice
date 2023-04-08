@@ -1,9 +1,9 @@
 {
-  "id": "MAP_TEST_TOWN_YOUR_HOUSE",
-  "name": "TestTown_Your_House",
-  "layout": "LAYOUT_TEST_TOWN_YOUR_HOUSE",
+  "id": "MAP_GLORIA_TOWN_YOUR_HOUSE",
+  "name": "GloriaTown_Your_House",
+  "layout": "LAYOUT_GLORIA_TOWN_YOUR_HOUSE",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_TEST_TOWN",
+  "region_map_section": "MAPSEC_GLORIA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Your_House_PersonScript_Mom",
+      "script": "GloriaTown_Your_House_PersonScript_Mom",
       "flag": "0"
     }
   ],
@@ -33,21 +33,21 @@
       "x": 8,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN",
+      "dest_map": "MAP_GLORIA_TOWN",
       "dest_warp_id": "1"
     },
     {
       "x": 9,
       "y": 8,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN",
+      "dest_map": "MAP_GLORIA_TOWN",
       "dest_warp_id": "1"
     },
     {
       "x": 8,
       "y": 2,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN_YOUR_HOUSE_2F",
+      "dest_map": "MAP_GLORIA_TOWN_YOUR_HOUSE_2F",
       "dest_warp_id": "0"
     }
   ],
@@ -59,7 +59,7 @@
       "elevation": 0,
       "var": "VAR_YOUR_HOUSE_STATE",
       "var_value": "1",
-      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionOne"
+      "script": "GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionOne"
     },
     {
       "type": "trigger",
@@ -68,7 +68,7 @@
       "elevation": 0,
       "var": "VAR_YOUR_HOUSE_STATE",
       "var_value": "1",
-      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionTwo"
+      "script": "GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionTwo"
     },
     {
       "type": "trigger",
@@ -77,7 +77,7 @@
       "elevation": 0,
       "var": "VAR_YOUR_HOUSE_STATE",
       "var_value": "1",
-      "script": "TestTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionThree"
+      "script": "GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionThree"
     }
   ],
   "bg_events": [
@@ -87,7 +87,7 @@
       "y": 4,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TestTown_Your_House_SignScript_TV"
+      "script": "GloriaTown_Your_House_SignScript_TV"
     }
   ]
 }

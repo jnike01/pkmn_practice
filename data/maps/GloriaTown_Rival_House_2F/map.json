@@ -1,9 +1,9 @@
 {
-  "id": "MAP_TEST_TOWN_RIVAL_HOUSE_2F",
-  "name": "TestTown_Rival_House_2F",
-  "layout": "LAYOUT_TEST_TOWN_RIVAL_HOUSE_2F",
+  "id": "MAP_GLORIA_TOWN_RIVAL_HOUSE_2F",
+  "name": "GloriaTown_Rival_House_2F",
+  "layout": "LAYOUT_GLORIA_TOWN_RIVAL_HOUSE_2F",
   "music": "MUS_LITTLEROOT",
-  "region_map_section": "MAPSEC_TEST_TOWN",
+  "region_map_section": "MAPSEC_GLORIA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Rival_House_2F_PersonScript_RivalIntro",
+      "script": "GloriaTown_Rival_House_2F_PersonScript_RivalIntro",
       "flag": "FLAG_RIVAL_INTRO"
     }
   ],
@@ -33,7 +33,7 @@
       "x": 1,
       "y": 1,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN_RIVAL_HOUSE",
+      "dest_map": "MAP_GLORIA_TOWN_RIVAL_HOUSE",
       "dest_warp_id": "2"
     }
   ],
@@ -47,7 +47,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Rival_House_2F_SignScript_TV"
+      "script": "GloriaTown_Rival_House_2F_SignScript_TV"
     },
     {
       "type": "sign",
@@ -55,7 +55,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Rival_House_2F_SignScript_Gamecube"
+      "script": "GloriaTown_Rival_House_2F_SignScript_Gamecube"
     },
     {
       "type": "sign",
@@ -63,7 +63,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Rival_House_2F_SignScript_Notebook"
+      "script": "GloriaTown_Rival_House_2F_SignScript_Notebook"
     },
     {
       "type": "sign",
@@ -71,7 +71,7 @@
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Rival_House_2F_SignScript_PC"
+      "script": "GloriaTown_Rival_House_2F_SignScript_PC"
     }
   ]
 }

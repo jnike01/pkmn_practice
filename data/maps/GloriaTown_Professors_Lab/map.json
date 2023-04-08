@@ -1,9 +1,9 @@
 {
-  "id": "MAP_TEST_TOWN_PROFESSORS_LAB",
-  "name": "TestTown_Professors_Lab",
-  "layout": "LAYOUT_TEST_TOWN_PROFESSORS_LAB",
+  "id": "MAP_GLORIA_TOWN_PROFESSORS_LAB",
+  "name": "GloriaTown_Professors_Lab",
+  "layout": "LAYOUT_GLORIA_TOWN_PROFESSORS_LAB",
   "music": "MUS_BIRCH_LAB",
-  "region_map_section": "MAPSEC_TEST_TOWN",
+  "region_map_section": "MAPSEC_GLORIA_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_INDOOR",
@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_ObjectScript_PokeballOne",
+      "script": "GloriaTown_Professors_Lab_ObjectScript_PokeballOne",
       "flag": "FLAG_STARTER_BALL_ONE"
     },
     {
@@ -37,7 +37,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_ObjectScript_PokeballTwo",
+      "script": "GloriaTown_Professors_Lab_ObjectScript_PokeballTwo",
       "flag": "FLAG_STARTER_BALL_TWO"
     },
     {
@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_ObjectScript_PokeballThree",
+      "script": "GloriaTown_Professors_Lab_ObjectScript_PokeballThree",
       "flag": "FLAG_STARTER_BALL_THREE"
     },
     {
@@ -63,7 +63,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_PersonScript_Professor",
+      "script": "GloriaTown_Professors_Lab_PersonScript_Professor",
       "flag": "0"
     },
     {
@@ -76,7 +76,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_PersonScript_Aide1",
+      "script": "GloriaTown_Professors_Lab_PersonScript_Aide1",
       "flag": "0"
     },
     {
@@ -89,7 +89,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "TestTown_Professors_Lab_PersonScript_Aide2",
+      "script": "GloriaTown_Professors_Lab_PersonScript_Aide2",
       "flag": "0"
     }
   ],
@@ -98,14 +98,14 @@
       "x": 6,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN",
+      "dest_map": "MAP_GLORIA_TOWN",
       "dest_warp_id": "0"
     },
     {
       "x": 7,
       "y": 13,
       "elevation": 0,
-      "dest_map": "MAP_TEST_TOWN",
+      "dest_map": "MAP_GLORIA_TOWN",
       "dest_warp_id": "0"
     }
   ],
@@ -115,36 +115,36 @@
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TEST_TOWN_STATE",
+      "var": "VAR_GLORIA_TOWN_STATE",
       "var_value": "0",
-      "script": "TestTown_Professors_Lab_TriggerScript_StarterChoose"
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StarterChoose"
     },
     {
       "type": "trigger",
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TEST_TOWN_STATE",
+      "var": "VAR_GLORIA_TOWN_STATE",
       "var_value": "0",
-      "script": "TestTown_Professors_Lab_TriggerScript_StarterChoose2"
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StarterChoose2"
     },
     {
       "type": "trigger",
       "x": 6,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TEST_TOWN_STATE",
+      "var": "VAR_GLORIA_TOWN_STATE",
       "var_value": "1",
-      "script": "TestTown_Professors_Lab_TriggerScript_StopLeaving"
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StopLeaving"
     },
     {
       "type": "trigger",
       "x": 7,
       "y": 12,
       "elevation": 0,
-      "var": "VAR_TEST_TOWN_STATE",
+      "var": "VAR_GLORIA_TOWN_STATE",
       "var_value": "1",
-      "script": "TestTown_Professors_Lab_TriggerScript_StopLeaving"
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StopLeaving"
     }
   ],
   "bg_events": [
@@ -154,7 +154,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "TestTown_Professors_Lab_SequenceScript_HealMachine"
+      "script": "GloriaTown_Professors_Lab_SequenceScript_HealMachine"
     },
     {
       "type": "sign",
@@ -162,7 +162,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TestTown_Professors_Lab_SignScript_HealMachine"
+      "script": "GloriaTown_Professors_Lab_SignScript_HealMachine"
     },
     {
       "type": "sign",
@@ -170,7 +170,7 @@
       "y": 5,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "TestTown_Professors_Lab_SignScript_HealMachine"
+      "script": "GloriaTown_Professors_Lab_SignScript_HealMachine"
     }
   ]
 }
