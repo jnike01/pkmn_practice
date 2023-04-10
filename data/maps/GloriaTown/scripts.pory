@@ -67,7 +67,9 @@ script GloriaTown_ControlScript_RivalBattleSetup{
         setflag(FLAG_RIVAL_BATTLE_ONE)
     }
     else{
-        clearflag(FLAG_RIVAL_BATTLE_ONE)
+        if(var(VAR_GLORIA_TOWN_STATE) == 2){
+            clearflag(FLAG_RIVAL_BATTLE_ONE)
+        }
     }
 }
 
@@ -84,6 +86,7 @@ script GloriaTown_SequenceScript_RivalLeave{
     waitmovement(0)
     removeobject(6)
     setflag(FLAG_RIVAL_BATTLE_ONE)
+    setvar(VAR_GLORIA_TOWN_STATE, 3)
     releaseall
 }
 

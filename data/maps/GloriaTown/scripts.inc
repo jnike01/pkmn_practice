@@ -68,11 +68,16 @@ GloriaTown_PersonScript_NPC1::
 
 GloriaTown_ControlScript_RivalBattleSetup::
 	goto_if_unset FLAG_SYS_POKEMON_GET, GloriaTown_ControlScript_RivalBattleSetup_1
-	clearflag FLAG_RIVAL_BATTLE_ONE
+	compare VAR_GLORIA_TOWN_STATE, 2
+	goto_if_eq GloriaTown_ControlScript_RivalBattleSetup_4
 	return
 
 GloriaTown_ControlScript_RivalBattleSetup_1:
 	setflag FLAG_RIVAL_BATTLE_ONE
+	return
+
+GloriaTown_ControlScript_RivalBattleSetup_4:
+	clearflag FLAG_RIVAL_BATTLE_ONE
 	return
 
 
@@ -89,6 +94,7 @@ GloriaTown_SequenceScript_RivalLeave::
 	waitmovement 0
 	removeobject 6
 	setflag FLAG_RIVAL_BATTLE_ONE
+	setvar VAR_GLORIA_TOWN_STATE, 3
 	releaseall
 	return
 

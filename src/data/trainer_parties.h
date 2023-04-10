@@ -12419,18 +12419,28 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Leaf[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_BrendanLinkPlaceholder[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Jack_1[] = {
     {
     .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_GROUDON,
+    .lvl = 3,
+    .species = SPECIES_RATTATA,
+    },
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_TAILLOW,    
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_MayLinkPlaceholder[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Heather_1[] = {
     {
     .iv = 0,
-    .lvl = 5,
-    .species = SPECIES_KYOGRE,
+    .lvl = 3,
+    .species = SPECIES_PIDOVE,
+    },
+    {
+    .iv = 0,
+    .lvl = 4,
+    .species = SPECIES_SHINX,    
     }
 };

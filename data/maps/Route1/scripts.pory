@@ -1,0 +1,53 @@
+mapscripts Route1_MapScripts{}
+
+script Route1_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_POTION, 1)
+    removeobject(1)
+    release
+    end
+}
+
+script Route1_SignScript_RouteSign{
+    lock
+    msgbox("Route 1, a beautiful landscape.")
+    release
+    end
+}
+
+script Route1_TrainerScript_Heather{
+    trainerbattle_single(TRAINER_HEATHER_1, Route1_TextScript_Heather_Intro, Route1_TextScript_Heather_Outro)
+    msgbox(Route1_TextScript_Heather_Dialogue, MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route1_TrainerScript_Jack{
+    trainerbattle_single(TRAINER_JACK_1, Route1_TextScript_Jack_Intro, Route1_TextScript_Jack_Outro)
+    msgbox(Route1_TextScript_Jack_Dialogue, MSGBOX_AUTOCLOSE)
+    waitmessage
+    end
+}
+
+text Route1_TextScript_Heather_Intro{
+    "Placeholder Text."
+}
+
+text Route1_TextScript_Heather_Outro{
+    "Placeholder Text."
+}
+
+text Route1_TextScript_Heather_Dialogue{
+    "Placeholder Text."
+}
+
+text Route1_TextScript_Jack_Intro{
+    "Placeholder Text."
+}
+
+text Route1_TextScript_Jack_Outro{
+    "Placeholder Text."
+}
+
+text Route1_TextScript_Jack_Dialogue{
+    "Placeholder Text."
+}
