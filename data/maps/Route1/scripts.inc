@@ -30,8 +30,21 @@ Route1_TrainerScript_Jack::
 	end
 
 
+Route1_PersonScript_NPC1::
+	lock
+	faceplayer
+	msgbox Route1_PersonScript_NPC1_Text_0
+	release
+	end
+
+
 Route1_SignScript_RouteSign_Text_0:
 	.string "Route 1, a beautiful landscape.$"
+
+Route1_PersonScript_NPC1_Text_0:
+	.string "This grass is great for catching\n"
+	.string "pokemon! I love the breeze here too,\l"
+	.string "it's great.$"
 
 Route1_TextScript_Heather_Intro::
 	.string "Placeholder Text.$"

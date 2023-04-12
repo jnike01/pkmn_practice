@@ -10,30 +10,37 @@ script GloriaTown_DefaultScript_DefaultState{
     call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, GloriaTown_ControlScript_RivalBattleSetup)
 }
 
-script GloriaTown_Signscript_Player_House{
+script GloriaTown_SignScript_Player_House{
     lock
     msgbox("{PLAYER}{KUN}'s House")
     release
     end
 }
 
-script GloriaTown_Signscript_Rival_House{
+script GloriaTown_SignScript_Rival_House{
     lock
     msgbox("Professor's House")
     release
     end
 }
 
-script GloriaTown_Signscript_Prof_Lab{
+script GloriaTown_SignScript_Prof_Lab{
     lock
     msgbox("Professor's Lab")
     release
     end
 }
 
-script GloriaTown_Signscript_Gym{
+script GloriaTown_SignScript_Gym{
     lock
     msgbox("Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”")
+    release
+    end
+}
+
+script GloriaTown_SignScript_TownSign{
+    lock
+    msgbox("Gloria Town, a serene abode.")
     release
     end
 }
@@ -58,6 +65,14 @@ script GloriaTown_PersonScript_NPC1{
     lock
     faceplayer
     msgbox(format("This town is so beautiful and calming. I'm visiting from out of town and this place is great. I might want to move here!"))
+    release
+    end
+}
+
+script GloriaTown_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("I love coming to Gloria Town to fish! There's some encounters here that you can't get anywhere else. You should try it some time!"))
     release
     end
 }

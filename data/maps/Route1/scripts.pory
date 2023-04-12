@@ -28,6 +28,14 @@ script Route1_TrainerScript_Jack{
     end
 }
 
+script Route1_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("This grass is great for catching pokemon! I love the breeze here too, it's great."))
+    release
+    end
+}
+
 text Route1_TextScript_Heather_Intro{
     "Placeholder Text."
 }

@@ -14,30 +14,37 @@ GloriaTown_DefaultScript_DefaultState_2:
 	goto GloriaTown_DefaultScript_DefaultState_1
 
 
-GloriaTown_Signscript_Player_House::
+GloriaTown_SignScript_Player_House::
 	lock
-	msgbox GloriaTown_Signscript_Player_House_Text_0
+	msgbox GloriaTown_SignScript_Player_House_Text_0
 	release
 	end
 
 
-GloriaTown_Signscript_Rival_House::
+GloriaTown_SignScript_Rival_House::
 	lock
-	msgbox GloriaTown_Signscript_Rival_House_Text_0
+	msgbox GloriaTown_SignScript_Rival_House_Text_0
 	release
 	end
 
 
-GloriaTown_Signscript_Prof_Lab::
+GloriaTown_SignScript_Prof_Lab::
 	lock
-	msgbox GloriaTown_Signscript_Prof_Lab_Text_0
+	msgbox GloriaTown_SignScript_Prof_Lab_Text_0
 	release
 	end
 
 
-GloriaTown_Signscript_Gym::
+GloriaTown_SignScript_Gym::
 	lock
-	msgbox GloriaTown_Signscript_Gym_Text_0
+	msgbox GloriaTown_SignScript_Gym_Text_0
+	release
+	end
+
+
+GloriaTown_SignScript_TownSign::
+	lock
+	msgbox GloriaTown_SignScript_TownSign_Text_0
 	release
 	end
 
@@ -62,6 +69,14 @@ GloriaTown_PersonScript_NPC1::
 	lock
 	faceplayer
 	msgbox GloriaTown_PersonScript_NPC1_Text_0
+	release
+	end
+
+
+GloriaTown_PersonScript_NPC2::
+	lock
+	faceplayer
+	msgbox GloriaTown_PersonScript_NPC2_Text_0
 	release
 	end
 
@@ -141,23 +156,32 @@ GloriaTown_MovementScript_RivalLeaveAfterBattle:
 	walk_down
 	step_end
 
-GloriaTown_Signscript_Player_House_Text_0:
+GloriaTown_SignScript_Player_House_Text_0:
 	.string "{PLAYER}{KUN}'s House$"
 
-GloriaTown_Signscript_Rival_House_Text_0:
+GloriaTown_SignScript_Rival_House_Text_0:
 	.string "Professor's House$"
 
-GloriaTown_Signscript_Prof_Lab_Text_0:
+GloriaTown_SignScript_Prof_Lab_Text_0:
 	.string "Professor's Lab$"
 
-GloriaTown_Signscript_Gym_Text_0:
+GloriaTown_SignScript_Gym_Text_0:
 	.string "Test Town Pokemon Gym\nLeader: Zackary\p“The wise man of iron!”$"
+
+GloriaTown_SignScript_TownSign_Text_0:
+	.string "Gloria Town, a serene abode.$"
 
 GloriaTown_PersonScript_NPC1_Text_0:
 	.string "This town is so beautiful and calming.\n"
 	.string "I'm visiting from out of town and this\l"
 	.string "place is great. I might want to move\l"
 	.string "here!$"
+
+GloriaTown_PersonScript_NPC2_Text_0:
+	.string "I love coming to Gloria Town to fish!\n"
+	.string "There's some encounters here that you\l"
+	.string "can't get anywhere else. You should try\l"
+	.string "it some time!$"
 
 GloriaTown_TriggerScript_BlockPath_Text_0:
 	.string "Mother said to visit the Professor and\nyour Rival before heading out!$"
