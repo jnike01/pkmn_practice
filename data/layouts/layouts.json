@@ -4310,6 +4310,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route1/border.bin",
       "blockdata_filepath": "data/layouts/Route1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNVIEW_TOWN",
+      "name": "SunviewTown_Layout",
+      "width": 22,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/SunviewTown/border.bin",
+      "blockdata_filepath": "data/layouts/SunviewTown/map.bin"
     }
   ]
 }

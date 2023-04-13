@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_SUNVIEW_TOWN",
+      "offset": 16,
+      "direction": "left"
+    },
+    {
       "map": "MAP_GLORIA_TOWN",
       "offset": -4,
       "direction": "up"

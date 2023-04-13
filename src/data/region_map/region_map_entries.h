@@ -203,6 +203,7 @@ static const u8 sMapName_TERRA_CAVE[] = _("TERRA CAVE");
 static const u8 sMapName_DESERT_UNDERPASS[] = _("DESERT UNDERPASS");
 static const u8 sMapName_TRAINER_HILL[] = _("TRAINER HILL");
 static const u8 sMapName_GLORIA_TOWN[] = _("Gloria Town");
+static const u8 sMapName_SUNVIEW_TOWN[] = _("Sunview Town");
 
 const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_LITTLEROOT_TOWN] = { 4, 11, 1, 1, sMapName_LITTLEROOT_TOWN},
@@ -408,6 +409,7 @@ const struct RegionMapLocation gRegionMapEntries[] = {
     [MAPSEC_NAVEL_ROCK] = { 0, 0, 1, 1, sMapName_NAVEL_ROCK},
     [MAPSEC_TRAINER_HILL] = { 8, 4, 1, 1, sMapName_TRAINER_HILL},
     [MAPSEC_GLORIA_TOWN] = {0, 0, 1, 1, sMapName_GLORIA_TOWN},
+    [MAPSEC_SUNVIEW_TOWN] = {0, 0, 1, 1, sMapName_SUNVIEW_TOWN},
 };
 
 #endif // GUARD_DATA_REGION_MAP_REGION_MAP_ENTRIES_H

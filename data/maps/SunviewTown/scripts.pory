@@ -1,0 +1,8 @@
+mapscripts SunviewTown_MapScripts{}
+
+script SunviewTown_SignScript_TownSign{
+    lock
+    msgbox("Sunview Town, a sunny place.")
+    release
+    end
+}
