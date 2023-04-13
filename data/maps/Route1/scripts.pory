@@ -37,25 +37,25 @@ script Route1_PersonScript_NPC1{
 }
 
 text Route1_TextScript_Heather_Intro{
-    "Placeholder Text."
+    format("My Pokemon are energized from relaxing in this nice weather, so let's battle!")
 }
 
 text Route1_TextScript_Heather_Outro{
-    "Placeholder Text."
+    "Wow! You are good at this!"
 }
 
 text Route1_TextScript_Heather_Dialogue{
-    "Placeholder Text."
+    format("The breeze is really nice today. I hope you're enjoying it as much as I am.")
 }
 
 text Route1_TextScript_Jack_Intro{
-    "Placeholder Text."
+    format("I'm new to Pokemon battling, so let's do our best and learn from a battle.")
 }
 
 text Route1_TextScript_Jack_Outro{
-    "Placeholder Text."
+    format("I learned some new tactics, I hope you did too.")
 }
 
 text Route1_TextScript_Jack_Dialogue{
-    "Placeholder Text."
+    format("Good luck on your journey, I hope battling me taught you as much as it did me.")
 }

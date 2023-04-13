@@ -264,12 +264,12 @@
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER                   0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER             0x40F6
 #define VAR_STARTER_REGION                               0x40F7
-#define VAR_GLORIA_TOWN_STATE                              0x40F8
+#define VAR_GLORIA_TOWN_STATE                            0x40F8
 #define VAR_STARTER_CHOICE                               0x40F9
 #define VAR_YOUR_HOUSE_STATE                             0x40FA
 #define VAR_RIVAL_STATE                                  0x40FB
 #define VAR_RIVAL_HOUSE_STATE                            0x40FC
-#define VAR_UNUSED_0x40FD                                0x40FD // Unused Var
+#define VAR_PROFESSOR_STARTER_STATE                      0x40FD 
 #define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
 #define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
 

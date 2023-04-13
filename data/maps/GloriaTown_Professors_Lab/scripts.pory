@@ -64,14 +64,38 @@ script GloriaTown_Professors_Lab_TriggerScript_StopLeaving{
     releaseall
 }
 
+script GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable1{
+    lockall
+    msgbox("You need to choose a Pokemon.")
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_StopBeforeTable1)
+    waitmovement(0)
+    releaseall
+}
+
+script GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable2{
+    lockall
+    msgbox("You need to choose a Pokemon.")
+    applymovement(OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_StopBeforeTable2)
+    waitmovement(0)
+    releaseall
+}
+
 movement GloriaTown_Professors_Lab_MovementScript_DoNotLeave{
     walk_up
+}
+
+movement GloriaTown_Professors_Lab_MovementScript_StopBeforeTable1{
+    walk_right
+}
+
+movement GloriaTown_Professors_Lab_MovementScript_StopBeforeTable2{
+    walk_down
 }
 
 script GloriaTown_Professors_Lab_PersonScript_Aide1{
     lock
     faceplayer
-    msgbox("The Professor has assigned me\nthe task of researching ancient\lhistory. There are so many wonders and\lmuch to learn!")
+    msgbox(format("The Professor has assigned me the task of researching ancient history. There are so many wonders and much to learn!"))
     release
     end
 }
@@ -79,7 +103,7 @@ script GloriaTown_Professors_Lab_PersonScript_Aide1{
 script GloriaTown_Professors_Lab_PersonScript_Aide2{
     lock 
     faceplayer
-    msgbox("I'm so lucky to have been hired\nby the Professsor to help him in\lhis research!")
+    msgbox(format("I'm so lucky to have been hired by the Professsor to help him in his research!"))
     release 
     end
 }
@@ -337,6 +361,7 @@ script GloriaTown_Professors_Lab_SequenceScript_GivePokedex{
     special(SetUnlockedPokedexFlags)
     setflag(FLAG_RECEIVED_POKEDEX_FROM_BIRCH)
     setvar(VAR_CABLE_CLUB_TUTORIAL_STATE, 1)
+    setvar(VAR_PROFESSOR_STARTER_STATE, 1)
     msgbox(GloriaTown_Professors_Lab_TextScript_ExplainPokedex)
     msgbox(GloriaTown_Professors_Lab_TextScript_ExplainPokedexUpgrade)
     call(GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex)

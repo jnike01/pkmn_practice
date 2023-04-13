@@ -47,19 +47,25 @@ Route1_PersonScript_NPC1_Text_0:
 	.string "it's great.$"
 
 Route1_TextScript_Heather_Intro::
-	.string "Placeholder Text.$"
+	.string "My Pokemon are energized from relaxing\n"
+	.string "in this nice weather, so let's battle!$"
 
 Route1_TextScript_Heather_Outro::
-	.string "Placeholder Text.$"
+	.string "Wow! You are good at this!$"
 
 Route1_TextScript_Heather_Dialogue::
-	.string "Placeholder Text.$"
+	.string "The breeze is really nice today. I hope\n"
+	.string "you're enjoying it as much as I am.$"
 
 Route1_TextScript_Jack_Intro::
-	.string "Placeholder Text.$"
+	.string "I'm new to Pokemon battling, so let's do\n"
+	.string "our best and learn from a battle.$"
 
 Route1_TextScript_Jack_Outro::
-	.string "Placeholder Text.$"
+	.string "I learned some new tactics, I hope you\n"
+	.string "did too.$"
 
 Route1_TextScript_Jack_Dialogue::
-	.string "Placeholder Text.$"
+	.string "Good luck on your journey, I hope\n"
+	.string "battling me taught you as much as it\l"
+	.string "did me.$"

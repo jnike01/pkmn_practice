@@ -67,8 +67,34 @@ GloriaTown_Professors_Lab_TriggerScript_StopLeaving::
 	return
 
 
+GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable1::
+	lockall
+	msgbox GloriaTown_Professors_Lab_TriggerScript_StopLeaving_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_StopBeforeTable1
+	waitmovement 0
+	releaseall
+	return
+
+
+GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable2::
+	lockall
+	msgbox GloriaTown_Professors_Lab_TriggerScript_StopLeaving_Text_0
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Professors_Lab_MovementScript_StopBeforeTable2
+	waitmovement 0
+	releaseall
+	return
+
+
 GloriaTown_Professors_Lab_MovementScript_DoNotLeave:
 	walk_up
+	step_end
+
+GloriaTown_Professors_Lab_MovementScript_StopBeforeTable1:
+	walk_right
+	step_end
+
+GloriaTown_Professors_Lab_MovementScript_StopBeforeTable2:
+	walk_down
 	step_end
 
 GloriaTown_Professors_Lab_PersonScript_Aide1::
@@ -414,6 +440,7 @@ GloriaTown_Professors_Lab_SequenceScript_GivePokedex::
 	special SetUnlockedPokedexFlags
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
+	setvar VAR_PROFESSOR_STARTER_STATE, 1
 	msgbox GloriaTown_Professors_Lab_TextScript_ExplainPokedex
 	msgbox GloriaTown_Professors_Lab_TextScript_ExplainPokedexUpgrade
 	call GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex
@@ -459,10 +486,13 @@ GloriaTown_Professors_Lab_TriggerScript_StopLeaving_Text_0:
 	.string "You need to choose a Pokemon.$"
 
 GloriaTown_Professors_Lab_PersonScript_Aide1_Text_0:
-	.string "The Professor has assigned me\nthe task of researching ancient\lhistory. There are so many wonders and\lmuch to learn!$"
+	.string "The Professor has assigned me the task\n"
+	.string "of researching ancient history. There\l"
+	.string "are so many wonders and much to learn!$"
 
 GloriaTown_Professors_Lab_PersonScript_Aide2_Text_0:
-	.string "I'm so lucky to have been hired\nby the Professsor to help him in\lhis research!$"
+	.string "I'm so lucky to have been hired by the\n"
+	.string "Professsor to help him in his research!$"
 
 GloriaTown_Professors_Lab_PersonScript_Professor_Text_0:
 	.string "Would you like to see more?$"

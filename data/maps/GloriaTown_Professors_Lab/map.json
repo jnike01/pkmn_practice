@@ -145,6 +145,33 @@
       "var": "VAR_GLORIA_TOWN_STATE",
       "var_value": "1",
       "script": "GloriaTown_Professors_Lab_TriggerScript_StopLeaving"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_PROFESSOR_STARTER_STATE",
+      "var_value": "0",
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable1"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 2,
+      "elevation": 0,
+      "var": "VAR_PROFESSOR_STARTER_STATE",
+      "var_value": "0",
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable1"
+    },
+    {
+      "type": "trigger",
+      "x": 1,
+      "y": 3,
+      "elevation": 0,
+      "var": "VAR_PROFESSOR_STARTER_STATE",
+      "var_value": "0",
+      "script": "GloriaTown_Professors_Lab_TriggerScript_StopBeforeTable2"
     }
   ],
   "bg_events": [
