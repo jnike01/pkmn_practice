@@ -1,0 +1,17 @@
+mapscripts SunviewTown_House1_MapScripts{}
+
+script SunviewTown_House1_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("My wife and I have lived here for many years. It's been a great experience and I hope you settle down some day in a good place like this."))
+    release
+    end
+}
+
+script SunviewTown_House1_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("My husband is a bit overly nice but that's what I love about him."))
+    release
+    end
+}

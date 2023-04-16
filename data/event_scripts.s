@@ -1054,3 +1054,9 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route1/scripts.inc"
 
 	.include "data/maps/SunviewTown/scripts.inc"
+
+	.include "data/maps/SunviewTown_House1/scripts.inc"
+
+	.include "data/maps/SunviewTown_House2/scripts.inc"
+
+	.include "data/maps/SunviewTown_Mart/scripts.inc"

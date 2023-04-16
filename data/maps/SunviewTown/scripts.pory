@@ -6,3 +6,61 @@ script SunviewTown_SignScript_TownSign{
     release
     end
 }
+
+script SunviewTown_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("This town is great inspiration for my artwork! Do you like making art too?"))
+    release
+    end
+}
+
+script SunviewTown_PersonScript_OldRodFisherman{
+    lock
+    faceplayer
+    goto_if_set(FLAG_RECEIVED_OLD_ROD, SunviewTown_SequenceScript_HowsFishing)
+    msgbox(SunviewTown_TextScript_OldRodPrompt, MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, YES, SunviewTown_SequenceScript_GiveOldRod)
+    goto_if_eq(VAR_RESULT, NO, SunviewTown_SequenceScript_DontWantRod)
+}
+
+script SunviewTown_SequenceScript_HowsFishing{
+    msgbox(SunviewTown_TextScript_HopeFishingIsGood)
+    release
+    end
+}
+
+script SunviewTown_SequenceScript_GiveOldRod{
+    msgbox(SunviewTown_TextScript_GiveOldRod)
+    giveitem(ITEM_OLD_ROD)
+    setflag(FLAG_RECEIVED_OLD_ROD)
+    msgbox(SunviewTown_TextScript_FishingAdvice)
+    release
+    end
+}
+
+script SunviewTown_SequenceScript_DontWantRod{
+    msgbox(SunviewTown_TextScript_TooBadThen)
+    release
+    end
+}
+
+text SunviewTown_TextScript_OldRodPrompt{
+    format("This is a solid fishing spot. Are you getting the itch to fish in this nice weather?")
+}
+
+text SunviewTown_TextScript_HopeFishingIsGood{
+    format("Are you enjoying the fishing rod I gave you? I hope your fishing experience is good.")
+}
+
+text SunviewTown_TextScript_GiveOldRod{
+    format("Nice, I'm glad to hear it! Here's a solid fishing rod to start you out!")
+}
+
+text SunviewTown_TextScript_FishingAdvice{
+    format("To give you some advice, cast the rod when facing a body of water, wait until you get a bite and then reel in.")
+}
+
+text SunviewTown_TextScript_TooBadThen{
+    format("Ok then, if you ever get the desire to fish just let me know.")
+}

@@ -1,0 +1,14 @@
+mapscripts SunviewTown_Mart_MapScripts{}
+
+script SunviewTown_PersonScript_Employee{
+    lock
+    faceplayer
+    message("How may I serve you?")
+    waitmessage
+    pokemart(0)
+    msgbox("Please come again!")
+    release
+    end
+}
+
+//mart SunviewTown_MartScript_Inventory{}

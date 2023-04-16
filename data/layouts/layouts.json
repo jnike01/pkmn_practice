@@ -4320,6 +4320,36 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/SunviewTown/border.bin",
       "blockdata_filepath": "data/layouts/SunviewTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNVIEW_TOWN_HOUSE1",
+      "name": "SunviewTown_House1_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SunviewTown_House1/border.bin",
+      "blockdata_filepath": "data/layouts/SunviewTown_House1/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNVIEW_TOWN_HOUSE2",
+      "name": "SunviewTown_House2_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/SunviewTown_House2/border.bin",
+      "blockdata_filepath": "data/layouts/SunviewTown_House2/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNVIEW_TOWN_MART",
+      "name": "SunviewTown_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/SunviewTown_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/SunviewTown_Mart/map.bin"
     }
   ]
 }

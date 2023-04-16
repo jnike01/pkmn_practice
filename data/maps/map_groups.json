@@ -33,7 +33,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_IndoorGloriaTown"
+    "gMapGroup_IndoorGloriaTown",
+    "gMapGroup_IndoorSunviewTown"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -606,5 +607,10 @@
     "GloriaTown_Your_House_2F",
     "GloriaTown_Rival_House",
     "GloriaTown_Rival_House_2F"
+  ],
+  "gMapGroup_IndoorSunviewTown": [
+    "SunviewTown_House1",
+    "SunviewTown_House2",
+    "SunviewTown_Mart"
   ]
 }
