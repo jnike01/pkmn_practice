@@ -578,9 +578,10 @@
 #define MAP_GLORIA_TOWN_RIVAL_HOUSE_2F (4 | (33 << 8))
 
 // gMapGroup_IndoorSunviewTown
-#define MAP_SUNVIEW_TOWN_HOUSE1 (0 | (34 << 8))
-#define MAP_SUNVIEW_TOWN_HOUSE2 (1 | (34 << 8))
-#define MAP_SUNVIEW_TOWN_MART   (2 | (34 << 8))
+#define MAP_SUNVIEW_TOWN_HOUSE1      (0 | (34 << 8))
+#define MAP_SUNVIEW_TOWN_HOUSE2      (1 | (34 << 8))
+#define MAP_SUNVIEW_TOWN_MART        (2 | (34 << 8))
+#define MAP_SUNVIEW_TOWN_POKE_CENTER (3 | (34 << 8))
 
 #define MAP_GROUPS_COUNT 35
 

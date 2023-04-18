@@ -4350,6 +4350,16 @@
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/SunviewTown_Mart/border.bin",
       "blockdata_filepath": "data/layouts/SunviewTown_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUNVIEW_TOWN_POKE_CENTER",
+      "name": "SunviewTown_PokeCenter_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/SunviewTown_PokeCenter/border.bin",
+      "blockdata_filepath": "data/layouts/SunviewTown_PokeCenter/map.bin"
     }
   ]
 }

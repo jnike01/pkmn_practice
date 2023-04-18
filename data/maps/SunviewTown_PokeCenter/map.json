@@ -1,8 +1,8 @@
 {
-  "id": "MAP_SUNVIEW_TOWN_MART",
-  "name": "SunviewTown_Mart",
-  "layout": "LAYOUT_SUNVIEW_TOWN_MART",
-  "music": "MUS_POKE_MART",
+  "id": "MAP_SUNVIEW_TOWN_POKE_CENTER",
+  "name": "SunviewTown_PokeCenter",
+  "layout": "LAYOUT_SUNVIEW_TOWN_POKE_CENTER",
+  "music": "MUS_POKE_CENTER",
   "region_map_section": "MAPSEC_SUNVIEW_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
@@ -15,21 +15,34 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_MART_EMPLOYEE",
-      "x": 1,
-      "y": 3,
+      "graphics_id": "OBJ_EVENT_GFX_NURSE",
+      "x": 7,
+      "y": 2,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SunviewTown_PokeCenter_PersonScript_Nurse",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
+      "x": 10,
+      "y": 6,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunviewTown_PersonScript_Employee",
+      "script": "SunviewTown_PokeCenter_PersonScript_NPC1",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_WOMAN_2",
-      "x": 7,
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 2,
       "y": 2,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
@@ -37,37 +50,37 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunviewTown_Mart_PersonScript_NPC1",
+      "script": "SunviewTown_PokeCenter_PersonScript_NPC2",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_BOY_3",
-      "x": 8,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 1,
+      "y": 6,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SunviewTown_Mart_PersonScript_NPC2",
+      "script": "SunviewTown_PokeCenter_PersonScript_NPC3",
       "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 3,
-      "y": 7,
+      "x": 7,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SUNVIEW_TOWN",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     },
     {
-      "x": 4,
-      "y": 7,
+      "x": 6,
+      "y": 8,
       "elevation": 0,
       "dest_map": "MAP_SUNVIEW_TOWN",
-      "dest_warp_id": "2"
+      "dest_warp_id": "3"
     }
   ],
   "coord_events": [

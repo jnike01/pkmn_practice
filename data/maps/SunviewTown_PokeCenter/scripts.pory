@@ -1,0 +1,42 @@
+mapscripts SunviewTown_PokeCenter_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: SunviewTown_PokeCenter_DefaultScript_HealRespawn
+    MAP_SCRIPT_ON_RESUME: CableClub_OnResume
+}
+
+script SunviewTown_PokeCenter_DefaultScript_HealRespawn{
+    setrespawn(HEAL_LOCATION_SUNVIEW_TOWN)
+    end
+}
+
+script SunviewTown_PokeCenter_PersonScript_Nurse{
+    setvar(VAR_0x800B, 1)
+    call(Common_EventScript_PkmnCenterNurse)
+    waitmessage
+    waitbuttonpress
+    release
+    end
+}
+
+script SunviewTown_PokeCenter_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("The Pokemon Center is a great place to sit down and relax. I come here to do just that at least once a week!"))
+    release
+    end
+}
+
+script SunviewTown_PokeCenter_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("The Library here has a robust selection of material. Everything from History, to Cooking and even Manga can be found."))
+    release
+    end
+}
+
+script SunviewTown_PokeCenter_PersonScript_NPC3{
+    lock
+    faceplayer
+    msgbox(format("I've been travelling for a while and I'll never cease to be thankful for the free healthcare of the Pokemon Centers!"))
+    release
+    end
+}
