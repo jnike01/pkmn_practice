@@ -1062,3 +1062,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/SunviewTown_Mart/scripts.inc"
 
 	.include "data/maps/SunviewTown_PokeCenter/scripts.inc"
+
+	.include "data/maps/Route2/scripts.inc"

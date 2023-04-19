@@ -1,0 +1,42 @@
+mapscripts Route2_MapScripts{}
+
+script Route2_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_MAX_REVIVE)
+    removeobject(1)
+    release
+    end
+}
+
+script Route2_ItemScript_BallTwo{
+    lock
+    giveitem(ITEM_PARALYZE_HEAL)
+    removeobject(4)
+    release
+    end
+}
+
+script Route2_SignScript_RouteSign{
+    lock
+    msgbox("Route 2, mountainous greenland.")
+    release
+    end
+}
+
+script Route2_TrainerScript_Jakob{
+    trainerbattle_single(TRAINER_JAKOB_1, Route2_TextScript_Jakob_Intro, Route2_TextScript_Jakob_Outro)
+    msgbox(Route2_TextScript_Jakob_Dialogue, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route2_TextScript_Jakob_Intro{
+    format("placeholder text")
+}
+
+text Route2_TextScript_Jakob_Outro{
+    format("placeholder text")
+}
+
+text Route2_TextScript_Jakob_Dialogue{
+    format("placeholder text")
+}

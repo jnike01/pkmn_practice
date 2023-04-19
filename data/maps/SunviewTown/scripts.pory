@@ -7,6 +7,14 @@ script SunviewTown_SignScript_TownSign{
     end
 }
 
+script SunviewTown_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_TM06_TOXIC)
+    removeobject(3)
+    release
+    end
+}
+
 script SunviewTown_PersonScript_NPC1{
     lock
     faceplayer

@@ -9,6 +9,14 @@ SunviewTown_SignScript_TownSign::
 	end
 
 
+SunviewTown_ItemScript_BallOne::
+	lock
+	giveitem ITEM_TM06_TOXIC
+	removeobject 3
+	release
+	end
+
+
 SunviewTown_PersonScript_NPC1::
 	lock
 	faceplayer

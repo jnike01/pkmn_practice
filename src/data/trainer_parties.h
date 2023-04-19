@@ -12395,11 +12395,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Alvaro[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Everett[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Jakob[] = {
     {
     .iv = 0,
-    .lvl = 41,
-    .species = SPECIES_WOBBUFFET,
+    .lvl = 4,
+    .species = SPECIES_PARAS,
+    },
+    {
+    .iv = 0,
+    .lvl = 5,
+    .species = SPECIES_DOTTLER,
     }
 };
 
