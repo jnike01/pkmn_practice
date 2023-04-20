@@ -41,19 +41,26 @@ Route2_SignScript_RouteSign_Text_0:
 	.string "Route 2, mountainous greenland.$"
 
 Route2_TextScript_Jakob_Intro::
-	.string "placeholder text$"
+	.string "There's a decent selection of bugs here\n"
+	.string "before Crag Cave.$"
 
 Route2_TextScript_Jakob_Outro::
-	.string "placeholder text$"
+	.string "You have a good team! Be safe on your\n"
+	.string "travels.$"
 
 Route2_TextScript_Jakob_Dialogue::
-	.string "placeholder text$"
+	.string "I wish you good luck on finding some\n"
+	.string "solid Bug Type Pokemon.$"
 
 Route2_TextScript_Serena_Intro::
-	.string "placeholder text$"
+	.string "The breeze here is great! Do you like\n"
+	.string "weather like this?$"
 
 Route2_TextScript_Serena_Outro::
-	.string "placeholder text$"
+	.string "You layed my whole team out flat, huh?\n"
+	.string "You have some killer skills!$"
 
 Route2_TextScript_Serena_Dialogue::
-	.string "placeholder text$"
+	.string "I'm just gonna chill here and enjoy the\n"
+	.string "breeze. Feel free to relax along with\l"
+	.string "me...zzz.$"

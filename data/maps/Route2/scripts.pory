@@ -35,25 +35,25 @@ script Route2_TrainerScript_Serena{
 }
 
 text Route2_TextScript_Jakob_Intro{
-    format("placeholder text")
+    format("There's a decent selection of bugs here before Crag Cave.")
 }
 
 text Route2_TextScript_Jakob_Outro{
-    format("placeholder text")
+    format("You have a good team! Be safe on your travels.")
 }
 
 text Route2_TextScript_Jakob_Dialogue{
-    format("placeholder text")
+    format("I wish you good luck on finding some solid Bug Type Pokemon.")
 }
 
 text Route2_TextScript_Serena_Intro{
-    format("placeholder text")
+    format("The breeze here is great! Do you like weather like this?")
 }
 
 text Route2_TextScript_Serena_Outro{
-    format("placeholder text")
+    format("You layed my whole team out flat, huh? You have some killer skills!")
 }
 
 text Route2_TextScript_Serena_Dialogue{
-    format("placeholder text")
+    format("I'm just gonna chill here and enjoy the breeze. Feel free to relax along with me...zzz.")
 }
