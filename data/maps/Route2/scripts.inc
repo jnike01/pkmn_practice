@@ -31,6 +31,12 @@ Route2_TrainerScript_Jakob::
 	end
 
 
+Route2_TrainerScript_Serena::
+	trainerbattle_single TRAINER_SERENA_1, Route2_TextScript_Serena_Intro, Route2_TextScript_Serena_Outro
+	msgbox Route2_TextScript_Serena_Dialogue
+	return
+
+
 Route2_SignScript_RouteSign_Text_0:
 	.string "Route 2, mountainous greenland.$"
 
@@ -41,4 +47,13 @@ Route2_TextScript_Jakob_Outro::
 	.string "placeholder text$"
 
 Route2_TextScript_Jakob_Dialogue::
+	.string "placeholder text$"
+
+Route2_TextScript_Serena_Intro::
+	.string "placeholder text$"
+
+Route2_TextScript_Serena_Outro::
+	.string "placeholder text$"
+
+Route2_TextScript_Serena_Dialogue::
 	.string "placeholder text$"
