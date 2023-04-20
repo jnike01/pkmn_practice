@@ -6,6 +6,9 @@ script GloriaTown_Your_House_2F_DefaultScript_DefaultState{
     if(!(var(VAR_YOUR_HOUSE_STATE))){
         setvar(VAR_YOUR_HOUSE_STATE, 0)
     }
+    if(!(flag(FLAG_SYS_B_DASH))){
+        setflag(FLAG_SYS_B_DASH)
+    }
 }
 
 script GloriaTown_Your_House_2F_TriggerScript_GotoMom{

@@ -5,11 +5,17 @@ GloriaTown_Your_House_2F_MapScripts::
 
 GloriaTown_Your_House_2F_DefaultScript_DefaultState::
 	compare VAR_YOUR_HOUSE_STATE, 0
-	goto_if_eq GloriaTown_Your_House_2F_DefaultScript_DefaultState_1
+	goto_if_eq GloriaTown_Your_House_2F_DefaultScript_DefaultState_2
+GloriaTown_Your_House_2F_DefaultScript_DefaultState_1:
+	goto_if_unset FLAG_SYS_B_DASH, GloriaTown_Your_House_2F_DefaultScript_DefaultState_4
 	return
 
-GloriaTown_Your_House_2F_DefaultScript_DefaultState_1:
+GloriaTown_Your_House_2F_DefaultScript_DefaultState_2:
 	setvar VAR_YOUR_HOUSE_STATE, 0
+	goto GloriaTown_Your_House_2F_DefaultScript_DefaultState_1
+
+GloriaTown_Your_House_2F_DefaultScript_DefaultState_4:
+	setflag FLAG_SYS_B_DASH
 	return
 
 
