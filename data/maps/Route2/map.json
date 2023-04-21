@@ -74,7 +74,13 @@
     }
   ],
   "warp_events": [
-
+    {
+      "x": 10,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_CRAG_CAVE",
+      "dest_warp_id": "0"
+    }
   ],
   "coord_events": [
 

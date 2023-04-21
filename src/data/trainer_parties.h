@@ -12404,7 +12404,7 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Jakob[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_DOTTLER,
+    .species = SPECIES_LEDYBA,
     }
 };
 
