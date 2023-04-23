@@ -14,6 +14,28 @@ script CragCave_TrainerScript_Terry{
     end
 }
 
+script CragCave_TriggerScript_RivalSequence{
+    lock
+    applymovement(3, CragCave_MovementScript_RivalToPlayer)
+    waitmovement(0)
+    msgbox(format("This is out first dungeon! It's so cool to finally be experiencing the world in this new way! I'm going to go in first but when we get to the end, let's battle again to commemorate this moment."))
+    applymovement(3, CragCave_MovementScript_RivalAwayFromPlayer)
+    waitmovement(0)
+    removeobject(3)
+    setflag(FLAG_CRAG_RIVAL_TRIGGERED)
+    setvar(VAR_RIVAL_STATE, 4)
+    release
+    end
+}
+
+movement CragCave_MovementScript_RivalToPlayer{
+    walk_down * 5
+}
+
+movement CragCave_MovementScript_RivalAwayFromPlayer{
+    walk_up * 5
+}
+
 text CragCave_TextScript_Terry_Intro{
     format("The temperature in this cave is surprisingly good for a solid hike and especially a good battle.")
 }

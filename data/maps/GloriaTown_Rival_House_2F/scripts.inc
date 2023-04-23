@@ -80,7 +80,14 @@ GloriaTown_Rival_House_2F_MovementScript_PlayerOutOfWay:
 	step_end
 
 GloriaTown_Rival_House_2F_PersonScript_RivalIntro_Text_0:
-	.string "Placeholder Text$"
+	.string "What's up {PLAYER}{KUN}! It's the day you\n"
+	.string "get to obtain your first Pokemon from\l"
+	.string "the professor. I've been waiting for\l"
+	.string "this so we can go on a journey at the\l"
+	.string "same time like we promised as kids! Now\l"
+	.string "that you've checked in with me, head\l"
+	.string "over to the lab so we can get this show\l"
+	.string "on the road!$"
 
 GloriaTown_Rival_House_2F_SignScript_TV_Text_0:
 	.string "Wow! It's Super Mario Sunshine! This\n"

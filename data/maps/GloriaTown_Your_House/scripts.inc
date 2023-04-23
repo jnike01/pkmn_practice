@@ -14,9 +14,21 @@ GloriaTown_Your_House_SignScript_TV::
 GloriaTown_Your_House_PersonScript_Mom::
 	lock
 	faceplayer
-	msgbox GloriaTown_Your_House_PersonScript_Mom_Text_0
+	goto_if_set FLAG_ADVENTURE_STARTED, GloriaTown_Your_House_PersonScript_Mom_2
+	msgbox GloriaTown_Your_House_PersonScript_Mom_Text_2
+GloriaTown_Your_House_PersonScript_Mom_1:
 	release
 	end
+
+GloriaTown_Your_House_PersonScript_Mom_2:
+	msgbox GloriaTown_Your_House_PersonScript_Mom_Text_0
+	special HealPlayerParty
+	fadescreen FADE_TO_BLACK
+	playfanfare MUS_HEAL
+	delay 120
+	fadescreen FADE_FROM_BLACK
+	msgbox GloriaTown_Your_House_PersonScript_Mom_Text_1
+	goto GloriaTown_Your_House_PersonScript_Mom_1
 
 
 GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionOne::
@@ -110,7 +122,18 @@ GloriaTown_Your_House_SignScript_TV_Text_0:
 	.string "Breaking Bad seems to be on, that show\nis great!$"
 
 GloriaTown_Your_House_PersonScript_Mom_Text_0:
-	.string "Mom placeholder text$"
+	.string "You and your Pokemon look tired. Please\n"
+	.string "take this opportunity to rest...$"
+
+GloriaTown_Your_House_PersonScript_Mom_Text_1:
+	.string "You all look so much better now! If you\n"
+	.string "feel fatigued and are in the area,\l"
+	.string "remember you are always welcome to\l"
+	.string "rest here. Stay safe out there honey!$"
+
+GloriaTown_Your_House_PersonScript_Mom_Text_2:
+	.string "Please go do your errands honey,\n"
+	.string "they're very important.$"
 
 GloriaTown_Your_House_ControlScript_MomDialogueInit_Text_0:
 	.string "Hello, {PLAYER}{KUN}! Please come over and see me\nplease.$"
@@ -119,8 +142,7 @@ GloriaTown_Your_House_TextScript_MomDialogueOne::
 	.string "The Professor came by this morning and\n"
 	.string "told me that he wants you to stop by\l"
 	.string "and see him to get your Starter and\l"
-	.string "pokedex.\p"
-	.string "Please be safe doing so and I love you\n"
-	.string "{PLAYER}{KUN}. Also, make sure to see your friend\l"
-	.string "beforehand like you said! I love you and\l"
-	.string "be safe!$"
+	.string "pokedex. Please be safe doing so and I\l"
+	.string "love you {PLAYER}{KUN}. Also, make sure to\l"
+	.string "see your friend beforehand like you\l"
+	.string "said!$"

@@ -139,13 +139,19 @@ GloriaTown_Rival_House_MovementScript_ToGrandmaFour:
 	step_end
 
 GloriaTown_Rival_House_PersonScript_RivalGrandma_Text_0:
-	.string "Hello, {PLAYER}{KUN}! I'm so proud of my\ngrandson and you for growing up so well!$"
+	.string "Hello, {PLAYER}{KUN}! I'm so proud of my\n"
+	.string "grandson and you for growing up so\l"
+	.string "well!$"
 
 GloriaTown_Rival_House_SignScript_TV_Text_0:
-	.string "It's the original Wizard of Oz! Now that's an oldie.$"
+	.string "It's the original Wizard of Oz! Now\n"
+	.string "that's an oldie.$"
 
 GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit_Text_0:
 	.string "Hey, {PLAYER}{KUN}!$"
 
 GloriaTown_Rival_House_TextScript_GrandmaDialogue::
-	.string "Placeholder Text$"
+	.string "It's nice to see you, I hope you've been\n"
+	.string "doing well. My grandson has been\l"
+	.string "waiting for you so please go upstairs\l"
+	.string "to see him.$"

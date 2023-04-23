@@ -356,7 +356,8 @@ GloriaTown_Professors_Lab_SequenceScript_HealMachine_2:
 GloriaTown_Professors_Lab_SequenceScript_HealMachine_5:
 	special HealPlayerParty
 	fadescreen FADE_TO_BLACK
-	delay 30
+	playfanfare MUS_HEAL
+	delay 120
 	fadescreen FADE_FROM_BLACK
 	msgbox GloriaTown_Professors_Lab_SequenceScript_HealMachine_Text_2
 	goto GloriaTown_Professors_Lab_SequenceScript_HealMachine_1
@@ -441,6 +442,7 @@ GloriaTown_Professors_Lab_SequenceScript_GivePokedex::
 	setflag FLAG_RECEIVED_POKEDEX_FROM_BIRCH
 	setvar VAR_CABLE_CLUB_TUTORIAL_STATE, 1
 	setvar VAR_PROFESSOR_STARTER_STATE, 1
+	setvar VAR_RIVAL_STATE, 2
 	msgbox GloriaTown_Professors_Lab_TextScript_ExplainPokedex
 	msgbox GloriaTown_Professors_Lab_TextScript_ExplainPokedexUpgrade
 	call GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex

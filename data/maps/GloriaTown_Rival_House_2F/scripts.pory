@@ -12,7 +12,7 @@ script GloriaTown_Rival_House_2F_ControlScript_RivalFirstDialogueSetup{
 script GloriaTown_Rival_House_2F_PersonScript_RivalIntro{
     lock
     faceplayer
-    msgbox("Placeholder Text")
+    msgbox(format("What's up {PLAYER}{KUN}! It's the day you get to obtain your first Pokemon from the professor. I've been waiting for this so we can go on a journey at the same time like we promised as kids! Now that you've checked in with me, head over to the lab so we can get this show on the road!"))
     call(GloriaTown_Rival_House_2F_SequenceScript_RivalIntroFinish)
     release
     end

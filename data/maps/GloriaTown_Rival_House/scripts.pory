@@ -11,7 +11,7 @@ script GloriaTown_Rival_House_DefaultScript_DefaultState{
 script GloriaTown_Rival_House_PersonScript_RivalGrandma{
     lock
     faceplayer
-    msgbox("Hello, {PLAYER}{KUN}! I'm so proud of my\ngrandson and you for growing up so well!")
+    msgbox(format("Hello, {PLAYER}{KUN}! I'm so proud of my grandson and you for growing up so well!"))
     release
     end
 }
@@ -19,7 +19,7 @@ script GloriaTown_Rival_House_PersonScript_RivalGrandma{
 script GloriaTown_Rival_House_SignScript_TV{
     lock
     special(TurnOnTVScreen)
-    msgbox("It's the original Wizard of Oz! Now that's an oldie.")
+    msgbox(format("It's the original Wizard of Oz! Now that's an oldie."))
     special(TurnOffTVScreen)
     release
     end
@@ -126,5 +126,5 @@ movement GloriaTown_Rival_House_MovementScript_ToGrandmaFour{
 }
 
 text GloriaTown_Rival_House_TextScript_GrandmaDialogue{
-    "Placeholder Text"
+    format("It's nice to see you, I hope you've been doing well. My grandson has been waiting for you so please go upstairs to see him.")
 }

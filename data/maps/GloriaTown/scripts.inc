@@ -97,21 +97,80 @@ GloriaTown_ControlScript_RivalBattleSetup_4:
 
 
 GloriaTown_TrainerScript_RivalBattleOne::
-	trainerbattle_single TRAINER_RED, GloriaTown_TextScript_RivalIntro, GloriaTown_TextScript_RivalOutro, GloriaTown_SequenceScript_RivalLeave
+	call GloriaTown_MusicScript_RivalEncounter
+	msgbox GloriaTown_TextScript_RivalIntro
+	trainerbattle_no_intro TRAINER_RED, GloriaTown_TextScript_RivalOutro
+	msgbox GloriaTown_TextScript_RivalBattleAftermath
+	closemessage
+	setflag FLAG_RIVAL_BATTLE_ONE
+	setvar VAR_GLORIA_TOWN_STATE, 3
+	call GloriaTown_SequenceScript_RivalLeave1
+	return
+
+
+GloriaTown_SequenceScript_RivalLeave1::
+	lockall
+	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle1
+	waitmovement 0
+	removeobject 6
+	fadedefaultbgm
+	releaseall
+	return
+
+
+GloriaTown_SequenceScript_RivalLeave2::
+	lockall
+	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle2
+	waitmovement 0
+	removeobject 6
+	fadedefaultbgm
+	releaseall
+	return
+
+
+GloriaTown_SequenceScript_RivalLeave3::
+	lockall
+	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle3
+	waitmovement 0
+	removeobject 6
+	fadedefaultbgm
+	releaseall
+	return
+
+
+GloriaTown_MusicScript_RivalEncounter::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	return
+
+
+GloriaTown_TriggerScript_RivalEncounter1::
+	applymovement 6, GloriaTown_MovementScript_RivalToPlayer1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
+	waitmovement 0
+	call GloriaTown_TrainerScript_RivalBattleOne
+	setvar VAR_RIVAL_STATE, 3
 	end
 
 
-GloriaTown_SequenceScript_RivalLeave::
-	msgbox GloriaTown_TextScript_RivalBattleAftermath
-	closemessage
-	lockall
-	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle
+GloriaTown_TriggerScript_RivalEncounter2::
+	applymovement 6, GloriaTown_MovementScript_RivalToPlayer2
 	waitmovement 0
-	removeobject 6
-	setflag FLAG_RIVAL_BATTLE_ONE
-	setvar VAR_GLORIA_TOWN_STATE, 3
-	releaseall
-	return
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
+	waitmovement 0
+	call GloriaTown_TrainerScript_RivalBattleOne
+	setvar VAR_RIVAL_STATE, 3
+	end
+
+
+GloriaTown_TriggerScript_RivalEncounter3::
+	applymovement 6, GloriaTown_MovementScript_RivalToPlayer3
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
+	waitmovement 0
+	call GloriaTown_TrainerScript_RivalBattleOne
+	setvar VAR_RIVAL_STATE, 3
+	end
 
 
 GloriaTown_TriggerScript_BlockPath::
@@ -140,20 +199,81 @@ GloriaTown_MovementScript_StopPlayerLab:
 	walk_right
 	step_end
 
-GloriaTown_MovementScript_RivalLeaveAfterBattle:
+GloriaTown_MovementScript_RivalToPlayer1:
+	walk_down
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GloriaTown_MovementScript_RivalToPlayer2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GloriaTown_MovementScript_RivalToPlayer3:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+GloriaTown_MovementScript_FaceRival:
+	face_right
+	step_end
+
+GloriaTown_MovementScript_RivalLeaveAfterBattle1:
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	walk_right
 	walk_right
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+GloriaTown_MovementScript_RivalLeaveAfterBattle2:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	step_end
+
+GloriaTown_MovementScript_RivalLeaveAfterBattle3:
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_right
 	step_end
 
 GloriaTown_SignScript_Player_House_Text_0:
@@ -190,10 +310,20 @@ GloriaTown_TriggerScript_GotoRival_Text_0:
 	.string "You should go visit your rival first!$"
 
 GloriaTown_TextScript_RivalIntro::
-	.string "Placeholder text$"
+	.string "Now that you have your Pokemon, let's\n"
+	.string "battle before we both head out! I've\l"
+	.string "been looking forward to this for a long\l"
+	.string "time, let's get it!$"
 
 GloriaTown_TextScript_RivalOutro::
-	.string "Placeholder text$"
+	.string "You are very good at this! It's\n"
+	.string "surprising that this is your first\l"
+	.string "battle.$"
 
 GloriaTown_TextScript_RivalBattleAftermath::
-	.string "Placeholder text$"
+	.string "That was a very exhilarating battle and\n"
+	.string "everything I was hoping for! Let's do\l"
+	.string "this again when we get further along on\l"
+	.string "our journeys. Now, let's go out and\l"
+	.string "explore the world! Stay safe and see\l"
+	.string "you around!$"
