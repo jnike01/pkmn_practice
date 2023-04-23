@@ -1,1 +1,27 @@
 mapscripts CragCave_MapScripts{}
+
+script CragCave_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_ESCAPE_ROPE)
+    removeobject(1)
+    release
+    end
+}
+
+script CragCave_TrainerScript_Terry{
+    trainerbattle_single(TRAINER_TERRY_1, CragCave_TextScript_Terry_Intro, CragCave_TextScript_Terry_Outro)
+    msgbox(CragCave_TextScript_Terry_Dialogue, MSGBOX_AUTOCLOSE)
+    end
+}
+
+text CragCave_TextScript_Terry_Intro{
+    format("The temperature in this cave is surprisingly good for a solid hike and especially a good battle.")
+}
+
+text CragCave_TextScript_Terry_Outro{
+    format("Stay safe traversing the cave!")
+}
+
+text CragCave_TextScript_Terry_Dialogue{
+    format("Hiking is good for the body so it's a good idea to do it as often as possible. Although, make sure to keep proper track of your health while doing so.")
+}

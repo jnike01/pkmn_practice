@@ -1173,7 +1173,7 @@
 #define FLAG_ITEM_ROUTE_2_MAX_REVIVE                                0x465
 #define FLAG_ITEM_ROUTE_2_PARALYZE_HEAL                             0x466
 #define FLAG_ITEM_SUNVIEW_TOWN_TM06_TOXIC                           0x467 
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
+#define FLAG_ITEM_CRAG_CAVE_ESCAPE_ROPE                             0x468
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B

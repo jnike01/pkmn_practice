@@ -849,7 +849,7 @@
 #define TRAINER_THALIA_3                    845
 #define TRAINER_THALIA_4                    846
 #define TRAINER_THALIA_5                    847
-#define TRAINER_MARIELA                     848
+#define TRAINER_TERRY_1                     848
 #define TRAINER_SERENA_1                    849
 #define TRAINER_JAKOB_1                     850
 #define TRAINER_RED                         851
