@@ -91,7 +91,9 @@ script GloriaTown_ControlScript_RivalBattleSetup{
 script GloriaTown_TrainerScript_RivalBattleOne{
     call(GloriaTown_MusicScript_RivalEncounter)
     msgbox(GloriaTown_TextScript_RivalIntro)
-    trainerbattle_no_intro(TRAINER_RED, GloriaTown_TextScript_RivalOutro)
+    //trainerbattle_no_intro(TRAINER_RED, GloriaTown_TextScript_RivalOutro)
+    trainerbattle_no_intro_no_whiteout(TRAINER_RED, GloriaTown_TextScript_RivalOutro)
+    special(HealPlayerParty)
     msgbox(GloriaTown_TextScript_RivalBattleAftermath)
     closemessage
     setflag(FLAG_RIVAL_BATTLE_ONE)
