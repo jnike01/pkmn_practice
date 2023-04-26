@@ -7,6 +7,7 @@ GloriaTown_DefaultScript_DefaultState::
 	goto_if_unset FLAG_SYS_POKEMON_GET, GloriaTown_DefaultScript_DefaultState_2
 GloriaTown_DefaultScript_DefaultState_1:
 	call_if_unset FLAG_RIVAL_BATTLE_CONTROL, GloriaTown_ControlScript_RivalBattleSetup
+	setrespawn HEAL_LOCATION_GLORIA_TOWN
 	return
 
 GloriaTown_DefaultScript_DefaultState_2:

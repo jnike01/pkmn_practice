@@ -6,8 +6,8 @@ script GloriaTown_DefaultScript_DefaultState{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         setvar(VAR_GLORIA_TOWN_STATE, 0)
     }
-
     call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, GloriaTown_ControlScript_RivalBattleSetup)
+    setrespawn(HEAL_LOCATION_GLORIA_TOWN)
 }
 
 script GloriaTown_SignScript_Player_House{

@@ -1,5 +1,11 @@
 GloriaTown_Your_House_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, GloriaTown_Your_House_DefaultScript_OnTransition
 	.byte 0
+
+
+GloriaTown_Your_House_DefaultScript_OnTransition::
+	setrespawn HEAL_LOCATION_GLORIA_TOWN
+	end
 
 
 GloriaTown_Your_House_SignScript_TV::

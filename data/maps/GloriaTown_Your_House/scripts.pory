@@ -1,4 +1,11 @@
-mapscripts GloriaTown_Your_House_MapScripts{}
+mapscripts GloriaTown_Your_House_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: GloriaTown_Your_House_DefaultScript_OnTransition
+}
+
+script GloriaTown_Your_House_DefaultScript_OnTransition{
+    setrespawn(HEAL_LOCATION_GLORIA_TOWN)
+    end
+}
 
 script GloriaTown_Your_House_SignScript_TV{
     lock

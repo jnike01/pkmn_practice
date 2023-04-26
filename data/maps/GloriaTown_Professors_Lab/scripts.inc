@@ -1,11 +1,5 @@
 GloriaTown_Professors_Lab_MapScripts::
-	map_script MAP_SCRIPT_ON_TRANSITION, GloriaTown_Professors_Lab_DefaultScript_Ball
 	.byte 0
-
-
-GloriaTown_Professors_Lab_DefaultScript_Ball::
-	setvar VAR_STARTER_REGION, 0
-	return
 
 
 GloriaTown_Professors_Lab_TriggerScript_StarterChoose::
@@ -115,49 +109,19 @@ GloriaTown_Professors_Lab_PersonScript_Aide2::
 
 GloriaTown_Professors_Lab_PersonScript_Professor::
 	goto_if_unset FLAG_SYS_POKEMON_GET, GloriaTown_Professors_Lab_PersonScript_Professor_2
-	msgbox GloriaTown_Professors_Lab_PersonScript_Professor_Text_2, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox GloriaTown_Professors_Lab_PersonScript_Professor_Text_1
+	release
 GloriaTown_Professors_Lab_PersonScript_Professor_1:
 	end
 
 GloriaTown_Professors_Lab_PersonScript_Professor_2:
 	lock
 	faceplayer
-	message GloriaTown_Professors_Lab_PersonScript_Professor_Text_0
-	multichoice 25, 5, MULTI_STARTER_CHOICE, 0
-	closemessage
-	compare VAR_RESULT, 0
-	goto_if_eq GloriaTown_Professors_Lab_PersonScript_Professor_6
-	compare VAR_RESULT, 1
-	goto_if_eq GloriaTown_Professors_Lab_PersonScript_Professor_7
-	compare VAR_RESULT, 2
-	goto_if_eq GloriaTown_Professors_Lab_PersonScript_Professor_8
-GloriaTown_Professors_Lab_PersonScript_Professor_5:
-	msgbox GloriaTown_Professors_Lab_PersonScript_Professor_Text_1
-	waitmessage
+	msgbox GloriaTown_Professors_Lab_PersonScript_Professor_Text_0
 	release
 	goto GloriaTown_Professors_Lab_PersonScript_Professor_1
-
-GloriaTown_Professors_Lab_PersonScript_Professor_6:
-	call GloriaTown_Professors_Lab_FadeScript_StarterFade
-	setvar VAR_STARTER_REGION, 2
-	goto GloriaTown_Professors_Lab_PersonScript_Professor_5
-
-GloriaTown_Professors_Lab_PersonScript_Professor_7:
-	call GloriaTown_Professors_Lab_FadeScript_StarterFade
-	setvar VAR_STARTER_REGION, 1
-	goto GloriaTown_Professors_Lab_PersonScript_Professor_5
-
-GloriaTown_Professors_Lab_PersonScript_Professor_8:
-	call GloriaTown_Professors_Lab_FadeScript_StarterFade
-	setvar VAR_STARTER_REGION, 0
-	goto GloriaTown_Professors_Lab_PersonScript_Professor_5
-
-
-GloriaTown_Professors_Lab_FadeScript_StarterFade::
-	fadescreen FADE_TO_BLACK
-	delay 20
-	fadescreen FADE_FROM_BLACK
-	return
 
 
 GloriaTown_Professors_Lab_ObjectScript_PokeballOne::
@@ -171,29 +135,8 @@ GloriaTown_Professors_Lab_ObjectScript_PokeballOne_1:
 	end
 
 GloriaTown_Professors_Lab_ObjectScript_PokeballOne_2:
-	compare VAR_STARTER_REGION, 0
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballOne_5
-	compare VAR_STARTER_REGION, 1
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballOne_6
-	compare VAR_STARTER_REGION, 2
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballOne_7
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballOne_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballOne_5:
-	bufferspeciesname STR_VAR_1, SPECIES_MUDKIP
-	setvar VAR_STARTER_CHOICE, SPECIES_MUDKIP
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballOne_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballOne_6:
-	bufferspeciesname STR_VAR_1, SPECIES_TOTODILE
-	setvar VAR_STARTER_CHOICE, SPECIES_TOTODILE
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballOne_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballOne_7:
-	bufferspeciesname STR_VAR_1, SPECIES_SQUIRTLE
-	setvar VAR_STARTER_CHOICE, SPECIES_SQUIRTLE
+	bufferspeciesname STR_VAR_1, SPECIES_STARLY
+	setvar VAR_STARTER_CHOICE, SPECIES_STARLY
 	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
 	goto GloriaTown_Professors_Lab_ObjectScript_PokeballOne_1
 
@@ -209,29 +152,8 @@ GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_1:
 	end
 
 GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_2:
-	compare VAR_STARTER_REGION, 0
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_5
-	compare VAR_STARTER_REGION, 1
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_6
-	compare VAR_STARTER_REGION, 2
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_7
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_5:
-	bufferspeciesname STR_VAR_1, SPECIES_TREECKO
-	setvar VAR_STARTER_CHOICE, SPECIES_TREECKO
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_6:
-	bufferspeciesname STR_VAR_1, SPECIES_CHIKORITA
-	setvar VAR_STARTER_CHOICE, SPECIES_CHIKORITA
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_7:
-	bufferspeciesname STR_VAR_1, SPECIES_BULBASAUR
-	setvar VAR_STARTER_CHOICE, SPECIES_BULBASAUR
+	bufferspeciesname STR_VAR_1, SPECIES_ROLYCOLY
+	setvar VAR_STARTER_CHOICE, SPECIES_ROLYCOLY
 	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
 	goto GloriaTown_Professors_Lab_ObjectScript_PokeballTwo_1
 
@@ -247,29 +169,8 @@ GloriaTown_Professors_Lab_ObjectScript_PokeballThree_1:
 	end
 
 GloriaTown_Professors_Lab_ObjectScript_PokeballThree_2:
-	compare VAR_STARTER_REGION, 0
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballThree_5
-	compare VAR_STARTER_REGION, 1
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballThree_6
-	compare VAR_STARTER_REGION, 2
-	goto_if_eq GloriaTown_Professors_Lab_ObjectScript_PokeballThree_7
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballThree_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballThree_5:
-	bufferspeciesname STR_VAR_1, SPECIES_TORCHIC
-	setvar VAR_STARTER_CHOICE, SPECIES_TORCHIC
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballThree_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballThree_6:
-	bufferspeciesname STR_VAR_1, SPECIES_CYNDAQUIL
-	setvar VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL
-	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
-	goto GloriaTown_Professors_Lab_ObjectScript_PokeballThree_1
-
-GloriaTown_Professors_Lab_ObjectScript_PokeballThree_7:
-	bufferspeciesname STR_VAR_1, SPECIES_CHARMANDER
-	setvar VAR_STARTER_CHOICE, SPECIES_CHARMANDER
+	bufferspeciesname STR_VAR_1, SPECIES_TIMBURR
+	setvar VAR_STARTER_CHOICE, SPECIES_TIMBURR
 	call GloriaTown_Professors_Lab_PokemonScript_GiveStarter
 	goto GloriaTown_Professors_Lab_ObjectScript_PokeballThree_1
 
@@ -497,13 +398,16 @@ GloriaTown_Professors_Lab_PersonScript_Aide2_Text_0:
 	.string "Professsor to help him in his research!$"
 
 GloriaTown_Professors_Lab_PersonScript_Professor_Text_0:
-	.string "Would you like to see more?$"
+	.string "Make sure to choose carefully since you\n"
+	.string "have one chance at this. Make your\l"
+	.string "choice count!$"
 
 GloriaTown_Professors_Lab_PersonScript_Professor_Text_1:
-	.string "Choose wisely...$"
-
-GloriaTown_Professors_Lab_PersonScript_Professor_Text_2:
-	.string "Take care of your Pokemon.$"
+	.string "It makes me smile to see trainers\n"
+	.string "receive their first Pokemon and go out\l"
+	.string "to explore the world. Your always\l"
+	.string "welcome to discuss anything regarding\l"
+	.string "Pokemon or the region itself.$"
 
 GloriaTown_Professors_Lab_ObjectScript_PokeballOne_Text_0:
 	.string "Don't take another!$"
@@ -547,18 +451,21 @@ GloriaTown_Professors_Lab_SequenceScript_GivePokedex_Text_1:
 GloriaTown_Professors_Lab_SequenceScript_GivePokedex_Text_2:
 	.string "These allow you to catch your own\n"
 	.string "Pokemon in tall grass so you can\l"
-	.string "collect research for the Pokedex$"
+	.string "collect research for the Pokedex and\l"
+	.string "create your ideal team for your\l"
+	.string "journey.$"
 
 GloriaTown_Professors_Lab_TextScript_BeginAdventure::
-	.string "Welcome to my lab!\p"
-	.string "Thanks for stopping by and\n"
-	.string "participating in our annual Pokemon\l"
-	.string "giveaway for new Trainers.\p"
-	.string "If you want more options\n"
-	.string "come let me know!\n$"
+	.string "Welcome {PLAYER}{KUN}, to my lab! I'm glad\n"
+	.string "you could come as I had invited you a\l"
+	.string "bit abruptly. I hope you have an idea\l"
+	.string "of what you want for a starter because\l"
+	.string "I'm ready whenever you are! Just pick\l"
+	.string "one of the three Pokeballs on the\l"
+	.string "table by my desktop computer.$"
 
 GloriaTown_Professors_Lab_TextScript_NotChosen::
-	.string "You did not choose the Pokemon$"
+	.string "You did not choose your starter!$"
 
 GloriaTown_Professors_Lab_TextScript_ExplainPokedex::
 	.string "Professor: The Pokedex is a high-tech\n"

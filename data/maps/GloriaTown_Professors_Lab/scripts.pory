@@ -1,10 +1,4 @@
-mapscripts GloriaTown_Professors_Lab_MapScripts{
-    MAP_SCRIPT_ON_TRANSITION: GloriaTown_Professors_Lab_DefaultScript_Ball
-}
-
-script GloriaTown_Professors_Lab_DefaultScript_Ball{
-    setvar(VAR_STARTER_REGION, 0)
-}
+mapscripts GloriaTown_Professors_Lab_MapScripts{}
 
 script GloriaTown_Professors_Lab_TriggerScript_StarterChoose{
     lock
@@ -48,12 +42,7 @@ movement GloriaTown_Professors_Lab_MovementScript_ProfMove2{
 }
 
 text GloriaTown_Professors_Lab_TextScript_BeginAdventure{
-    "Welcome to my lab!\p"
-    "Thanks for stopping by and\n"
-    "participating in our annual Pokemon\l"
-    "giveaway for new Trainers.\p"
-    "If you want more options\n" 
-    "come let me know!\n"
+    format("Welcome {PLAYER}{KUN}, to my lab! I'm glad you could come as I had invited you a bit abruptly. I hope you have an idea of what you want for a starter because I'm ready whenever you are! Just pick one of the three Pokeballs on the table by my desktop computer.")
 }
 
 script GloriaTown_Professors_Lab_TriggerScript_StopLeaving{
@@ -112,57 +101,25 @@ script GloriaTown_Professors_Lab_PersonScript_Professor{
     if(!(flag(FLAG_SYS_POKEMON_GET))){
         lock
         faceplayer
-        message("Would you like to see more?")
-        multichoice(25, 5, MULTI_STARTER_CHOICE, 0)
-        closemessage
-        if(var(VAR_RESULT) == 0){
-            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
-            setvar(VAR_STARTER_REGION, 2)
-        }
-        elif(var(VAR_RESULT) == 1){
-            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
-            setvar(VAR_STARTER_REGION, 1)
-        }
-        elif(var(VAR_RESULT) == 2){
-            call(GloriaTown_Professors_Lab_FadeScript_StarterFade)
-            setvar(VAR_STARTER_REGION, 0)
-        }
-        msgbox("Choose wisely...")
-        waitmessage
+        msgbox(format("Make sure to choose carefully since you have one chance at this. Make your choice count!"))
         release
     } 
     else{
-        msgbox("Take care of your Pokemon.", MSGBOX_NPC)
+        lock
+        faceplayer
+        msgbox(format("It makes me smile to see trainers receive their first Pokemon and go out to explore the world. Your always welcome to discuss anything regarding Pokemon or the region itself."))
+        release
     }   
     end
-}
-
-script GloriaTown_Professors_Lab_FadeScript_StarterFade{
-    fadescreen(FADE_TO_BLACK)
-    delay(20)
-    fadescreen(FADE_FROM_BLACK)
-    return
 }
 
 script GloriaTown_Professors_Lab_ObjectScript_PokeballOne{
     lockall
     setvar(VAR_TEMP_0, 1)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
-        if(var(VAR_STARTER_REGION) == 0){
-            bufferspeciesname(STR_VAR_1, SPECIES_MUDKIP)
-            setvar(VAR_STARTER_CHOICE, SPECIES_MUDKIP)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 1){
-            bufferspeciesname(STR_VAR_1, SPECIES_TOTODILE)
-            setvar(VAR_STARTER_CHOICE, SPECIES_TOTODILE)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 2){
-            bufferspeciesname(STR_VAR_1, SPECIES_SQUIRTLE)
-            setvar(VAR_STARTER_CHOICE, SPECIES_SQUIRTLE)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
+        bufferspeciesname(STR_VAR_1, SPECIES_STARLY)
+        setvar(VAR_STARTER_CHOICE, SPECIES_STARLY)
+        call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
     }
     else{
         msgbox("Don't take another!")
@@ -176,21 +133,9 @@ script GloriaTown_Professors_Lab_ObjectScript_PokeballTwo{
     lockall
     setvar(VAR_TEMP_0, 2)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
-        if(var(VAR_STARTER_REGION) == 0){
-            bufferspeciesname(STR_VAR_1, SPECIES_TREECKO)
-            setvar(VAR_STARTER_CHOICE, SPECIES_TREECKO)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 1){
-            bufferspeciesname(STR_VAR_1, SPECIES_CHIKORITA)
-            setvar(VAR_STARTER_CHOICE, SPECIES_CHIKORITA)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 2){
-            bufferspeciesname(STR_VAR_1, SPECIES_BULBASAUR)
-            setvar(VAR_STARTER_CHOICE, SPECIES_BULBASAUR)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
+        bufferspeciesname(STR_VAR_1, SPECIES_ROLYCOLY)
+        setvar(VAR_STARTER_CHOICE, SPECIES_ROLYCOLY)
+        call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
     }
     else{
         msgbox("Don't take another!")
@@ -204,21 +149,9 @@ script GloriaTown_Professors_Lab_ObjectScript_PokeballThree{
     lockall
     setvar(VAR_TEMP_0, 3)
     if(!(flag(FLAG_SYS_POKEMON_GET))){
-        if(var(VAR_STARTER_REGION) == 0){
-            bufferspeciesname(STR_VAR_1, SPECIES_TORCHIC)
-            setvar(VAR_STARTER_CHOICE, SPECIES_TORCHIC)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 1){
-            bufferspeciesname(STR_VAR_1, SPECIES_CYNDAQUIL)
-            setvar(VAR_STARTER_CHOICE, SPECIES_CYNDAQUIL)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
-        elif(var(VAR_STARTER_REGION) == 2){
-            bufferspeciesname(STR_VAR_1, SPECIES_CHARMANDER)
-            setvar(VAR_STARTER_CHOICE, SPECIES_CHARMANDER)
-            call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
-        }
+        bufferspeciesname(STR_VAR_1, SPECIES_TIMBURR)
+        setvar(VAR_STARTER_CHOICE, SPECIES_TIMBURR)
+        call(GloriaTown_Professors_Lab_PokemonScript_GiveStarter)
     }
     else{
         msgbox("Don't take another!")
@@ -327,7 +260,7 @@ script GloriaTown_Professors_Lab_SignScript_HealMachine{
 }
 
 text GloriaTown_Professors_Lab_TextScript_NotChosen{
-    "You did not choose the Pokemon"
+    "You did not choose your starter!"
 }
 
 script GloriaTown_Professors_Lab_SequenceScript_InitiatePokedexSequence{
@@ -369,7 +302,7 @@ script GloriaTown_Professors_Lab_SequenceScript_GivePokedex{
     call(GloriaTown_Professors_Lab_SequenceScript_UpgradeNationalDex)
     msgbox("Also, take these with you.")
     giveitem(ITEM_POKE_BALL, 5)
-    msgbox(format("These allow you to catch your own Pokemon in tall grass so you can collect research for the Pokedex"))
+    msgbox(format("These allow you to catch your own Pokemon in tall grass so you can collect research for the Pokedex and create your ideal team for your journey."))
     waitmessage
     release
     end
