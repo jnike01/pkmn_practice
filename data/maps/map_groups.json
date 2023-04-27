@@ -412,7 +412,8 @@
     "AlteringCave",
     "MeteorFalls_StevensCave",
     "CragCave",
-    "CragCave_2R"
+    "CragCave_2R",
+    "CragCave_3R"
   ],
   "gMapGroup_IndoorDynamic": [
     "SecretBase_RedCave1",

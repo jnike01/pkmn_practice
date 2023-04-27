@@ -1,0 +1,143 @@
+CragCave_3R_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, CragCave_3R_DefaultScript_DefaultState
+	.byte 0
+
+
+CragCave_3R_DefaultScript_DefaultState::
+	call_if_unset FLAG_RIVAL_BATTLE_CONTROL, CragCave_3R_ControlScript_RivalBattleSetup
+	return
+
+
+CragCave_3R_ItemScript_BallOne::
+	lock
+	giveitem ITEM_SUPER_POTION
+	removeobject 1
+	release
+	end
+
+
+CragCave_3R_ItemScript_BallTwo::
+	lock
+	giveitem ITEM_RARE_CANDY
+	removeobject 3
+	release
+	end
+
+
+CragCave_3R_ControlScript_RivalBattleSetup::
+	setflag FLAG_RIVAL_BATTLE_TWO
+	return
+
+
+CragCave_3R_TriggerScript_StartRivalBattle1::
+	addobject 5
+	applymovement 5, CragCave_3R_MovementScript_RivalApproach1
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, CragCave_3R_MovementScript_FaceRival_1
+	waitmovement 0
+	call CragCave_3R_TrainerScript_RivalBattleTwo
+	call CragCave_3R_SequenceScript_RivalLeave1
+	setvar VAR_RIVAL_STATE, 5
+	end
+
+
+CragCave_3R_TriggerScript_StartRivalBattle2::
+	addobject 5
+	applymovement 5, CragCave_3R_MovementScript_RivalApproach2
+	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, CragCave_3R_MovementScript_FaceRival_2
+	waitmovement 0
+	call CragCave_3R_TrainerScript_RivalBattleTwo
+	setvar VAR_RIVAL_STATE, 5
+	end
+
+
+CragCave_3R_TrainerScript_RivalBattleTwo::
+	call CragCave_3R_MusicScript_RivalEncounter
+	msgbox CragCave_3R_TextScript_RivalIntro
+	trainerbattle_no_intro TRAINER_RED_2, CragCave_3R_TextScript_RivalOutro
+	msgbox CragCave_3R_TextScript_RivalAftermath
+	closemessage
+	setflag FLAG_RIVAL_BATTLE_TWO
+	return
+
+
+CragCave_3R_SequenceScript_RivalLeave1::
+	lockall
+	applymovement 5, CragCave_3R_MovementScript_RivalExit1
+	waitmovement 0
+	removeobject 5
+	playse SE_EXIT
+	fadedefaultbgm
+	releaseall
+	return
+
+
+CragCave_3R_SequenceScript_RivalLeave2::
+	lockall
+	applymovement 5, CragCave_3R_MovementScript_RivalExit2
+	waitmovement 0
+	removeobject 5
+	playse SE_EXIT
+	fadedefaultbgm
+	releaseall
+	return
+
+
+CragCave_3R_MusicScript_RivalEncounter::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	return
+
+
+CragCave_3R_MovementScript_RivalApproach1:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	step_end
+
+CragCave_3R_MovementScript_RivalApproach2:
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	walk_left
+	face_down
+	step_end
+
+CragCave_3R_MovementScript_FaceRival_1:
+	face_right
+	step_end
+
+CragCave_3R_MovementScript_FaceRival_2:
+	face_up
+	step_end
+
+CragCave_3R_MovementScript_RivalExit1:
+	walk_down
+	walk_left
+	face_down
+	step_end
+
+CragCave_3R_MovementScript_RivalExit2:
+	walk_left
+	walk_down
+	step_end
+
+CragCave_3R_TextScript_RivalIntro::
+	.string "placeholder$"
+
+CragCave_3R_TextScript_RivalOutro::
+	.string "placeholder$"
+
+CragCave_3R_TextScript_RivalAftermath::
+	.string "placeholder$"

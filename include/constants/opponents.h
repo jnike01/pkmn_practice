@@ -845,7 +845,7 @@
 #define TRAINER_GABRIELLE_3                 841
 #define TRAINER_GABRIELLE_4                 842
 #define TRAINER_GABRIELLE_5                 843
-#define TRAINER_UNUSED_854                  844
+#define TRAINER_RED_2                       844
 #define TRAINER_UNUSED_845                  845
 #define TRAINER_UNUSED_846                  846
 #define TRAINER_TAKEDA_1                    847
