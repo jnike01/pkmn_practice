@@ -546,7 +546,7 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_119_CALCIUM                   (FLAG_HIDDEN_ITEMS_START + 0x05)
 #define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x08                         (FLAG_HIDDEN_ITEMS_START + 0x08) // Unused Flag
+#define FLAG_HIDDEN_ITEM_CRAG_CAVE_2R_EVERSTONE              (FLAG_HIDDEN_ITEMS_START + 0x08)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x09                         (FLAG_HIDDEN_ITEMS_START + 0x09) // Unused Flag
 #define FLAG_HIDDEN_ITEM_UNUSED_0x0A                         (FLAG_HIDDEN_ITEMS_START + 0x0A) // Unused Flag
 #define FLAG_HIDDEN_ITEM_UNUSED_0x0B                         (FLAG_HIDDEN_ITEMS_START + 0x0B) // Unused Flag
@@ -1178,19 +1178,19 @@
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_ITEM_CRAG_CAVE_2R_TM39_ROCK_TOMB                       0x46D
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_ITEM_GLORIA_TOWN_EVERSTONE                               0x470
+#define FLAG_ITEM_GLORIA_TOWN_EVERSTONE                             0x470
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_ITEM_GLORIA_TOWN_RARE_CANDY                              0x472
+#define FLAG_ITEM_GLORIA_TOWN_RARE_CANDY                            0x472
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_ITEM_ROUTE_1_POTION                                    0x479 // Unused Flag
+#define FLAG_ITEM_ROUTE_1_POTION                                    0x479 
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C

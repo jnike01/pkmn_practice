@@ -1,7 +1,7 @@
 {
-  "id": "MAP_CRAG_CAVE",
-  "name": "CragCave",
-  "layout": "LAYOUT_CRAG_CAVE",
+  "id": "MAP_CRAG_CAVE_2R",
+  "name": "CragCave_2R",
+  "layout": "LAYOUT_CRAG_CAVE_2R",
   "music": "MUS_PETALBURG_WOODS",
   "region_map_section": "MAPSEC_CRAG_CAVE",
   "requires_flash": false,
@@ -16,72 +16,64 @@
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
-      "x": 3,
-      "y": 7,
+      "x": 13,
+      "y": 22,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "CragCave_ItemScript_BallOne",
-      "flag": "FLAG_ITEM_CRAG_CAVE_ESCAPE_ROPE"
+      "script": "CragCave_2R_ItemScript_BallOne",
+      "flag": "FLAG_ITEM_CRAG_CAVE_2R_TM39_ROCK_TOMB"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_HIKER",
-      "x": 5,
-      "y": 2,
+      "graphics_id": "OBJ_EVENT_GFX_YOUNGSTER",
+      "x": 19,
+      "y": 14,
       "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NORMAL",
-      "trainer_sight_or_berry_tree_id": "2",
-      "script": "CragCave_TrainerScript_Terry",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "CragCave_2R_TrainerScript_Timmy",
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_RED",
-      "x": 7,
-      "y": 5,
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 10,
+      "y": 4,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_NONE",
       "movement_range_x": 0,
       "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
-      "flag": "FLAG_CRAG_RIVAL_TRIGGERED"
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "CaveCave_2R_TrainerScript_Takeda",
+      "flag": "0"
     }
   ],
   "warp_events": [
     {
-      "x": 7,
-      "y": 12,
+      "x": 17,
+      "y": 26,
       "elevation": 0,
-      "dest_map": "MAP_ROUTE2",
-      "dest_warp_id": "0"
-    },
-    {
-      "x": 7,
-      "y": 1,
-      "elevation": 0,
-      "dest_map": "MAP_CRAG_CAVE_2R",
-      "dest_warp_id": "0"
+      "dest_map": "MAP_CRAG_CAVE",
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 7,
-      "y": 11,
-      "elevation": 0,
-      "var": "VAR_RIVAL_STATE",
-      "var_value": "3",
-      "script": "CragCave_TriggerScript_RivalSequence"
-    }
+
   ],
   "bg_events": [
-
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "item": "ITEM_EVERSTONE",
+      "flag": "FLAG_HIDDEN_ITEM_CRAG_CAVE_2R_EVERSTONE"
+    }
   ]
 }

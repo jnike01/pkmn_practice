@@ -1066,3 +1066,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/Route2/scripts.inc"
 
 	.include "data/maps/CragCave/scripts.inc"
+
+	.include "data/maps/CragCave_2R/scripts.inc"

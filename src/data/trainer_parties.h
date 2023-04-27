@@ -12307,70 +12307,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Gabrielle5[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia2[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Takeda_1[] = {
     {
-    .iv = 10,
-    .lvl = 34,
-    .species = SPECIES_WAILMER,
+    .iv = 0,
+    .lvl = 6,
+    .species = SPECIES_ELGYEM,
     },
     {
-    .iv = 10,
-    .lvl = 34,
-    .species = SPECIES_HORSEA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia3[] = {
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = 20,
-    .lvl = 36,
-    .species = SPECIES_SEADRA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia4[] = {
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_WAILMER,
-    },
-    {
-    .iv = 30,
-    .lvl = 38,
-    .species = SPECIES_SEADRA,
-    }
-};
-
-static const struct TrainerMonNoItemDefaultMoves sParty_Thalia5[] = {
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_LUVDISC,
-    },
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_WAILORD,
-    },
-    {
-    .iv = 40,
-    .lvl = 40,
-    .species = SPECIES_KINGDRA,
+    .iv = 0,
+    .lvl = 7,
+    .species = SPECIES_NINCADA,
     }
 };
 
@@ -12421,11 +12367,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red[] = {
     }
 };
 
-static const struct TrainerMonNoItemDefaultMoves sParty_Leaf[] = {
+static const struct TrainerMonNoItemDefaultMoves sParty_Timmy_1[] = {
     {
     .iv = 0,
     .lvl = 5,
-    .species = SPECIES_BULBASAUR,
+    .species = SPECIES_SANDSHREW,
+    },
+    {
+    .iv = 0,
+    .lvl = 6,
+    .species = SPECIES_PATRAT,
     }
 };
 

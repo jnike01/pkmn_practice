@@ -845,15 +845,15 @@
 #define TRAINER_GABRIELLE_3                 841
 #define TRAINER_GABRIELLE_4                 842
 #define TRAINER_GABRIELLE_5                 843
-#define TRAINER_THALIA_2                    844
-#define TRAINER_THALIA_3                    845
-#define TRAINER_THALIA_4                    846
-#define TRAINER_THALIA_5                    847
+#define TRAINER_UNUSED_854                  844
+#define TRAINER_UNUSED_845                  845
+#define TRAINER_UNUSED_846                  846
+#define TRAINER_TAKEDA_1                    847
 #define TRAINER_TERRY_1                     848
 #define TRAINER_SERENA_1                    849
 #define TRAINER_JAKOB_1                     850
 #define TRAINER_RED                         851
-#define TRAINER_LEAF                        852
+#define TRAINER_TIMMY_1                     852
 #define TRAINER_JACK_1                      853
 #define TRAINER_HEATHER_1                   854
 
