@@ -59,6 +59,7 @@
 #define MAP_ROUTE1           (50 | (0 << 8))
 #define MAP_SUNVIEW_TOWN     (51 | (0 << 8))
 #define MAP_ROUTE2           (52 | (0 << 8))
+#define MAP_JOYVALE_CITY     (53 | (0 << 8))
 
 // gMapGroup_IndoorLittleroot
 #define MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F    (0 | (1 << 8))

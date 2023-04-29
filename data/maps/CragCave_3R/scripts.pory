@@ -115,13 +115,13 @@ movement CragCave_3R_MovementScript_RivalExit2{
 }
 
 text CragCave_3R_TextScript_RivalIntro{
-    format("placeholder")
+    format("This cave was very interesting and fun to traverse. Did you find any good pokemon in here? I found myself a strong one, so let's have a go like I said at the entrance with our new experience! Prepare yourself!")
 }
 
 text CragCave_3R_TextScript_RivalOutro{
-    format("placeholder")
+    format("You're very proficient at this already! I'll get stronger so we can do this again soon!")
 }
 
 text CragCave_3R_TextScript_RivalAftermath{
-    format("placeholder")
+    format("That was definitely a solid battle. I'll have to continue training and improve my team so I can try again to beat you. I'm going to head to the first gym, so wish me luck! Good luck on your own challenge. See ya!")
 }

@@ -4400,6 +4400,16 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/CragCave_3R/border.bin",
       "blockdata_filepath": "data/layouts/CragCave_3R/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY",
+      "name": "JoyvaleCity_Layout",
+      "width": 28,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/JoyvaleCity/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity/map.bin"
     }
   ]
 }

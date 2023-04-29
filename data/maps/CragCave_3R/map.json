@@ -100,6 +100,13 @@
       "elevation": 0,
       "dest_map": "MAP_CRAG_CAVE_2R",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 3,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_JOYVALE_CITY",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

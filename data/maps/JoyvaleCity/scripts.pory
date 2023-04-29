@@ -1,0 +1,32 @@
+mapscripts JoyvaleCity_MapScripts{}
+
+script JoyvaleCity_SignScript_CitySign{
+    lock
+    msgbox("Joyvale City, a flowery sprawl.")
+    release
+    end
+}
+
+script JoyvaleCity_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("This city is a nice change of pace from the cave. There were no birds in there either."))
+    release
+    end
+}
+
+script JoyvaleCity_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("The shade under these trees is really comfortable. Do you like to relax under the shade?"))
+    release
+    end
+}
+
+script JoyvaleCity_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_GREAT_BALL)
+    removeobject(1)
+    release
+    end
+}
