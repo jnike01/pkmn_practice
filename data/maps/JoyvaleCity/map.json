@@ -50,7 +50,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "NULL",
+      "script": "JoyvaleCity_PersonScript_NPC2",
       "flag": "0"
     }
   ],
@@ -61,6 +61,13 @@
       "elevation": 0,
       "dest_map": "MAP_CRAG_CAVE_3R",
       "dest_warp_id": "1"
+    },
+    {
+      "x": 14,
+      "y": 20,
+      "elevation": 0,
+      "dest_map": "MAP_JOYVALE_CITY_POKE_CENTER",
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [

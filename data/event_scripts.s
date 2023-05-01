@@ -1072,3 +1072,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/CragCave_3R/scripts.inc"
 
 	.include "data/maps/JoyvaleCity/scripts.inc"
+
+	.include "data/maps/JoyvaleCity_PokeCenter/scripts.inc"

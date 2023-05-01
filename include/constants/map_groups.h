@@ -588,6 +588,9 @@
 #define MAP_SUNVIEW_TOWN_MART        (2 | (34 << 8))
 #define MAP_SUNVIEW_TOWN_POKE_CENTER (3 | (34 << 8))
 
-#define MAP_GROUPS_COUNT 35
+// gMapGroup_IndoorJoyvaleCity
+#define MAP_JOYVALE_CITY_POKE_CENTER (0 | (35 << 8))
+
+#define MAP_GROUPS_COUNT 36
 
 #endif // GUARD_CONSTANTS_MAP_GROUPS_H

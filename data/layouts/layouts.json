@@ -4410,6 +4410,16 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/JoyvaleCity/border.bin",
       "blockdata_filepath": "data/layouts/JoyvaleCity/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY_POKE_CENTER",
+      "name": "JoyvaleCity_PokeCenter_Layout",
+      "width": 14,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonCenter",
+      "border_filepath": "data/layouts/JoyvaleCity_PokeCenter/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity_PokeCenter/map.bin"
     }
   ]
 }

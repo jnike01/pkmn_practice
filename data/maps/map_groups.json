@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
     "gMapGroup_IndoorGloriaTown",
-    "gMapGroup_IndoorSunviewTown"
+    "gMapGroup_IndoorSunviewTown",
+    "gMapGroup_IndoorJoyvaleCity"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -618,5 +619,8 @@
     "SunviewTown_House2",
     "SunviewTown_Mart",
     "SunviewTown_PokeCenter"
+  ],
+  "gMapGroup_IndoorJoyvaleCity": [
+    "JoyvaleCity_PokeCenter"
   ]
 }
