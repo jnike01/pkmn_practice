@@ -16,3 +16,27 @@ script JoyvaleCity_PokeCenter_PersonScript_Nurse{
     release
     end
 }
+
+script JoyvaleCity_PokeCenter_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("It's great that there's these nice tables at every Pokemon Center. I love sitting here and reading my cookbooks!"))
+    release
+    end
+}
+
+script JoyvaleCity_PokeCenter_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("The air conditioning in here is refreshing in comparison to the hot weather outside. I can read my books in comfort."))
+    release
+    end
+}
+
+script JoyvaleCity_PokeCenter_PersonScript_NPC3{
+    lock
+    faceplayer
+    msgbox(format("The map here is very high quality. It's a great source of inpsiration for my art!"))
+    release
+    end
+}

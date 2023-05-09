@@ -2,13 +2,13 @@ SunviewTown_Mart_MapScripts::
 	.byte 0
 
 
-SunviewTown_PersonScript_Employee::
+SunviewTown_Mart_PersonScript_Employee::
 	lock
 	faceplayer
-	message SunviewTown_PersonScript_Employee_Text_0
+	message SunviewTown_Mart_PersonScript_Employee_Text_0
 	waitmessage
 	pokemart 0
-	msgbox SunviewTown_PersonScript_Employee_Text_1
+	msgbox SunviewTown_Mart_PersonScript_Employee_Text_1
 	release
 	end
 
@@ -29,10 +29,10 @@ SunviewTown_Mart_PersonScript_NPC2::
 	end
 
 
-SunviewTown_PersonScript_Employee_Text_0:
+SunviewTown_Mart_PersonScript_Employee_Text_0:
 	.string "How may I serve you?$"
 
-SunviewTown_PersonScript_Employee_Text_1:
+SunviewTown_Mart_PersonScript_Employee_Text_1:
 	.string "Please come again!$"
 
 SunviewTown_Mart_PersonScript_NPC1_Text_0:

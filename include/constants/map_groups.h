@@ -590,6 +590,8 @@
 
 // gMapGroup_IndoorJoyvaleCity
 #define MAP_JOYVALE_CITY_POKE_CENTER (0 | (35 << 8))
+#define MAP_JOYVALE_CITY_MART        (1 | (35 << 8))
+#define MAP_JOYVALE_CITY_HOUSE1      (2 | (35 << 8))
 
 #define MAP_GROUPS_COUNT 36
 

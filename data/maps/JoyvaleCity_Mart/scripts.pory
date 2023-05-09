@@ -1,0 +1,28 @@
+script JoyvaleCity_Mart_MapScripts{}
+
+script JoyvaleCity_Mart_PersonScript_Employee{
+    lock
+    faceplayer
+    message("How may I serve you?")
+    waitmessage
+    pokemart(0)
+    msgbox("Please come again!")
+    release
+    end
+}
+
+script JoyvaleCity_Mart_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("The ice cream options here are plentiful! I love the flavors they have in stock here!"))
+    release
+    end
+}
+
+script JoyvaleCity_Mart_PersonScript_NPC2{
+    lock
+    faceplayer
+    msgbox(format("Shopping here is always a great convenience."))
+    release
+    end
+}

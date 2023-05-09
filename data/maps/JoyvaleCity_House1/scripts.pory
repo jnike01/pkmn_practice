@@ -1,0 +1,50 @@
+mapscripts JoyvaleCity_House1_MapScripts{}
+
+script JoyvaleCity_House1_SignScript_TV{
+    lock
+    special(TurnOnTVScreen)
+    msgbox(format("Naruto Shippuden is playing right now. It looks like the war arc is currently going on."))
+    special(TurnOffTVScreen)
+    release
+    end
+}
+
+script JoyvaleCity_House1_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("Washing dishes for my brother is always a chore! I wish he'd get off his butt and help me sometimes."))
+    release
+    end
+}
+
+script JoyvaleCity_House1_PersonScript_NPC2{
+    lock
+    faceplayer
+    goto_if_set(FLAG_RECEIVED_SITRUS_BERRY, JoyvaleCity_House1_SequenceScript_AfterBerry)
+    msgbox(format("I wish I could help my sister wash dishes but I get very sleepy after eating. Please take this so I can stop eating..."))
+    giveitem(ITEM_SITRUS_BERRY, 1)
+    goto_if_eq(VAR_RESULT, FALSE, JoyvaleCity_House1_SequenceScript_NoRoom)
+    setflag(FLAG_RECEIVED_SITRUS_BERRY)
+    release
+    end
+}
+
+script JoyvaleCity_House1_SequenceScript_AfterBerry{
+    msgbox(JoyvaleCity_House1_TextScript_AfterBerry)
+    release
+    end
+}
+
+script JoyvaleCity_House1_SequenceScript_NoRoom{
+    msgbox(JoyvaleCity_House1_TextScript_NoRoom)
+    release
+    end
+}
+
+text JoyvaleCity_House1_TextScript_AfterBerry{
+    format("Hopefully I'll be able to get up and help my sister now.")
+}
+
+text JoyvaleCity_House1_TextScript_NoRoom{
+    format("You have no room for this! Please come back when you do so I can get up.")
+}

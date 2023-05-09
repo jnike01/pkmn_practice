@@ -4420,6 +4420,26 @@
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/JoyvaleCity_PokeCenter/border.bin",
       "blockdata_filepath": "data/layouts/JoyvaleCity_PokeCenter/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY_MART",
+      "name": "JoyvaleCity_Mart_Layout",
+      "width": 11,
+      "height": 8,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/JoyvaleCity_Mart/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity_Mart/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY_HOUSE1",
+      "name": "JoyvaleCity_House1_Layout",
+      "width": 10,
+      "height": 9,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_GenericBuilding",
+      "border_filepath": "data/layouts/JoyvaleCity_House1/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity_House1/map.bin"
     }
   ]
 }

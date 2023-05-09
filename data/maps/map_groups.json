@@ -621,6 +621,8 @@
     "SunviewTown_PokeCenter"
   ],
   "gMapGroup_IndoorJoyvaleCity": [
-    "JoyvaleCity_PokeCenter"
+    "JoyvaleCity_PokeCenter",
+    "JoyvaleCity_Mart",
+    "JoyvaleCity_House1"
   ]
 }
