@@ -1078,3 +1078,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/JoyvaleCity_Mart/scripts.inc"
 
 	.include "data/maps/JoyvaleCity_House1/scripts.inc"
+
+	.include "data/maps/JoyvaleCity_House2/scripts.inc"

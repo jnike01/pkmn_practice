@@ -1016,21 +1016,21 @@ static const struct InGameTrade sIngameTrades[] =
         .sheen = 10,
         .requestedSpecies = SPECIES_VOLBEAT
     },
-    [INGAME_TRADE_HORSEA] =
+    [INGAME_TRADE_HOUNDOUR] =
     {
-        .nickname = _("SEASOR"),
-        .species = SPECIES_HORSEA,
+        .nickname = _("Flamvell"),
+        .species = SPECIES_HOUNDOUR,
         .ivs = {5, 4, 4, 4, 5, 4},
         .abilityNum = 0,
         .otId = 46285,
         .conditions = {5, 5, 5, 5, 30},
         .personality = 0x7F,
-        .heldItem = ITEM_WAVE_MAIL,
+        .heldItem = ITEM_CHARCOAL,
         .mailNum = 1,
-        .otName = _("SKYLAR"),
+        .otName = _("Zeke"),
         .otGender = MALE,
         .sheen = 10,
-        .requestedSpecies = SPECIES_BAGON
+        .requestedSpecies = SPECIES_LOTAD
     },
     [INGAME_TRADE_MEOWTH] =
     {

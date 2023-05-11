@@ -1,7 +1,7 @@
 {
-  "id": "MAP_JOYVALE_CITY_HOUSE1",
-  "name": "JoyvaleCity_House1",
-  "layout": "LAYOUT_JOYVALE_CITY_HOUSE1",
+  "id": "MAP_JOYVALE_CITY_HOUSE2",
+  "name": "JoyvaleCity_House2",
+  "layout": "LAYOUT_JOYVALE_CITY_HOUSE2",
   "music": "MUS_PETALBURG",
   "region_map_section": "MAPSEC_JOYVALE_CITY",
   "requires_flash": false,
@@ -15,29 +15,29 @@
   "connections": 0,
   "object_events": [
     {
-      "graphics_id": "OBJ_EVENT_GFX_PICNICKER",
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
       "x": 3,
-      "y": 2,
+      "y": 5,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "JoyvaleCity_House2_PersonScript_TradeNPC",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCHOOL_KID_M",
+      "x": 7,
+      "y": 3,
       "elevation": 0,
       "movement_type": "MOVEMENT_TYPE_FACE_UP",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "JoyvaleCity_House1_PersonScript_NPC1",
-      "flag": "0"
-    },
-    {
-      "graphics_id": "OBJ_EVENT_GFX_FAT_MAN",
-      "x": 6,
-      "y": 4,
-      "elevation": 0,
-      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "JoyvaleCity_House1_PersonScript_NPC2",
+      "script": "JoyvaleCity_House2_PersonScript_NPC1",
       "flag": "0"
     }
   ],
@@ -47,14 +47,14 @@
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_JOYVALE_CITY",
-      "dest_warp_id": "3"
+      "dest_warp_id": "4"
     },
     {
       "x": 5,
       "y": 8,
       "elevation": 0,
       "dest_map": "MAP_JOYVALE_CITY",
-      "dest_warp_id": "3"
+      "dest_warp_id": "4"
     }
   ],
   "coord_events": [
@@ -63,11 +63,11 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 8,
+      "x": 7,
       "y": 1,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "JoyvaleCity_House1_SignScript_TV"
+      "script": "JoyvaleCity_House2_SignScript_TV"
     }
   ]
 }

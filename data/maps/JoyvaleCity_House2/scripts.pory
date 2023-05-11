@@ -1,0 +1,67 @@
+script JoyvaleCity_House2_MapScripts{}
+
+script JoyvaleCity_House2_SignScript_TV{
+    lock
+    special(TurnOnTVScreen)
+    msgbox(format("It's Regular Show! That was a great watch for a kid's show."))
+    special(TurnOffTVScreen)
+    release
+    end
+}
+
+script JoyvaleCity_House2_PersonScript_NPC1{
+    lock
+    faceplayer
+    msgbox(format("Wooooaaaahhhh!"))
+    release
+    end
+}
+
+script JoyvaleCity_House2_PersonScript_TradeNPC{
+    lock
+    faceplayer
+    goto_if_set(FLAG_JOYVALE_NPC_TRADE_COMPLETED, JoyvaleCity_House2_SequenceScript_AfterTrade)
+    setvar(VAR_0x8008, INGAME_TRADE_HOUNDOUR)
+    copyvar(VAR_0x8004, VAR_0x8008)
+    specialvar(VAR_RESULT, GetInGameTradeSpeciesInfo)
+    copyvar(VAR_0x8009, VAR_RESULT)
+    msgbox(format("Do you have a {STR_VAR_1} you are willing to trade? I would appreciate it if you would for my {STR_VAR_2}, Flamvell. {STR_VAR_1} would help a lot more against the dangers I face."), MSGBOX_YESNO)
+    goto_if_eq(VAR_RESULT, NO, JoyvaleCity_House2_SequenceScript_DeclineTrade)
+    special(ChoosePartyMon)
+    waitstate
+    copyvar(VAR_0x800A, VAR_0x8004)
+    goto_if_eq(VAR_0x8004, PARTY_NOTHING_CHOSEN, JoyvaleCity_House2_SequenceScript_DeclineTrade)
+    copyvar(VAR_0x8005, VAR_0x800A)
+	specialvar(VAR_RESULT, GetTradeSpecies)
+	copyvar(VAR_0x800B, VAR_RESULT)
+    goto_if_ne(VAR_RESULT, VAR_0x8009, JoyvaleCity_House2_SequenceScript_NotRequestedMon)
+    copyvar(VAR_0x8004, VAR_0x8008)
+	copyvar(VAR_0x8005, VAR_0x800A)
+	special(CreateInGameTradePokemon)
+	special(DoInGameTradeScene)
+	waitstate
+	bufferspeciesname(STR_VAR_1, VAR_0x8009)
+    msgbox(format("Thanks a lot for this! I hope great things come for you and Flamvell!"))
+    setflag(FLAG_JOYVALE_NPC_TRADE_COMPLETED)
+    release
+    end
+}
+
+script JoyvaleCity_House2_SequenceScript_AfterTrade{
+    msgbox(format("I hope my old friend is helping you in your endeavers. Take good care of Flamvell for me!"))
+    release
+    end
+}
+
+script JoyvaleCity_House2_SequenceScript_DeclineTrade{
+    msgbox(format("Aww, that sucks! Hopefully, you will reconsider. Flamvell is really well behaved."))
+    release
+    end
+}
+
+script JoyvaleCity_House2_SequenceScript_NotRequestedMon{
+    bufferspeciesname(STR_VAR_1, VAR_0x8009)
+    msgbox(format("This isn't the Pokemon I'm looking for. If you want this trade to go through, bring me a {STR_VAR_1}."))
+    release
+    end
+}
