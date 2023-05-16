@@ -1,0 +1,29 @@
+mapscripts JoyvaleCity_Gym_B1F_MapScripts{}
+
+script JoyvaleCity_Gym_B1F_TrainerScript_Homer{
+    trainerbattle_single(TRAINER_HOMER_1, JoyvaleCity_Gym_B1F_TextScript_HomerIntro, JoyvaleCity_Gym_B1F_TextScript_HomerOutro)
+    msgbox(format("Leader Lily is much stronger than me. You will be in for a big challenge!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script JoyvaleCity_Gym_B1F_TrainerScript_Ken{
+    trainerbattle_single(TRAINER_KEN_1, JoyvaleCity_Gym_B1F_TextScript_KenIntro, JoyvaleCity_Gym_B1F_TextScript_KenOutro)
+    msgbox(format("I have learned a lot from our battle."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+text JoyvaleCity_Gym_B1F_TextScript_HomerIntro{
+    format("My job is to test you to make sure you are worthy of challenging Leader Lily. Prepare yourself!")
+}
+
+text JoyvaleCity_Gym_B1F_TextScript_HomerOutro{
+    format("You have done a remarkable job!")
+}
+
+text JoyvaleCity_Gym_B1F_TextScript_KenIntro{
+    format("Let's have a great match to prepare for your confrontation with Leader Lily!")
+}
+
+text JoyvaleCity_Gym_B1F_TextScript_KenOutro{
+    format("Good luck on your challenge!")
+}

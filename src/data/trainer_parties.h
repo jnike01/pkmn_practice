@@ -12308,6 +12308,27 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Mary_1[] = {
     }
 };
 
+static const struct TrainerMonNoItemDefaultMoves sParty_Homer_1[] = {
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_DARUMAKA,
+    },
+    {
+    .iv = 0,
+    .lvl = 11,
+    .species = SPECIES_NUMEL,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Ken_1[] = {
+    {
+    .iv = 0,
+    .lvl = 12,
+    .species = SPECIES_MAGBY,
+    }
+};
+
 static const struct TrainerMonNoItemDefaultMoves sParty_Route3_Frost_Grunt_1[] = {
     {
     .iv = 0,

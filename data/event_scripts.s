@@ -1082,3 +1082,7 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/JoyvaleCity_House2/scripts.inc"
 
 	.include "data/maps/Route3/scripts.inc"
+
+	.include "data/maps/JoyvaleCity_Gym/scripts.inc"
+
+	.include "data/maps/JoyvaleCity_Gym_B1F/scripts.inc"

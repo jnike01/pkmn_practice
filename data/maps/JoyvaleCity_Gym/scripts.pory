@@ -1,0 +1,26 @@
+mapscripts JoyvaleCity_Gym_MapScripts{}
+
+script JoyvaleCity_Gym_Aide{
+    lock
+    faceplayer
+    goto_if_set(FLAG_RECEIVED_JOYVALE_GYM_WATER, JoyvaleCity_Gym_SequenceScript_AfterWater)
+    msgbox(format("Hey challenger! Lily has a team of sizzling Pokemon! Water, Rock and Ground Type Pokemon are your best bet against her. Take this fresh water to help with your challenge!"))
+    giveitem(ITEM_FRESH_WATER, 1)
+    goto_if_eq(VAR_RESULT, FALSE, JoyvaleCity_Gym_SequenceScript_NoRoom)
+    setflag(FLAG_RECEIVED_JOYVALE_GYM_WATER)
+    msgbox(format("Good luck!"))
+    release
+    end
+}
+
+script JoyvaleCity_Gym_SequenceScript_AfterWater{
+    msgbox(format("Hey challenger! Lily has a team of sizzling Pokemon! Water, Rock and Ground Type Pokemon are your best bet against her."))
+    release
+    end
+}
+
+script JoyvaleCity_Gym_SequenceScript_NoRoom{
+    msgbox(format("You have no room! Please come back when you have space to get this fresh water."))
+    release
+    end
+}

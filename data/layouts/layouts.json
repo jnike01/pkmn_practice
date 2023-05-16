@@ -4460,6 +4460,26 @@
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/Route3/border.bin",
       "blockdata_filepath": "data/layouts/Route3/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY_GYM",
+      "name": "JoyvaleCity_Gym_Layout",
+      "width": 19,
+      "height": 14,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/JoyvaleCity_Gym/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity_Gym/map.bin"
+    },
+    {
+      "id": "LAYOUT_JOYVALE_CITY_GYM_B1F",
+      "name": "JoyvaleCity_Gym_B1F_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_LavaridgeGym",
+      "border_filepath": "data/layouts/JoyvaleCity_Gym_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/JoyvaleCity_Gym_B1F/map.bin"
     }
   ]
 }
