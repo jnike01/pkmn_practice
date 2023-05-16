@@ -1,6 +1,6 @@
 mapscripts JoyvaleCity_Gym_MapScripts{}
 
-script JoyvaleCity_Gym_Aide{
+script JoyvaleCity_Gym_PersonScript_Aide{
     lock
     faceplayer
     goto_if_set(FLAG_RECEIVED_JOYVALE_GYM_WATER, JoyvaleCity_Gym_SequenceScript_AfterWater)
@@ -12,6 +12,8 @@ script JoyvaleCity_Gym_Aide{
     release
     end
 }
+
+script JoyvaleCity_Gym_PersonScript_LeaderLily{}
 
 script JoyvaleCity_Gym_SequenceScript_AfterWater{
     msgbox(format("Hey challenger! Lily has a team of sizzling Pokemon! Water, Rock and Ground Type Pokemon are your best bet against her."))
