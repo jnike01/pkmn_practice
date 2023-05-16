@@ -17,6 +17,7 @@ GloriaTown_Rival_House_2F_PersonScript_RivalIntro::
 	lock
 	faceplayer
 	msgbox GloriaTown_Rival_House_2F_PersonScript_RivalIntro_Text_0
+	closemessage
 	call GloriaTown_Rival_House_2F_SequenceScript_RivalIntroFinish
 	release
 	end

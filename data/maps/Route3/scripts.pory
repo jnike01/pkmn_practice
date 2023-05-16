@@ -1,0 +1,177 @@
+mapscripts Route3_MapScripts{
+    MAP_SCRIPT_ON_TRANSITION: Route3_DefaultScript_DefaultState
+}
+
+script Route3_DefaultScript_DefaultState{
+    if(!(flag(FLAG_ROUTE_3_EVIL_TEAM))){
+        setflag(FLAG_ROUTE_3_TRAINERS)
+        playbgm(MUS_AQUA_MAGMA_HIDEOUT, FALSE)
+    }
+    else{
+        clearflag(FLAG_ROUTE_3_TRAINERS)
+    }
+}
+
+script Route3_TriggerScript_IntroduceEvilTeam{
+    lock
+    msgbox(format("It looks like there are thugs of some kind here. Maybe the gym leader is fighting them off. It's time to help out!"))
+    setvar(VAR_ROUTE_3_EVIL_TEAM, 1)
+    release
+    end
+}
+
+script Route3_TriggerScript_BlockPath{
+    lockall
+    msgbox(format("You still have things to do before you can move on!"))
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_BlockPathMove)
+    waitmovement(0)
+    releaseall
+    end
+}
+
+script Route3_TriggerScript_Cutscene1{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_ToCutscene1)
+    waitmovement(0)
+    msgbox(Route3_TextScript_AdminSpeech1)
+    closemessage
+    applymovement(5, Route3_MovementScript_AdminToPlayer)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToAdmin)
+    waitmovement(0)
+    msgbox(Route3_TextScript_AdminSpeech2)
+    closemessage
+    applymovement(5, Route3_MovementScript_AdminLeave)
+    waitmovement(0)
+    removeobject(5)
+    fadedefaultbgm
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToLily)
+    waitmovement(0)
+    applymovement(6, Route3_MovementScript_LilyToPlayer)
+    waitmovement(0)
+    msgbox(Route3_TextScript_LilySpeech)
+    closemessage
+    applymovement(6, Route3_MovementScript_LilyLeave)
+    waitmovement(0)
+    removeobject(6)
+    setflag(FLAG_ROUTE_3_EVIL_TEAM)
+    setvar(VAR_ROUTE_3_CUTSCENE, 1)
+    clearflag(FLAG_ROUTE_3_TRAINERS)
+    special(HealPlayerParty)
+    release
+    end
+}
+
+script Route3_TriggerScript_Cutscene2{
+    lock
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_ToCutscene2)
+    waitmovement(0)
+    msgbox(Route3_TextScript_AdminSpeech1)
+    closemessage
+    applymovement(5, Route3_MovementScript_AdminToPlayer)
+    waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToAdmin)
+    waitmovement(0)
+    msgbox(Route3_TextScript_AdminSpeech2)
+    closemessage
+    applymovement(5, Route3_MovementScript_AdminLeave)
+    waitmovement(0)
+    removeobject(5)
+    fadedefaultbgm
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToLily)
+    waitmovement(0)
+    applymovement(6, Route3_MovementScript_LilyToPlayer)
+    waitmovement(0)
+    msgbox(Route3_TextScript_LilySpeech)
+    closemessage
+    applymovement(6, Route3_MovementScript_LilyLeave)
+    waitmovement(0)
+    removeobject(6)
+    setflag(FLAG_ROUTE_3_EVIL_TEAM)
+    setvar(VAR_ROUTE_3_CUTSCENE, 1)
+    clearflag(FLAG_ROUTE_3_TRAINERS)
+    special(HealPlayerParty)
+    release
+    end
+}
+
+script Route3_TrainerScript_FrostGrunt1{
+    trainerbattle_single(TRAINER_ROUTE_3_FROST_GRUNT_1, Route3_TextScript_GruntIntro1, Route3_TextScript_GruntOutro1)
+    msgbox(format("Admin Jennifer will definitely beat you if you cross paths. Be happy while you still can!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route3_TrainerScript_FrostGrunt2{
+    trainerbattle_single(TRAINER_ROUTE_3_FROST_GRUNT_2, Route3_TextScript_GruntIntro2, Route3_TextScript_GruntOutro2)
+    msgbox(format("Next time we cross paths I'll get you for this!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+movement Route3_MovementScript_BlockPathMove{
+    walk_left
+}
+
+movement Route3_MovementScript_ToCutscene1{
+    walk_up * 5
+    walk_left * 5
+}
+
+movement Route3_MovementScript_ToCutscene2{
+    walk_up * 5
+    walk_left * 6
+}
+
+movement Route3_MovementScript_AdminToPlayer{
+    walk_right * 3
+    face_up
+}
+
+movement Route3_MovementScript_PlayerToAdmin{
+    face_down
+}
+
+movement Route3_MovementScript_AdminLeave{
+    walk_right * 5
+    walk_down * 8
+}
+movement Route3_MovementScript_PlayerToLily{
+    face_left
+}
+
+movement Route3_MovementScript_LilyToPlayer{
+    walk_right * 2
+}
+
+movement Route3_MovementScript_LilyLeave{
+    walk_down
+    walk_right * 6
+    walk_down * 8
+}
+
+text Route3_TextScript_GruntIntro1{
+    format("You should run along, little kid! We of Team Frost are too dangerous of a bunch for kids like you.")
+}
+
+text Route3_TextScript_GruntOutro1{
+    format("You're way stronger than I expected! Don't get a big head though!")
+}
+
+text Route3_TextScript_GruntIntro2{
+    format("I'm here to make sure Admin Jennifer's business goes uninterrupted! Scram little kid!")
+}
+
+text Route3_TextScript_GruntOutro2{
+    format("I'm a failure...")
+}
+
+text Route3_TextScript_AdminSpeech1{
+    format("Jennifer: You are pretty strong, Gym Leader Enya. I was not expecting such a challenge from you. Alas, we have come to a stalemate so Team Frost and I must depart for now. We will meet again...")
+}
+
+text Route3_TextScript_AdminSpeech2{
+    format("Jennifer: I'm surprised a newbie trainer like you was able to take out my grunts. I must leave now but I will never forget you. I can see your potential and strong will reflected in your eyes. I'll make sure Team Frost will not underestimate you in the future.")
+}
+
+text Route3_TextScript_LilySpeech{
+    format("Lily: Hey there! Thanks for helping me fight off those Team Frost Thugs! You've earned my respect doing that with no prompt. I couldn't learn what their purpose is but I'm going to notify the league of their presence to hopefully nip this problem in the bud before it gets out of hand. I'd love it if you would come to my gym and challenge me. I can tell we'll have a great match! See you later!")
+}

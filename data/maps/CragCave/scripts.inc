@@ -21,6 +21,7 @@ CragCave_TriggerScript_RivalSequence::
 	applymovement 3, CragCave_MovementScript_RivalToPlayer
 	waitmovement 0
 	msgbox CragCave_TriggerScript_RivalSequence_Text_0
+	closemessage
 	applymovement 3, CragCave_MovementScript_RivalAwayFromPlayer
 	waitmovement 0
 	removeobject 3

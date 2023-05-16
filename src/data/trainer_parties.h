@@ -12418,3 +12418,29 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Red_2[] = {
     .species = SPECIES_EEVEE,    
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Route3_Frost_Grunt_1[] = {
+    {
+    .iv = 0,
+    .lvl = 8,
+    .species = SPECIES_SWINUB,
+    },
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_NATU,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Route3_Frost_Grunt_2[] = {
+    {
+    .iv = 0,
+    .lvl = 9,
+    .species = SPECIES_GOTHITA,
+    },
+    {
+    .iv = 0,
+    .lvl = 10,
+    .species = SPECIES_SNEASEL,
+    }
+};

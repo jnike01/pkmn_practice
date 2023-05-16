@@ -85,7 +85,7 @@ CragCave_3R_SequenceScript_RivalLeave2::
 
 
 CragCave_3R_MusicScript_RivalEncounter::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	return
 
 

@@ -7,6 +7,14 @@ script JoyvaleCity_SignScript_CitySign{
     end
 }
 
+script JoyvaleCity_PersonScript_GymExec{
+    lock
+    faceplayer
+    msgbox(format("The leader is out right now. If you go north to route 3, you should find him in due time."))
+    release
+    end
+}
+
 script JoyvaleCity_PersonScript_NPC1{
     lock
     faceplayer

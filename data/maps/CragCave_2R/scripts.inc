@@ -19,7 +19,7 @@ CragCave_2R_TrainerScript_Timmy::
 CaveCave_2R_TrainerScript_Takeda::
 	trainerbattle_single TRAINER_TAKEDA_1, CragCave_2R_TextScript_TakedaIntro, CragCave_2R_TextScript_TakedaOutro
 	msgbox CragCave_2R_TextScript_TakedaDialogue, MSGBOX_AUTOCLOSE
-	return
+	end
 
 
 CragCave_2R_TextScript_TimmyIntro::

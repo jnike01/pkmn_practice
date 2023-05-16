@@ -11959,7 +11959,7 @@
           "map": "MAP_CRAG_CAVE_2R",
           "base_label": "gCragCave_2R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,
@@ -12113,7 +12113,7 @@
           "map": "MAP_CRAG_CAVE_3R",
           "base_label": "gCragCave_3R0",
           "land_mons": {
-            "encounter_rate": 0,
+            "encounter_rate": 10,
             "mons": [
               {
                 "min_level": 5,

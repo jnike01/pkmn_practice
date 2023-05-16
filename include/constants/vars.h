@@ -245,7 +245,7 @@
 #define VAR_GIFT_UNUSED_5                                0x40E2 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_6                                0x40E3 // Var is written to, but never read
 #define VAR_GIFT_UNUSED_7                                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                                0x40E5 // Unused Var
+#define VAR_ROUTE_3_CUTSCENE                             0x40E5
 #define VAR_DAILY_SLOTS                                  0x40E6
 #define VAR_DAILY_WILDS                                  0x40E7
 #define VAR_DAILY_BLENDER                                0x40E8
@@ -270,8 +270,8 @@
 #define VAR_RIVAL_STATE                                  0x40FB
 #define VAR_RIVAL_HOUSE_STATE                            0x40FC
 #define VAR_PROFESSOR_STARTER_STATE                      0x40FD 
-#define VAR_UNUSED_0x40FE                                0x40FE // Unused Var
-#define VAR_UNUSED_0x40FF                                0x40FF // Unused Var
+#define VAR_ROUTE_3_EVIL_TEAM                            0x40FE
+#define VAR_1ST_GYM_BEATEN                               0x40FF
 
 #define VARS_END                                         0x40FF
 #define VARS_COUNT                                       (VARS_END - VARS_START + 1)
