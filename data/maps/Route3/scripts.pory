@@ -5,10 +5,7 @@ mapscripts Route3_MapScripts{
 script Route3_DefaultScript_DefaultState{
     if(!(flag(FLAG_ROUTE_3_EVIL_TEAM))){
         setflag(FLAG_ROUTE_3_TRAINERS)
-        playbgm(MUS_AQUA_MAGMA_HIDEOUT, FALSE)
-    }
-    else{
-        clearflag(FLAG_ROUTE_3_TRAINERS)
+        fadenewbgm(MUS_AQUA_MAGMA_HIDEOUT)
     }
 }
 

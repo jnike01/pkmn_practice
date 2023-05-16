@@ -5,12 +5,11 @@ Route3_MapScripts::
 
 Route3_DefaultScript_DefaultState::
 	goto_if_unset FLAG_ROUTE_3_EVIL_TEAM, Route3_DefaultScript_DefaultState_1
-	clearflag FLAG_ROUTE_3_TRAINERS
 	return
 
 Route3_DefaultScript_DefaultState_1:
 	setflag FLAG_ROUTE_3_TRAINERS
-	playbgm MUS_AQUA_MAGMA_HIDEOUT, FALSE
+	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
 	return
 
 
