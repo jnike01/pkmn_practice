@@ -12292,6 +12292,75 @@
               }
             ]
           }
+        },
+        {
+          "map": "MAP_ROUTE3",
+          "base_label": "gRoute30",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_SEEDOT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_BUIZEL"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_EKANS"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_PIKIPEK"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_SEWADDLE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_STUFFUL"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_MEOWTH"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_JIGGLYPUFF"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_VENIPEDE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_HELIOPTILE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_PLUSLE"
+              },
+              {
+                "min_level": 7,
+                "max_level": 9,
+                "species": "SPECIES_MINUN"
+              }
+            ]
+          }
         }
       ]
     },

@@ -108,6 +108,18 @@ Route3_TrainerScript_FrostGrunt2::
 	end
 
 
+Route3_TrainerScript_Mary::
+	trainerbattle_single TRAINER_MARY_1, Route3_TextScript_MaryIntro, Route3_TextScript_MaryOutro
+	msgbox Route3_TrainerScript_Mary_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
+Route3_TrainerScript_Morrison::
+	trainerbattle_single TRAINER_MORRISON_1, Route3_TextScript_MorrisonIntro, Route3_TextScript_MorrisonOutro
+	msgbox Route3_TrainerScript_Morrison_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
 Route3_MovementScript_BlockPathMove:
 	walk_left
 	step_end
@@ -212,6 +224,14 @@ Route3_TrainerScript_FrostGrunt2_Text_0:
 	.string "Next time we cross paths I'll get you\n"
 	.string "for this!$"
 
+Route3_TrainerScript_Mary_Text_0:
+	.string "I love relaxing with my Doduo in this\n"
+	.string "amazing terrain!$"
+
+Route3_TrainerScript_Morrison_Text_0:
+	.string "You should look into some good Bug\n"
+	.string "Pokemon for your team.$"
+
 Route3_TextScript_GruntIntro1::
 	.string "You should run along, little kid! We of\n"
 	.string "Team Frost are too dangerous of a\l"
@@ -228,6 +248,20 @@ Route3_TextScript_GruntIntro2::
 
 Route3_TextScript_GruntOutro2::
 	.string "I'm a failure...$"
+
+Route3_TextScript_MaryIntro::
+	.string "My baby and I are itching for a battle!$"
+
+Route3_TextScript_MaryOutro::
+	.string "You and your Pokemon have a strong\n"
+	.string "bond!$"
+
+Route3_TextScript_MorrisonIntro::
+	.string "This route is great training for my\n"
+	.string "bugs.$"
+
+Route3_TextScript_MorrisonOutro::
+	.string "Thanks for the experience!$"
 
 Route3_TextScript_AdminSpeech1::
 	.string "Jennifer: You are pretty strong, Gym\n"

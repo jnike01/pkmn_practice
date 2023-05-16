@@ -841,10 +841,10 @@
 #define TRAINER_SAWYER_3                    837
 #define TRAINER_SAWYER_4                    838
 #define TRAINER_SAWYER_5                    839
-#define TRAINER_GABRIELLE_2                 840
-#define TRAINER_GABRIELLE_3                 841
-#define TRAINER_GABRIELLE_4                 842
-#define TRAINER_GABRIELLE_5                 843
+#define TRAINER_MARY_1                      840
+#define TRAINER_MORRISON_1                  841
+#define TRAINER_UNUSED_842                  842
+#define TRAINER_UNUSED_843                  843
 #define TRAINER_RED_2                       844
 #define TRAINER_ROUTE_3_FROST_GRUNT_1       845
 #define TRAINER_ROUTE_3_FROST_GRUNT_2       846

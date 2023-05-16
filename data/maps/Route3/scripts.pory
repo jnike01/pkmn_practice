@@ -104,6 +104,18 @@ script Route3_TrainerScript_FrostGrunt2{
     end
 }
 
+script Route3_TrainerScript_Mary{
+    trainerbattle_single(TRAINER_MARY_1, Route3_TextScript_MaryIntro, Route3_TextScript_MaryOutro)
+    msgbox(format("I love relaxing with my Doduo in this amazing terrain!"), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route3_TrainerScript_Morrison{
+    trainerbattle_single(TRAINER_MORRISON_1, Route3_TextScript_MorrisonIntro, Route3_TextScript_MorrisonOutro)
+    msgbox(format("You should look into some good Bug Pokemon for your team."), MSGBOX_AUTOCLOSE)
+    end
+}
+
 movement Route3_MovementScript_BlockPathMove{
     walk_left
 }
@@ -159,6 +171,22 @@ text Route3_TextScript_GruntIntro2{
 
 text Route3_TextScript_GruntOutro2{
     format("I'm a failure...")
+}
+
+text Route3_TextScript_MaryIntro{
+    format("My baby and I are itching for a battle!")
+}
+
+text Route3_TextScript_MaryOutro{
+    format("You and your Pokemon have a strong bond!")
+}
+
+text Route3_TextScript_MorrisonIntro{
+    format("This route is great training for my bugs.")
+}
+
+text Route3_TextScript_MorrisonOutro{
+    format("Thanks for the experience!")
 }
 
 text Route3_TextScript_AdminSpeech1{
