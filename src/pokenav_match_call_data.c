@@ -364,25 +364,6 @@ static const struct MatchCallStructNPC sScottMatchCallHeader =
     .textData = sScottTextScripts
 };
 
-static const match_call_text_data_t sRoxanneTextScripts[] = {
-    { MatchCall_Text_Roxanne1, 0xFFFE,              0xFFFF },
-    { MatchCall_Text_Roxanne2, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Roxanne3, 0xFFFF,              0xFFFF },
-    { MatchCall_Text_Roxanne4, FLAG_SYS_GAME_CLEAR, 0xFFFF },
-    { NULL,                    0xFFFF,              0xFFFF }
-};
-
-static const struct MatchCallStructTrainer sRoxanneMatchCallHeader =
-{
-    .type = MC_TYPE_LEADER,
-    .mapSec = MAPSEC_RUSTBORO_CITY,
-    .flag = FLAG_ENABLE_ROXANNE_MATCH_CALL,
-    .rematchTableIdx = REMATCH_ROXANNE,
-    .desc = gText_RoxanneMatchCallDesc,
-    .name = NULL,
-    .textData = sRoxanneTextScripts
-};
-
 static const match_call_text_data_t sBrawlyTextScripts[] = {
     { MatchCall_Text_Brawly1, 0xFFFE,              0xFFFF },
     { MatchCall_Text_Brawly2, 0xFFFF,              0xFFFF },
@@ -587,7 +568,6 @@ static const match_call_t sMatchCallHeaders[] = {
     [MC_HEADER_MOM]        = {.npc    = &sMomMatchCallHeader},
     [MC_HEADER_STEVEN]     = {.npc    = &sStevenMatchCallHeader},
     [MC_HEADER_SCOTT]      = {.npc    = &sScottMatchCallHeader},
-    [MC_HEADER_ROXANNE]    = {.leader = &sRoxanneMatchCallHeader},
     [MC_HEADER_BRAWLY]     = {.leader = &sBrawlyMatchCallHeader},
     [MC_HEADER_WATTSON]    = {.leader = &sWattsonMatchCallHeader},
     [MC_HEADER_FLANNERY]   = {.leader = &sFlanneryMatchCallHeader},

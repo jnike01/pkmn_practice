@@ -82,6 +82,7 @@ GloriaTown_Your_House_ControlScript_MomDialogueInit::
 	applymovement 1, GloriaTown_Your_House_MovementScript_MomFaceRight
 	waitmovement 0
 	msgbox GloriaTown_Your_House_ControlScript_MomDialogueInit_Text_0
+	closemessage
 	return
 
 

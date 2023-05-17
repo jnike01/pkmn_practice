@@ -86,6 +86,7 @@ script GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit{
     applymovement(1, GloriaTown_Rival_House_MovementScript_GrandmaFaceDoor)
     waitmovement(0)
     msgbox("Hey, {PLAYER}{KUN}!")
+    closemessage
     return    
 }
 

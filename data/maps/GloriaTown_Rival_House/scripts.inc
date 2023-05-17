@@ -91,6 +91,7 @@ GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit::
 	applymovement 1, GloriaTown_Rival_House_MovementScript_GrandmaFaceDoor
 	waitmovement 0
 	msgbox GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit_Text_0
+	closemessage
 	return
 
 

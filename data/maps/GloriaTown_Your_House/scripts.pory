@@ -80,6 +80,7 @@ script GloriaTown_Your_House_ControlScript_MomDialogueInit{
     applymovement(1, GloriaTown_Your_House_MovementScript_MomFaceRight)
     waitmovement(0)
     msgbox("Hello, {PLAYER}{KUN}! Please come over and see me\nplease.")
+    closemessage
     return
 }
 

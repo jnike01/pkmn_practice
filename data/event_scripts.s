@@ -224,7 +224,6 @@ gStdScripts_End::
 	.include "data/maps/RustboroCity_DevonCorp_1F/scripts.inc"
 	.include "data/maps/RustboroCity_DevonCorp_2F/scripts.inc"
 	.include "data/maps/RustboroCity_DevonCorp_3F/scripts.inc"
-	.include "data/maps/RustboroCity_Gym/scripts.inc"
 	.include "data/maps/RustboroCity_PokemonSchool/scripts.inc"
 	.include "data/maps/RustboroCity_PokemonCenter_1F/scripts.inc"
 	.include "data/maps/RustboroCity_PokemonCenter_2F/scripts.inc"

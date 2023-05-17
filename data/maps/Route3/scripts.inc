@@ -265,10 +265,10 @@ Route3_TextScript_MorrisonOutro::
 
 Route3_TextScript_AdminSpeech1::
 	.string "Jennifer: You are pretty strong, Gym\n"
-	.string "Leader Enya. I was not expecting such\l"
-	.string "a challenge from you. Alas, we have\l"
-	.string "come to a stalemate so Team Frost and\l"
-	.string "I must depart for now. We will meet\l"
+	.string "Leader Lily. I was not expecting such a\l"
+	.string "challenge from you. Alas, we have come\l"
+	.string "to a stalemate so Team Frost and I\l"
+	.string "must depart for now. We will meet\l"
 	.string "again...$"
 
 Route3_TextScript_AdminSpeech2::
