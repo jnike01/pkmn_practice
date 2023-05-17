@@ -13,7 +13,35 @@ script JoyvaleCity_Gym_PersonScript_Aide{
     end
 }
 
-script JoyvaleCity_Gym_PersonScript_LeaderLily{}
+script JoyvaleCity_Gym_PersonScript_LeaderLily{
+    trainerbattle_single(TRAINER_LILY_1, JoyvaleCity_Gym_TextScript_LilyIntro, JoyvaleCity_Gym_TextScript_LilyOutro, JoyvaleCity_Gym_SequenceScript_LilyDefeated, NO_MUSIC)
+    goto_if_unset(FLAG_RECEIVED_TM43_FLAME_CHARGE, JoyvaleCity_Gym_SequenceScript_GiveFlameCharge)
+    msgbox(JoyvaleCity_Gym_TextScript_LilyPostBattleDialogue)
+    release
+    end
+}
+
+script JoyvaleCity_Gym_SequenceScript_LilyDefeated{
+    message(JoyvaleCity_Gym_TextScript_ReceivedFlareBadge)
+    waitmessage
+    call(Common_EventScript_PlayGymBadgeFanfare)
+    msgbox(JoyvaleCity_Gym_Text_FlareBadgeInfoTakeThis, MSGBOX_DEFAULT)
+    setflag(FLAG_DEFEATED_JOYVALE_GYM)
+    setflag(FLAG_BADGE01_GET)
+    setvar(VAR_0x8008, 1)
+	call(Common_EventScript_SetGymTrainers)
+    goto(JoyvaleCity_Gym_SequenceScript_GiveFlameCharge)
+    end
+}
+
+script JoyvaleCity_Gym_SequenceScript_GiveFlameCharge{
+    giveitem(ITEM_TM43_FLAME_CHARGE)
+	goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+	setflag(FLAG_RECEIVED_TM43_FLAME_CHARGE)
+	msgbox(JoyvaleCity_Gym_Text_ExplainFlameCharge, MSGBOX_DEFAULT)
+	release
+	end
+}
 
 script JoyvaleCity_Gym_SequenceScript_AfterWater{
     msgbox(format("Hey challenger! Lily has a team of sizzling Pokemon! Water, Rock and Ground Type Pokemon are your best bet against her."))
@@ -25,4 +53,28 @@ script JoyvaleCity_Gym_SequenceScript_NoRoom{
     msgbox(format("You have no room! Please come back when you have space to get this fresh water."))
     release
     end
+}
+
+text JoyvaleCity_Gym_TextScript_LilyIntro{
+    format("Lily: It's nice to see you again. I've been looking forward to our match since you helped drive out the Team Frost thugs. Let's skip the pretense and get this show on the road!")
+}
+
+text JoyvaleCity_Gym_TextScript_LilyOutro{
+    format("Lily: You did a great job beating me. Please accept the amazing Flare Badge!")
+}
+
+text JoyvaleCity_Gym_TextScript_LilyPostBattleDialogue{
+    format("You should go back to route 3 and then go east towards the next gym. Good luck and keep an eye out for Team Frost!")
+}
+
+text JoyvaleCity_Gym_TextScript_ReceivedFlareBadge{
+    format("{PLAYER} received the Flare Badge from Gym Leader Lily.")
+}
+
+text JoyvaleCity_Gym_Text_FlareBadgeInfoTakeThis{
+    format("The Flare Badge let's you use the HM move Cut outside of battle. Also, take this with you please.")
+}
+
+text JoyvaleCity_Gym_Text_ExplainFlameCharge{
+    format("That TM contains the move Flame Charge. It's a physical attacking move that the user will charge your foe with, wreathed in fire, to deal damage and boost your own speed stat in the process.")
 }

@@ -3181,16 +3181,16 @@ const struct Trainer gTrainers[] = {
         .party = ITEM_CUSTOM_MOVES(sParty_Drake),
     },
 
-    [TRAINER_ROXANNE_1] =
+    [TRAINER_LILY_1] =
     {
         .trainerClass = TRAINER_CLASS_LEADER,
         .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
         .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("ROXANNE"),
+        .trainerName = _("Lily"),
         .items = {ITEM_POTION, ITEM_POTION, ITEM_NONE, ITEM_NONE},
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne1),
+        .party = ITEM_CUSTOM_MOVES(sParty_Lily_1),
     },
 
     [TRAINER_BRAWLY_1] =
@@ -9239,54 +9239,6 @@ const struct Trainer gTrainers[] = {
         .doubleBattle = FALSE,
         .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
         .party = NO_ITEM_DEFAULT_MOVES(sParty_MayRustboroTorchic),
-    },
-
-    [TRAINER_ROXANNE_2] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("ROXANNE"),
-        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne2),
-    },
-
-    [TRAINER_ROXANNE_3] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("ROXANNE"),
-        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne3),
-    },
-
-    [TRAINER_ROXANNE_4] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("ROXANNE"),
-        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne4),
-    },
-
-    [TRAINER_ROXANNE_5] =
-    {
-        .trainerClass = TRAINER_CLASS_LEADER,
-        .encounterMusic_gender = F_TRAINER_FEMALE | TRAINER_ENCOUNTER_MUSIC_FEMALE,
-        .trainerPic = TRAINER_PIC_LEADER_ROXANNE,
-        .trainerName = _("ROXANNE"),
-        .items = {ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_FULL_RESTORE, ITEM_NONE},
-        .doubleBattle = TRUE,
-        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY,
-        .party = ITEM_CUSTOM_MOVES(sParty_Roxanne5),
     },
 
     [TRAINER_BRAWLY_2] =

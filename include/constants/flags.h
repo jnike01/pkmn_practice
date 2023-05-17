@@ -182,7 +182,7 @@
 #define FLAG_CUTE_PAINTING_MADE              0xA2
 #define FLAG_SMART_PAINTING_MADE             0xA3
 #define FLAG_TOUGH_PAINTING_MADE             0xA4
-#define FLAG_RECEIVED_TM39                   0xA5
+#define FLAG_RECEIVED_TM43_FLAME_CHARGE      0xA5
 #define FLAG_RECEIVED_TM08                   0xA6
 #define FLAG_RECEIVED_TM34                   0xA7
 #define FLAG_RECEIVED_TM50                   0xA8
@@ -440,7 +440,7 @@
 #define FLAG_REMATCH_SAWYER                  0x19B
 #define FLAG_REMATCH_KIRA_AND_DAN            0x19C
 #define FLAG_REMATCH_WALLY                   0x19D
-#define FLAG_REMATCH_ROXANNE                 0x19E
+#define FLAG_UNUSED_0x19E                    0x19E
 #define FLAG_REMATCH_BRAWLY                  0x19F
 #define FLAG_REMATCH_WATTSON                 0x1A0
 #define FLAG_REMATCH_FLANNERY                0x1A1
@@ -1310,7 +1310,7 @@
 #define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
 #define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
 
-#define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
+#define FLAG_DEFEATED_JOYVALE_GYM                                   0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
 #define FLAG_DEFEATED_MAUVILLE_GYM                                  0x4F2
 #define FLAG_DEFEATED_LAVARIDGE_GYM                                 0x4F3

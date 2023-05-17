@@ -190,7 +190,7 @@ text Route3_TextScript_MorrisonOutro{
 }
 
 text Route3_TextScript_AdminSpeech1{
-    format("Jennifer: You are pretty strong, Gym Leader Enya. I was not expecting such a challenge from you. Alas, we have come to a stalemate so Team Frost and I must depart for now. We will meet again...")
+    format("Jennifer: You are pretty strong, Gym Leader Lily. I was not expecting such a challenge from you. Alas, we have come to a stalemate so Team Frost and I must depart for now. We will meet again...")
 }
 
 text Route3_TextScript_AdminSpeech2{
