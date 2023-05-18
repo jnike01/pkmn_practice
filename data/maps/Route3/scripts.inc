@@ -4,12 +4,61 @@ Route3_MapScripts::
 
 
 Route3_DefaultScript_DefaultState::
-	goto_if_unset FLAG_ROUTE_3_EVIL_TEAM, Route3_DefaultScript_DefaultState_1
+	goto_if_unset FLAG_ROUTE_3_EVIL_TEAM, Route3_DefaultScript_DefaultState_2
+Route3_DefaultScript_DefaultState_1:
+	call_if_unset FLAG_RIVAL_BATTLE_CONTROL, Route3_ControlScript_RivalCutsceneControl
 	return
 
-Route3_DefaultScript_DefaultState_1:
+Route3_DefaultScript_DefaultState_2:
 	setflag FLAG_ROUTE_3_TRAINERS
 	fadenewbgm MUS_AQUA_MAGMA_HIDEOUT
+	goto Route3_DefaultScript_DefaultState_1
+
+
+Route3_ItemScript_BallOne::
+	lock
+	giveitem ITEM_BURN_HEAL
+	removeobject 7
+	release
+	end
+
+
+Route3_ItemScript_BallTwo::
+	lock
+	giveitem ITEM_REVIVE
+	removeobject 9
+	release
+	end
+
+
+Route3_ItemScript_BallThree::
+	lock
+	giveitem ITEM_TM05_ROAR
+	removeobject 10
+	release
+	end
+
+
+Route3_ControlScript_RivalCutsceneControl::
+	setflag FLAG_RIVAL_CUT_GIVE
+	return
+
+
+Route3_TriggerScript_RivalCutsceneInit1::
+	lock
+	addobject 13
+	applymovement 13, Route3_MovementScript_RivalToPlayer1
+	waitmovement 0
+	msgbox Route3_TriggerScript_RivalCutsceneInit1_Text_0
+	return
+
+
+Route3_TriggerScript_RivalCutsceneInit2::
+	lock
+	addobject 13
+	applymovement 13, Route3_MovementScript_RivalToPlayer2
+	waitmovement 0
+	msgbox Route3_TriggerScript_RivalCutsceneInit1_Text_0
 	return
 
 
@@ -204,6 +253,30 @@ Route3_MovementScript_LilyLeave:
 	walk_down
 	walk_down
 	step_end
+
+Route3_MovementScript_RivalToPlayer1:
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route3_MovementScript_RivalToPlayer2:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route3_TriggerScript_RivalCutsceneInit1_Text_0:
+	.string "$"
 
 Route3_TriggerScript_IntroduceEvilTeam_Text_0:
 	.string "It looks like there are thugs of some\n"

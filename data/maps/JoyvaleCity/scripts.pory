@@ -7,6 +7,13 @@ script JoyvaleCity_SignScript_CitySign{
     end
 }
 
+script JoyvaleCity_SignScript_GymSign{
+    lock
+    msgbox(format("Joyvale City Gym, Leader: Lily"))
+    release
+    end
+}
+
 script JoyvaleCity_PersonScript_GymExec{
     lock
     faceplayer
@@ -37,4 +44,8 @@ script JoyvaleCity_ItemScript_BallOne{
     removeobject(1)
     release
     end
+}
+
+text JoyvaleCity_TextScript_GymSign{
+    ""
 }

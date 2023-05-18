@@ -7,6 +7,52 @@ script Route3_DefaultScript_DefaultState{
         setflag(FLAG_ROUTE_3_TRAINERS)
         fadenewbgm(MUS_AQUA_MAGMA_HIDEOUT)
     }
+
+    call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, Route3_ControlScript_RivalCutsceneControl)
+}
+
+script Route3_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_BURN_HEAL)
+    removeobject(7)
+    release
+    end
+}
+
+script Route3_ItemScript_BallTwo{
+    lock
+    giveitem(ITEM_REVIVE)
+    removeobject(9)
+    release
+    end
+}
+
+script Route3_ItemScript_BallThree{
+    lock
+    giveitem(ITEM_TM05_ROAR)
+    removeobject(10)
+    release
+    end
+}
+
+script Route3_ControlScript_RivalCutsceneControl{
+    setflag(FLAG_RIVAL_CUT_GIVE)
+}
+
+script Route3_TriggerScript_RivalCutsceneInit1{
+    lock
+    addobject(13)
+    applymovement(13, Route3_MovementScript_RivalToPlayer1)
+    waitmovement(0)
+    msgbox(format(""))
+}
+
+script Route3_TriggerScript_RivalCutsceneInit2{
+    lock
+    addobject(13)
+    applymovement(13, Route3_MovementScript_RivalToPlayer2)
+    waitmovement(0)
+    msgbox(format(""))
 }
 
 script Route3_TriggerScript_IntroduceEvilTeam{
@@ -155,6 +201,15 @@ movement Route3_MovementScript_LilyLeave{
     walk_down
     walk_right * 6
     walk_down * 8
+}
+
+movement Route3_MovementScript_RivalToPlayer1{
+    walk_up * 7
+}
+
+movement Route3_MovementScript_RivalToPlayer2{
+    walk_right 
+    walk_up * 7
 }
 
 text Route3_TextScript_GruntIntro1{

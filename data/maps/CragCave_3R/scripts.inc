@@ -30,6 +30,7 @@ CragCave_3R_ControlScript_RivalBattleSetup::
 
 
 CragCave_3R_TriggerScript_StartRivalBattle1::
+	lock
 	addobject 5
 	applymovement 5, CragCave_3R_MovementScript_RivalApproach1
 	waitmovement 0
@@ -38,10 +39,12 @@ CragCave_3R_TriggerScript_StartRivalBattle1::
 	call CragCave_3R_TrainerScript_RivalBattleTwo
 	call CragCave_3R_SequenceScript_RivalLeave1
 	setvar VAR_RIVAL_STATE, 5
+	release
 	end
 
 
 CragCave_3R_TriggerScript_StartRivalBattle2::
+	lock
 	addobject 5
 	applymovement 5, CragCave_3R_MovementScript_RivalApproach2
 	waitmovement 0
@@ -49,6 +52,7 @@ CragCave_3R_TriggerScript_StartRivalBattle2::
 	waitmovement 0
 	call CragCave_3R_TrainerScript_RivalBattleTwo
 	setvar VAR_RIVAL_STATE, 5
+	release
 	end
 
 

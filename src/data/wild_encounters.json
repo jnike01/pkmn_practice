@@ -11740,52 +11740,52 @@
             "mons": [
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_BIDOOF"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_TAILLOW"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_LEDYBA"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_SCATTERBUG"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_LOTAD"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_MINCCINO"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_GROWLITHE"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_NINCADA"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_PETILIL"
               },
               {
                 "min_level": 4,
-                "max_level": 4,
+                "max_level": 5,
                 "species": "SPECIES_COTTONEE"
               },
               {
@@ -11894,62 +11894,62 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ROGGENROLA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_NOIBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_SLUGMA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_MANKEY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ARON"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_DRILBUR"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_RHYHORN"
               }
             ]
@@ -11963,62 +11963,62 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ROGGENROLA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_NOIBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_SLUGMA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_MANKEY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ARON"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_DRILBUR"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_RHYHORN"
               }
             ]
@@ -12117,62 +12117,62 @@
             "mons": [
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ROGGENROLA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BINACLE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ZUBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_NOIBAT"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_GEODUDE_ALOLAN"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_SLUGMA"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_MANKEY"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_ARON"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_DRILBUR"
               },
               {
                 "min_level": 5,
-                "max_level": 6,
+                "max_level": 7,
                 "species": "SPECIES_RHYHORN"
               }
             ]

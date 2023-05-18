@@ -53,7 +53,7 @@
 #define FLAG_UNUSED_0x029        0x29
 #define FLAG_ROUTE_3_EVIL_TEAM   0x2A
 #define FLAG_ROUTE_3_TRAINERS    0x2B
-#define FLAG_UNUSED_0x02C    0x2C // Unused Flag
+#define FLAG_RIVAL_CUT_GIVE      0x2C
 #define FLAG_UNUSED_0x02D    0x2D // Unused Flag
 #define FLAG_UNUSED_0x02E    0x2E // Unused Flag
 #define FLAG_UNUSED_0x02F    0x2F // Unused Flag
@@ -1217,10 +1217,10 @@
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_EAST_BIG_PEARL                  0x492
 #define FLAG_ITEM_CRAG_CAVE_3R_RARE_CANDY                           0x493
 #define FLAG_ITEM_JOYVALE_CITY_GREAT_BALL                           0x494 
+#define FLAG_ITEM_ROUTE_3_BURN_HEAL                                 0x495
+#define FLAG_ITEM_ROUTE_3_REVIVE                                    0x496
+#define FLAG_ITEM_ROUTE_3_TM_ROAR                                   0x497
 
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
-#define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag

@@ -52,42 +52,7 @@
     }
   ],
   "coord_events": [
-    {
-      "type": "trigger",
-      "x": 0,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_RIVAL_HOUSE_STATE",
-      "var_value": "0",
-      "script": "GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionOne"
-    },
-    {
-      "type": "trigger",
-      "x": 1,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_RIVAL_HOUSE_STATE",
-      "var_value": "0",
-      "script": "GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionTwo"
-    },
-    {
-      "type": "trigger",
-      "x": 2,
-      "y": 7,
-      "elevation": 0,
-      "var": "VAR_RIVAL_HOUSE_STATE",
-      "var_value": "0",
-      "script": "GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionThree"
-    },
-    {
-      "type": "trigger",
-      "x": 3,
-      "y": 8,
-      "elevation": 0,
-      "var": "VAR_RIVAL_HOUSE_STATE",
-      "var_value": "0",
-      "script": "GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionFour"
-    }
+
   ],
   "bg_events": [
     {

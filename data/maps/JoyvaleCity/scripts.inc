@@ -9,6 +9,13 @@ JoyvaleCity_SignScript_CitySign::
 	end
 
 
+JoyvaleCity_SignScript_GymSign::
+	lock
+	msgbox JoyvaleCity_SignScript_GymSign_Text_0
+	release
+	end
+
+
 JoyvaleCity_PersonScript_GymExec::
 	lock
 	faceplayer
@@ -44,6 +51,9 @@ JoyvaleCity_ItemScript_BallOne::
 JoyvaleCity_SignScript_CitySign_Text_0:
 	.string "Joyvale City, a flowery sprawl.$"
 
+JoyvaleCity_SignScript_GymSign_Text_0:
+	.string "Joyvale City Gym, Leader: Lily$"
+
 JoyvaleCity_PersonScript_GymExec_Text_0:
 	.string "The leader is out right now. If you go\n"
 	.string "north to route 3, you should find him in\l"
@@ -58,3 +68,6 @@ JoyvaleCity_PersonScript_NPC2_Text_0:
 	.string "The shade under these trees is really\n"
 	.string "comfortable. Do you like to relax under\l"
 	.string "the shade?$"
+
+JoyvaleCity_TextScript_GymSign::
+	.string "$"

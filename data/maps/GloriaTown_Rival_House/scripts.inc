@@ -1,6 +1,11 @@
 GloriaTown_Rival_House_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, GloriaTown_Rival_House_DefaultScript_DefaultState
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, GloriaTown_Rival_House_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+GloriaTown_Rival_House_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_RIVAL_HOUSE_STATE, 0, GloriaTown_Rival_House_SceneScript_GrandmaDialogueScene
+	.2byte 0
 
 
 GloriaTown_Rival_House_DefaultScript_DefaultState::
@@ -30,54 +35,10 @@ GloriaTown_Rival_House_SignScript_TV::
 	end
 
 
-GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionOne::
+GloriaTown_Rival_House_SceneScript_GrandmaDialogueScene::
 	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma
-	waitmovement 0
 	call GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaOne
-	waitmovement 0
-	msgbox GloriaTown_Rival_House_TextScript_GrandmaDialogue
-	applymovement 1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable
-	waitmovement 0
-	release
-	end
-
-
-GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionTwo::
-	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma
-	waitmovement 0
-	call GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaTwo
-	waitmovement 0
-	msgbox GloriaTown_Rival_House_TextScript_GrandmaDialogue
-	applymovement 1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable
-	waitmovement 0
-	release
-	end
-
-
-GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionThree::
-	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandma
-	waitmovement 0
-	call GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaThree
-	waitmovement 0
-	msgbox GloriaTown_Rival_House_TextScript_GrandmaDialogue
-	applymovement 1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable
-	waitmovement 0
-	release
-	end
-
-
-GloriaTown_Rival_House_TriggerScript_GrandmaDialogueScene_DirectionFour::
-	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_FaceGrandmaTwo
-	waitmovement 0
-	call GloriaTown_Rival_House_ControlScript_GrandmaDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandmaFour
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Rival_House_MovementScript_ToGrandma
 	waitmovement 0
 	msgbox GloriaTown_Rival_House_TextScript_GrandmaDialogue
 	applymovement 1, GloriaTown_Rival_House_MovementScript_GrandmaFaceTable
@@ -103,39 +64,10 @@ GloriaTown_Rival_House_MovementScript_GrandmaFaceTable:
 	face_right
 	step_end
 
-GloriaTown_Rival_House_MovementScript_FaceGrandma:
-	face_right
-	step_end
-
-GloriaTown_Rival_House_MovementScript_FaceGrandmaTwo:
-	face_up
-	step_end
-
-GloriaTown_Rival_House_MovementScript_ToGrandmaOne:
+GloriaTown_Rival_House_MovementScript_ToGrandma:
 	walk_up
 	walk_up
 	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-GloriaTown_Rival_House_MovementScript_ToGrandmaTwo:
-	walk_up
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-GloriaTown_Rival_House_MovementScript_ToGrandmaThree:
-	walk_up
-	walk_right
-	walk_right
-	step_end
-
-GloriaTown_Rival_House_MovementScript_ToGrandmaFour:
-	walk_up
-	walk_up
 	walk_right
 	step_end
 

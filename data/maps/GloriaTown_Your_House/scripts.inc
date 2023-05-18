@@ -1,6 +1,11 @@
 GloriaTown_Your_House_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, GloriaTown_Your_House_DefaultScript_OnTransition
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, GloriaTown_Your_House_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+GloriaTown_Your_House_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_YOUR_HOUSE_STATE, 1, GloriaTown_Your_House_SceneScript_MomDialogueSceneOne
+	.2byte 0
 
 
 GloriaTown_Your_House_DefaultScript_OnTransition::
@@ -37,38 +42,10 @@ GloriaTown_Your_House_PersonScript_Mom_2:
 	goto GloriaTown_Your_House_PersonScript_Mom_1
 
 
-GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionOne::
+GloriaTown_Your_House_SceneScript_MomDialogueSceneOne::
 	lock
 	call GloriaTown_Your_House_ControlScript_MomDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_ToMomOne
-	waitmovement 0
-	msgbox GloriaTown_Your_House_TextScript_MomDialogueOne
-	applymovement 1, GLORIA_TOWN_Your_House_MovementScript_MomFaceLeft
-	waitmovement 0
-	release
-	end
-
-
-GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionTwo::
-	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_PlayerFaceMomOne
-	waitmovement 0
-	call GloriaTown_Your_House_ControlScript_MomDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_ToMomTwo
-	waitmovement 0
-	msgbox GloriaTown_Your_House_TextScript_MomDialogueOne
-	applymovement 1, GLORIA_TOWN_Your_House_MovementScript_MomFaceLeft
-	waitmovement 0
-	release
-	end
-
-
-GloriaTown_Your_House_TriggerScript_MomDialogueSceneOne_DirectionThree::
-	lock
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_PlayerFaceMomTwo
-	waitmovement 0
-	call GloriaTown_Your_House_ControlScript_MomDialogueInit
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_ToMomThree
+	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_Your_House_MovementScript_ToMom
 	waitmovement 0
 	msgbox GloriaTown_Your_House_TextScript_MomDialogueOne
 	applymovement 1, GLORIA_TOWN_Your_House_MovementScript_MomFaceLeft
@@ -94,35 +71,12 @@ GLORIA_TOWN_Your_House_MovementScript_MomFaceLeft:
 	face_left
 	step_end
 
-GloriaTown_Your_House_MovementScript_ToMomOne:
-	walk_down
-	walk_down
-	walk_left
-	walk_left
-	step_end
-
-GloriaTown_Your_House_MovementScript_ToMomTwo:
-	walk_down
-	walk_down
-	walk_down
-	walk_left
-	step_end
-
-GloriaTown_Your_House_MovementScript_ToMomThree:
+GloriaTown_Your_House_MovementScript_ToMom:
 	walk_down
 	walk_down
 	walk_down
 	walk_left
 	walk_left
-	walk_left
-	step_end
-
-GloriaTown_Your_House_MovementScript_PlayerFaceMomOne:
-	face_down
-	step_end
-
-GloriaTown_Your_House_MovementScript_PlayerFaceMomTwo:
-	face_left
 	step_end
 
 GloriaTown_Your_House_SignScript_TV_Text_0:
