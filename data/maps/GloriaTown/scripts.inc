@@ -1,6 +1,11 @@
 GloriaTown_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, GloriaTown_DefaultScript_DefaultState
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, GloriaTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE
 	.byte 0
+
+GloriaTown_MapScripts_MAP_SCRIPT_ON_FRAME_TABLE:
+	map_script_2 VAR_RIVAL_STATE, 2, GloriaTown_SceneScript_RivalEncounterScene
+	.2byte 0
 
 
 GloriaTown_DefaultScript_DefaultState::
@@ -105,33 +110,13 @@ GloriaTown_TrainerScript_RivalBattleOne::
 	closemessage
 	setflag FLAG_RIVAL_BATTLE_ONE
 	setvar VAR_GLORIA_TOWN_STATE, 3
-	call GloriaTown_SequenceScript_RivalLeave1
+	call GloriaTown_SequenceScript_RivalLeave
 	return
 
 
-GloriaTown_SequenceScript_RivalLeave1::
+GloriaTown_SequenceScript_RivalLeave::
 	lockall
-	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle1
-	waitmovement 0
-	removeobject 6
-	fadedefaultbgm
-	releaseall
-	return
-
-
-GloriaTown_SequenceScript_RivalLeave2::
-	lockall
-	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle2
-	waitmovement 0
-	removeobject 6
-	fadedefaultbgm
-	releaseall
-	return
-
-
-GloriaTown_SequenceScript_RivalLeave3::
-	lockall
-	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle3
+	applymovement 6, GloriaTown_MovementScript_RivalLeaveAfterBattle
 	waitmovement 0
 	removeobject 6
 	fadedefaultbgm
@@ -140,37 +125,13 @@ GloriaTown_SequenceScript_RivalLeave3::
 
 
 GloriaTown_MusicScript_RivalEncounter::
-	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	return
 
 
-GloriaTown_TriggerScript_RivalEncounter1::
+GloriaTown_SceneScript_RivalEncounterScene::
 	lock
-	applymovement 6, GloriaTown_MovementScript_RivalToPlayer1
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
-	waitmovement 0
-	call GloriaTown_TrainerScript_RivalBattleOne
-	setvar VAR_RIVAL_STATE, 3
-	release
-	end
-
-
-GloriaTown_TriggerScript_RivalEncounter2::
-	lock
-	applymovement 6, GloriaTown_MovementScript_RivalToPlayer2
-	waitmovement 0
-	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
-	waitmovement 0
-	call GloriaTown_TrainerScript_RivalBattleOne
-	setvar VAR_RIVAL_STATE, 3
-	release
-	end
-
-
-GloriaTown_TriggerScript_RivalEncounter3::
-	lock
-	applymovement 6, GloriaTown_MovementScript_RivalToPlayer3
+	applymovement 6, GloriaTown_MovementScript_RivalToPlayer
 	waitmovement 0
 	applymovement OBJ_EVENT_ID_PLAYER, GloriaTown_MovementScript_FaceRival
 	waitmovement 0
@@ -206,30 +167,7 @@ GloriaTown_MovementScript_StopPlayerLab:
 	walk_right
 	step_end
 
-GloriaTown_MovementScript_RivalToPlayer1:
-	walk_down
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-GloriaTown_MovementScript_RivalToPlayer2:
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	walk_left
-	step_end
-
-GloriaTown_MovementScript_RivalToPlayer3:
-	walk_left
+GloriaTown_MovementScript_RivalToPlayer:
 	walk_left
 	walk_left
 	walk_left
@@ -244,33 +182,7 @@ GloriaTown_MovementScript_FaceRival:
 	face_right
 	step_end
 
-GloriaTown_MovementScript_RivalLeaveAfterBattle1:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-GloriaTown_MovementScript_RivalLeaveAfterBattle2:
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	walk_right
-	step_end
-
-GloriaTown_MovementScript_RivalLeaveAfterBattle3:
-	walk_right
+GloriaTown_MovementScript_RivalLeaveAfterBattle:
 	walk_right
 	walk_right
 	walk_right

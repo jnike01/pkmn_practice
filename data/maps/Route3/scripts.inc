@@ -33,7 +33,7 @@ Route3_ItemScript_BallTwo::
 
 Route3_ItemScript_BallThree::
 	lock
-	giveitem ITEM_TM05_ROAR
+	giveitem ITEM_TM05
 	removeobject 10
 	release
 	end
@@ -49,8 +49,18 @@ Route3_TriggerScript_RivalCutsceneInit1::
 	addobject 13
 	applymovement 13, Route3_MovementScript_RivalToPlayer1
 	waitmovement 0
-	msgbox Route3_TriggerScript_RivalCutsceneInit1_Text_0
-	return
+	call Route3_MusicScript_RivalEncounter
+	msgbox Route3_TextScript_RivalCutGive
+	giveitem ITEM_HM01, 1
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox Route3_TextScript_RivalDialogueEnd
+	applymovement 13, Route3_MovementScript_RivalLeave1
+	waitmovement 0
+	removeobject 13
+	playse SE_EXIT
+	fadedefaultbgm
+	release
+	end
 
 
 Route3_TriggerScript_RivalCutsceneInit2::
@@ -58,7 +68,22 @@ Route3_TriggerScript_RivalCutsceneInit2::
 	addobject 13
 	applymovement 13, Route3_MovementScript_RivalToPlayer2
 	waitmovement 0
-	msgbox Route3_TriggerScript_RivalCutsceneInit1_Text_0
+	call Route3_MusicScript_RivalEncounter
+	msgbox Route3_TextScript_RivalCutGive
+	giveitem ITEM_HM01, 1
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	msgbox Route3_TextScript_RivalDialogueEnd
+	applymovement 13, Route3_MovementScript_RivalLeave2
+	waitmovement 0
+	removeobject 13
+	playse SE_EXIT
+	fadedefaultbgm
+	release
+	end
+
+
+Route3_MusicScript_RivalEncounter::
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
 	return
 
 
@@ -169,6 +194,32 @@ Route3_TrainerScript_Morrison::
 	end
 
 
+Route3_TrainerScript_Jackie::
+	trainerbattle_single TRAINER_JACKIE_1, Route3_TextScript_JackieIntro, Route3_TextScript_JackieOutro
+	msgbox Route3_TrainerScript_Jackie_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
+Route3_TrainerScript_Oswald::
+	trainerbattle_single TRAINER_OSWALD_1, Route3_TextScript_OswaldIntro, Route3_TextScript_OswaldOutro
+	msgbox Route3_TrainerScript_Oswald_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
+Route3_MovementScript_RivalLeave1:
+	walk_right
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
+Route3_MovementScript_RivalLeave2:
+	walk_left
+	walk_up
+	walk_up
+	walk_up
+	step_end
+
 Route3_MovementScript_BlockPathMove:
 	walk_left
 	step_end
@@ -275,9 +326,6 @@ Route3_MovementScript_RivalToPlayer2:
 	walk_up
 	step_end
 
-Route3_TriggerScript_RivalCutsceneInit1_Text_0:
-	.string "$"
-
 Route3_TriggerScript_IntroduceEvilTeam_Text_0:
 	.string "It looks like there are thugs of some\n"
 	.string "kind here. Maybe the gym leader is\l"
@@ -304,6 +352,48 @@ Route3_TrainerScript_Mary_Text_0:
 Route3_TrainerScript_Morrison_Text_0:
 	.string "You should look into some good Bug\n"
 	.string "Pokemon for your team.$"
+
+Route3_TrainerScript_Jackie_Text_0:
+	.string "I cannot foresee anything about you\n"
+	.string "beyond this point. The way your life\l"
+	.string "goes is entirely in your hands.$"
+
+Route3_TrainerScript_Oswald_Text_0:
+	.string "Remember to always enjoy life. You\n"
+	.string "never know when everything could stop\l"
+	.string "going your way.$"
+
+Route3_TextScript_JackieIntro::
+	.string "I have forseen this battle coming. The\n"
+	.string "outcome is unclear to me so let's fight.$"
+
+Route3_TextScript_JackieOutro::
+	.string "You are strong to avoid my divination\n"
+	.string "and win.$"
+
+Route3_TextScript_OswaldIntro::
+	.string "Hello there, sonny. It's a beautiful time\n"
+	.string "to be alive! Let's have a friendly bout\l"
+	.string "to commemorate life!$"
+
+Route3_TextScript_OswaldOutro::
+	.string "I wish the best of luck to you sonny.$"
+
+Route3_TextScript_RivalCutGive::
+	.string "Yo, {PLAYER}! I see you have the first\n"
+	.string "gym badge now. I got mine before you\l"
+	.string "came so now we both are ready to go to\l"
+	.string "the next leg of our journey. I got two\l"
+	.string "of these HM's though, so here you go...$"
+
+Route3_TextScript_RivalDialogueEnd::
+	.string "That HM contains Cut which is a solid\n"
+	.string "move in battle. The real kicker though,\l"
+	.string "is it can be used to cut down trees like\l"
+	.string "the one below me. Next time we cross\l"
+	.string "paths, you better be ready to have a\l"
+	.string "battle with me and this time you're\l"
+	.string "gonna lose! See you later bro!$"
 
 Route3_TextScript_GruntIntro1::
 	.string "You should run along, little kid! We of\n"

@@ -29,7 +29,7 @@ script Route3_ItemScript_BallTwo{
 
 script Route3_ItemScript_BallThree{
     lock
-    giveitem(ITEM_TM05_ROAR)
+    giveitem(ITEM_TM05)
     removeobject(10)
     release
     end
@@ -44,7 +44,18 @@ script Route3_TriggerScript_RivalCutsceneInit1{
     addobject(13)
     applymovement(13, Route3_MovementScript_RivalToPlayer1)
     waitmovement(0)
-    msgbox(format(""))
+    call(Route3_MusicScript_RivalEncounter)
+    msgbox(Route3_TextScript_RivalCutGive)
+    giveitem(ITEM_HM01, 1)
+    goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+    msgbox(Route3_TextScript_RivalDialogueEnd)
+    applymovement(13, Route3_MovementScript_RivalLeave1)
+    waitmovement(0)
+    removeobject(13)
+    playse(SE_EXIT)
+    fadedefaultbgm
+    release
+    end
 }
 
 script Route3_TriggerScript_RivalCutsceneInit2{
@@ -52,7 +63,23 @@ script Route3_TriggerScript_RivalCutsceneInit2{
     addobject(13)
     applymovement(13, Route3_MovementScript_RivalToPlayer2)
     waitmovement(0)
-    msgbox(format(""))
+    call(Route3_MusicScript_RivalEncounter)
+    msgbox(Route3_TextScript_RivalCutGive)
+    giveitem(ITEM_HM01, 1)
+    goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+    msgbox(Route3_TextScript_RivalDialogueEnd)
+    applymovement(13, Route3_MovementScript_RivalLeave2)
+    waitmovement(0)
+    removeobject(13)
+    playse(SE_EXIT)
+    fadedefaultbgm
+    release
+    end
+}
+
+script Route3_MusicScript_RivalEncounter{
+    playbgm(MUS_ENCOUNTER_BRENDAN, FALSE)
+    return
 }
 
 script Route3_TriggerScript_IntroduceEvilTeam{
@@ -162,6 +189,28 @@ script Route3_TrainerScript_Morrison{
     end
 }
 
+script Route3_TrainerScript_Jackie{
+    trainerbattle_single(TRAINER_JACKIE_1, Route3_TextScript_JackieIntro, Route3_TextScript_JackieOutro)
+    msgbox(format("I cannot foresee anything about you beyond this point. The way your life goes is entirely in your hands."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route3_TrainerScript_Oswald{
+    trainerbattle_single(TRAINER_OSWALD_1, Route3_TextScript_OswaldIntro, Route3_TextScript_OswaldOutro)
+    msgbox(format("Remember to always enjoy life. You never know when everything could stop going your way."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+movement Route3_MovementScript_RivalLeave1{
+    walk_right
+    walk_up * 3
+}
+
+movement Route3_MovementScript_RivalLeave2{
+    walk_left
+    walk_up * 3
+}
+
 movement Route3_MovementScript_BlockPathMove{
     walk_left
 }
@@ -210,6 +259,30 @@ movement Route3_MovementScript_RivalToPlayer1{
 movement Route3_MovementScript_RivalToPlayer2{
     walk_right 
     walk_up * 7
+}
+
+text Route3_TextScript_JackieIntro{
+    format("I have forseen this battle coming. The outcome is unclear to me so let's fight.")
+}
+
+text Route3_TextScript_JackieOutro{
+    format("You are strong to avoid my divination and win.")
+}
+
+text Route3_TextScript_OswaldIntro{
+    format("Hello there, sonny. It's a beautiful time to be alive! Let's have a friendly bout to commemorate life!")
+}
+
+text Route3_TextScript_OswaldOutro{
+    format("I wish the best of luck to you sonny.")
+}
+
+text Route3_TextScript_RivalCutGive{
+    format("Yo, {PLAYER}! I see you have the first gym badge now. I got mine before you came so now we both are ready to go to the next leg of our journey. I got two of these HM's though, so here you go...")
+}
+
+text Route3_TextScript_RivalDialogueEnd{
+    format("That HM contains Cut which is a solid move in battle. The real kicker though, is it can be used to cut down trees like the one below me. Next time we cross paths, you better be ready to have a battle with me and this time you're gonna lose! See you later bro!")
 }
 
 text Route3_TextScript_GruntIntro1{

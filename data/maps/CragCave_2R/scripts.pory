@@ -2,7 +2,7 @@ mapscripts CragCave_2R_MapScripts{}
 
 script CragCave_2R_ItemScript_BallOne{
     lock
-    giveitem(ITEM_TM39_ROCK_TOMB)
+    giveitem(ITEM_TM39)
     removeobject(1)
     release
     end

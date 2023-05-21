@@ -38,7 +38,7 @@ JoyvaleCity_Gym_SequenceScript_LilyDefeated::
 
 
 JoyvaleCity_Gym_SequenceScript_GiveFlameCharge::
-	giveitem ITEM_TM43_FLAME_CHARGE
+	giveitem ITEM_TM43
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_TM43_FLAME_CHARGE
 	msgbox JoyvaleCity_Gym_Text_ExplainFlameCharge, MSGBOX_DEFAULT

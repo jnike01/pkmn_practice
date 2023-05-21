@@ -20,6 +20,7 @@ CragCave_TriggerScript_RivalSequence::
 	lock
 	applymovement 3, CragCave_MovementScript_RivalToPlayer
 	waitmovement 0
+	call CragCave_MusicScript_RivalEncounter
 	msgbox CragCave_TriggerScript_RivalSequence_Text_0
 	closemessage
 	applymovement 3, CragCave_MovementScript_RivalAwayFromPlayer
@@ -27,8 +28,14 @@ CragCave_TriggerScript_RivalSequence::
 	removeobject 3
 	setflag FLAG_CRAG_RIVAL_TRIGGERED
 	setvar VAR_RIVAL_STATE, 4
+	fadedefaultbgm
 	release
 	end
+
+
+CragCave_MusicScript_RivalEncounter::
+	playbgm MUS_ENCOUNTER_BRENDAN, FALSE
+	return
 
 
 CragCave_MovementScript_RivalToPlayer:

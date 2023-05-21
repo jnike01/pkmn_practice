@@ -771,8 +771,8 @@
 #define TRAINER_CRISTIN_1                   767
 #define TRAINER_MAY_RUSTBORO_TREECKO        768
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
-#define TRAINER_UNUSED_770                  770
-#define TRAINER_UNUSED_771                  771
+#define TRAINER_JACKIE_1                    770
+#define TRAINER_OSWALD_1                    771
 #define TRAINER_UNUSED_772                  772
 #define TRAINER_UNUSED_773                  773
 #define TRAINER_BRAWLY_2                    774

@@ -33,7 +33,7 @@ Route2_TrainerScript_Jakob::
 
 Route2_TrainerScript_Serena::
 	trainerbattle_single TRAINER_SERENA_1, Route2_TextScript_Serena_Intro, Route2_TextScript_Serena_Outro
-	msgbox Route2_TextScript_Serena_Dialogue
+	msgbox Route2_TextScript_Serena_Dialogue, MSGBOX_AUTOCLOSE
 	return
 
 
