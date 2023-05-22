@@ -341,7 +341,6 @@ static const struct LandmarkList sLandmarkLists[] =
     {MAPSEC_ROUTE_103, 2, Landmarks_Route103_2},
     {MAPSEC_ROUTE_104, 0, Landmarks_Route104_0},
     {MAPSEC_ROUTE_104, 1, Landmarks_Route104_1},
-    {MAPSEC_ROUTE_105, 0, Landmarks_Route105_0},
     {MAPSEC_ROUTE_108, 0, Landmarks_Route108_0},
     {MAPSEC_ROUTE_109, 0, Landmarks_Route109_0},
     {MAPSEC_ROUTE_110, 0, Landmarks_Route110_0},

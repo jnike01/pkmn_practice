@@ -192,16 +192,6 @@
       "blockdata_filepath": "data/layouts/Route104/map.bin"
     },
     {
-      "id": "LAYOUT_ROUTE105",
-      "name": "Route105_Layout",
-      "width": 40,
-      "height": 80,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
-      "border_filepath": "data/layouts/Route105/border.bin",
-      "blockdata_filepath": "data/layouts/Route105/map.bin"
-    },
-    {
       "id": "LAYOUT_ROUTE107",
       "name": "Route107_Layout",
       "width": 60,

@@ -38,36 +38,6 @@ AbnormalWeather_EventScript_PlaceTilesRoute118West::
 	setmetatile 9, 6, METATILE_General_CaveEntrance_Bottom, FALSE
 	return
 
-AbnormalWeather_EventScript_PlaceTilesRoute105North::
-	setmetatile 10, 28, METATILE_General_RoughWater, FALSE
-	setmetatile 11, 28, METATILE_General_RoughWater, FALSE
-	setmetatile 9, 29, METATILE_General_RoughWater, FALSE
-	setmetatile 10, 29, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 11, 29, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 12, 29, METATILE_General_RoughWater, FALSE
-	setmetatile 9, 30, METATILE_General_RoughWater, FALSE
-	setmetatile 10, 30, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 11, 30, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 12, 30, METATILE_General_RoughWater, FALSE
-	setmetatile 10, 31, METATILE_General_RoughWater, FALSE
-	setmetatile 11, 31, METATILE_General_RoughWater, FALSE
-	return
-
-AbnormalWeather_EventScript_PlaceTilesRoute105South::
-	setmetatile 20, 53, METATILE_General_RoughWater, FALSE
-	setmetatile 21, 53, METATILE_General_RoughWater, FALSE
-	setmetatile 19, 54, METATILE_General_RoughWater, FALSE
-	setmetatile 20, 54, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 21, 54, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 22, 54, METATILE_General_RoughWater, FALSE
-	setmetatile 19, 55, METATILE_General_RoughWater, FALSE
-	setmetatile 20, 55, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 21, 55, METATILE_General_RoughDeepWater, FALSE
-	setmetatile 22, 55, METATILE_General_RoughWater, FALSE
-	setmetatile 20, 56, METATILE_General_RoughWater, FALSE
-	setmetatile 21, 56, METATILE_General_RoughWater, FALSE
-	return
-
 AbnormalWeather_EventScript_PlaceTilesRoute125West::
 	setmetatile 8, 16, METATILE_General_RoughWater, FALSE
 	setmetatile 9, 16, METATILE_General_RoughWater, FALSE
@@ -210,8 +180,6 @@ AbnormalWeather_EventScript_CleanupMapTiles::
 	case ABNORMAL_WEATHER_ROUTE_116_SOUTH, AbnormalWeather_EventScript_CleanupRoute116South
 	case ABNORMAL_WEATHER_ROUTE_118_EAST, AbnormalWeather_EventScript_CleanupRoute118East
 	case ABNORMAL_WEATHER_ROUTE_118_WEST, AbnormalWeather_EventScript_CleanupRoute118West
-	case ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_EventScript_CleanupRoute105North
-	case ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_EventScript_CleanupRoute105South
 	case ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_EventScript_CleanupRoute125West
 	case ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_EventScript_CleanupRoute125East
 	case ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_EventScript_CleanupRoute127North
@@ -258,36 +226,6 @@ AbnormalWeather_EventScript_CleanupRoute118East::
 AbnormalWeather_EventScript_CleanupRoute118West::
 	setmetatile 9, 5, METATILE_General_RockWall_RockBase, TRUE
 	setmetatile 9, 6, METATILE_General_RockWall_GrassBase, TRUE
-	return
-
-AbnormalWeather_EventScript_CleanupRoute105North::
-	setmetatile 10, 28, METATILE_General_CalmWater, FALSE
-	setmetatile 11, 28, METATILE_General_CalmWater, FALSE
-	setmetatile 9, 29, METATILE_General_CalmWater, FALSE
-	setmetatile 10, 29, METATILE_General_CalmWater, FALSE
-	setmetatile 11, 29, METATILE_General_CalmWater, FALSE
-	setmetatile 12, 29, METATILE_General_CalmWater, FALSE
-	setmetatile 9, 30, METATILE_General_CalmWater, FALSE
-	setmetatile 10, 30, METATILE_General_CalmWater, FALSE
-	setmetatile 11, 30, METATILE_General_CalmWater, FALSE
-	setmetatile 12, 30, METATILE_General_CalmWater, FALSE
-	setmetatile 10, 31, METATILE_General_CalmWater, FALSE
-	setmetatile 11, 31, METATILE_General_CalmWater, FALSE
-	return
-
-AbnormalWeather_EventScript_CleanupRoute105South::
-	setmetatile 20, 53, METATILE_General_CalmWater, FALSE
-	setmetatile 21, 53, METATILE_General_CalmWater, FALSE
-	setmetatile 19, 54, METATILE_General_CalmWater, FALSE
-	setmetatile 20, 54, METATILE_General_CalmWater, FALSE
-	setmetatile 21, 54, METATILE_General_CalmWater, FALSE
-	setmetatile 22, 54, METATILE_General_CalmWater, FALSE
-	setmetatile 19, 55, METATILE_General_CalmWater, FALSE
-	setmetatile 20, 55, METATILE_General_CalmWater, FALSE
-	setmetatile 21, 55, METATILE_General_CalmWater, FALSE
-	setmetatile 22, 55, METATILE_General_CalmWater, FALSE
-	setmetatile 20, 56, METATILE_General_CalmWater, FALSE
-	setmetatile 21, 56, METATILE_General_CalmWater, FALSE
 	return
 
 AbnormalWeather_EventScript_CleanupRoute125West::
@@ -382,22 +320,12 @@ AbnormalWeather_EventScript_CleanupRoute129East::
 
 AbnormalWeather_Underwater_SetupEscapeWarp::
 	switch VAR_ABNORMAL_WEATHER_LOCATION
-	case ABNORMAL_WEATHER_ROUTE_105_NORTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute105North
-	case ABNORMAL_WEATHER_ROUTE_105_SOUTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute105South
 	case ABNORMAL_WEATHER_ROUTE_125_WEST, AbnormalWeather_Underwater_SetupEscapeWarpRoute125West
 	case ABNORMAL_WEATHER_ROUTE_125_EAST, AbnormalWeather_Underwater_SetupEscapeWarpRoute125East
 	case ABNORMAL_WEATHER_ROUTE_127_NORTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute127North
 	case ABNORMAL_WEATHER_ROUTE_127_SOUTH, AbnormalWeather_Underwater_SetupEscapeWarpRoute127South
 	case ABNORMAL_WEATHER_ROUTE_129_WEST, AbnormalWeather_Underwater_SetupEscapeWarpRoute129West
 	case ABNORMAL_WEATHER_ROUTE_129_EAST, AbnormalWeather_Underwater_SetupEscapeWarpRoute129East
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute105North::
-	setescapewarp MAP_ROUTE105, 11, 29
-	return
-
-AbnormalWeather_Underwater_SetupEscapeWarpRoute105South::
-	setescapewarp MAP_ROUTE105, 21, 54
 	return
 
 AbnormalWeather_Underwater_SetupEscapeWarpRoute125West::

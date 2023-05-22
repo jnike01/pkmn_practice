@@ -153,14 +153,6 @@
       "height": 3
     },
     {
-      "map_section": "MAPSEC_ROUTE_105",
-      "name": "ROUTE 105",
-      "x": 0,
-      "y": 10,
-      "width": 1,
-      "height": 3
-    },
-    {
       "map_section": "MAPSEC_ROUTE_107",
       "name": "ROUTE 107",
       "x": 3,
