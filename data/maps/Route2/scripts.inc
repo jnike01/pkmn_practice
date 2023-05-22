@@ -25,6 +25,13 @@ Route2_SignScript_RouteSign::
 	end
 
 
+Route2_SignScript_CragCave::
+	lock
+	msgbox Route2_SignScript_CragCave_Text_0
+	release
+	end
+
+
 Route2_TrainerScript_Jakob::
 	trainerbattle_single TRAINER_JAKOB_1, Route2_TextScript_Jakob_Intro, Route2_TextScript_Jakob_Outro
 	msgbox Route2_TextScript_Jakob_Dialogue, MSGBOX_AUTOCLOSE
@@ -39,6 +46,9 @@ Route2_TrainerScript_Serena::
 
 Route2_SignScript_RouteSign_Text_0:
 	.string "Route 2, mountainous greenland.$"
+
+Route2_SignScript_CragCave_Text_0:
+	.string "Entrance to Crag Cave.$"
 
 Route2_TextScript_Jakob_Intro::
 	.string "There's a decent selection of bugs here\n"

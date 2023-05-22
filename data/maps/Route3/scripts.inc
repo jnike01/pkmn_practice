@@ -15,6 +15,19 @@ Route3_DefaultScript_DefaultState_2:
 	goto Route3_DefaultScript_DefaultState_1
 
 
+Route3_SignScript_RouteSign::
+	lock
+	msgbox Route3_SignScript_RouteSign_Text_0
+	return
+
+
+Route3_SignScript_SummertreeThicket::
+	lock
+	msgbox Route3_SignScript_SummertreeThicket_Text_0
+	release
+	end
+
+
 Route3_ItemScript_BallOne::
 	lock
 	giveitem ITEM_BURN_HEAL
@@ -49,16 +62,20 @@ Route3_TriggerScript_RivalCutsceneInit1::
 	addobject 13
 	applymovement 13, Route3_MovementScript_RivalToPlayer1
 	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToRival
+	waitmovement 0
 	call Route3_MusicScript_RivalEncounter
 	msgbox Route3_TextScript_RivalCutGive
 	giveitem ITEM_HM01, 1
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox Route3_TextScript_RivalDialogueEnd
+	closemessage
 	applymovement 13, Route3_MovementScript_RivalLeave1
 	waitmovement 0
 	removeobject 13
 	playse SE_EXIT
 	fadedefaultbgm
+	setvar VAR_ROUTE_3_CUTSCENE, 2
 	release
 	end
 
@@ -68,16 +85,20 @@ Route3_TriggerScript_RivalCutsceneInit2::
 	addobject 13
 	applymovement 13, Route3_MovementScript_RivalToPlayer2
 	waitmovement 0
+	applymovement OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToRival
+	waitmovement 0
 	call Route3_MusicScript_RivalEncounter
 	msgbox Route3_TextScript_RivalCutGive
 	giveitem ITEM_HM01, 1
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox Route3_TextScript_RivalDialogueEnd
+	closemessage
 	applymovement 13, Route3_MovementScript_RivalLeave2
 	waitmovement 0
 	removeobject 13
 	playse SE_EXIT
 	fadedefaultbgm
+	setvar VAR_ROUTE_3_CUTSCENE, 2
 	release
 	end
 
@@ -220,6 +241,10 @@ Route3_MovementScript_RivalLeave2:
 	walk_up
 	step_end
 
+Route3_MovementScript_PlayerToRival:
+	face_down
+	step_end
+
 Route3_MovementScript_BlockPathMove:
 	walk_left
 	step_end
@@ -325,6 +350,12 @@ Route3_MovementScript_RivalToPlayer2:
 	walk_up
 	walk_up
 	step_end
+
+Route3_SignScript_RouteSign_Text_0:
+	.string "Route 3, a calming path.$"
+
+Route3_SignScript_SummertreeThicket_Text_0:
+	.string "Entrance to Summertree Wood.$"
 
 Route3_TriggerScript_IntroduceEvilTeam_Text_0:
 	.string "It looks like there are thugs of some\n"

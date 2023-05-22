@@ -209,7 +209,8 @@
 #define MAPSEC_CRAG_CAVE                    0xD8
 #define MAPSEC_JOYVALE_CITY                 0xD9
 #define MAPSEC_ROUTE_THREE                  0xDA
-#define MAPSEC_NONE                         0xDB
+#define MAPSEC_SUMMERTREE_THICKET           0xDB
+#define MAPSEC_NONE                         0xDC
 
 #define METLOC_SPECIAL_EGG                  0xFD
 #define METLOC_IN_GAME_TRADE                0xFE

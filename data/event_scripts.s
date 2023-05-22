@@ -1085,3 +1085,5 @@ Common_EventScript_LegendaryFlewAway::
 	.include "data/maps/JoyvaleCity_Gym/scripts.inc"
 
 	.include "data/maps/JoyvaleCity_Gym_B1F/scripts.inc"
+
+	.include "data/maps/SummertreeThicket/scripts.inc"

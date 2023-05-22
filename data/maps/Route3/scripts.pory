@@ -11,6 +11,18 @@ script Route3_DefaultScript_DefaultState{
     call_if_unset(FLAG_RIVAL_BATTLE_CONTROL, Route3_ControlScript_RivalCutsceneControl)
 }
 
+script Route3_SignScript_RouteSign{
+    lock
+    msgbox(format("Route 3, a calming path."))
+}
+
+script Route3_SignScript_SummertreeThicket{
+    lock
+    msgbox(format("Entrance to Summertree Wood."))
+    release
+    end
+}
+
 script Route3_ItemScript_BallOne{
     lock
     giveitem(ITEM_BURN_HEAL)
@@ -44,16 +56,20 @@ script Route3_TriggerScript_RivalCutsceneInit1{
     addobject(13)
     applymovement(13, Route3_MovementScript_RivalToPlayer1)
     waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToRival)
+    waitmovement(0)
     call(Route3_MusicScript_RivalEncounter)
     msgbox(Route3_TextScript_RivalCutGive)
     giveitem(ITEM_HM01, 1)
     goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
     msgbox(Route3_TextScript_RivalDialogueEnd)
+    closemessage
     applymovement(13, Route3_MovementScript_RivalLeave1)
     waitmovement(0)
     removeobject(13)
     playse(SE_EXIT)
     fadedefaultbgm
+    setvar(VAR_ROUTE_3_CUTSCENE, 2)
     release
     end
 }
@@ -63,16 +79,20 @@ script Route3_TriggerScript_RivalCutsceneInit2{
     addobject(13)
     applymovement(13, Route3_MovementScript_RivalToPlayer2)
     waitmovement(0)
+    applymovement(OBJ_EVENT_ID_PLAYER, Route3_MovementScript_PlayerToRival)
+    waitmovement(0)
     call(Route3_MusicScript_RivalEncounter)
     msgbox(Route3_TextScript_RivalCutGive)
     giveitem(ITEM_HM01, 1)
     goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
     msgbox(Route3_TextScript_RivalDialogueEnd)
+    closemessage
     applymovement(13, Route3_MovementScript_RivalLeave2)
     waitmovement(0)
     removeobject(13)
     playse(SE_EXIT)
     fadedefaultbgm
+    setvar(VAR_ROUTE_3_CUTSCENE, 2)
     release
     end
 }
@@ -209,6 +229,10 @@ movement Route3_MovementScript_RivalLeave1{
 movement Route3_MovementScript_RivalLeave2{
     walk_left
     walk_up * 3
+}
+
+movement Route3_MovementScript_PlayerToRival{
+    face_down
 }
 
 movement Route3_MovementScript_BlockPathMove{

@@ -4470,6 +4470,16 @@
       "secondary_tileset": "gTileset_LavaridgeGym",
       "border_filepath": "data/layouts/JoyvaleCity_Gym_B1F/border.bin",
       "blockdata_filepath": "data/layouts/JoyvaleCity_Gym_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SUMMERTREE_THICKET",
+      "name": "SummertreeThicket_Layout",
+      "width": 46,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/SummertreeThicket/border.bin",
+      "blockdata_filepath": "data/layouts/SummertreeThicket/map.bin"
     }
   ]
 }

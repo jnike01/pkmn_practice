@@ -23,6 +23,13 @@ script Route2_SignScript_RouteSign{
     end
 }
 
+script Route2_SignScript_CragCave{
+    lock
+    msgbox("Entrance to Crag Cave.")
+    release
+    end
+}
+
 script Route2_TrainerScript_Jakob{
     trainerbattle_single(TRAINER_JAKOB_1, Route2_TextScript_Jakob_Intro, Route2_TextScript_Jakob_Outro)
     msgbox(Route2_TextScript_Jakob_Dialogue, MSGBOX_AUTOCLOSE)

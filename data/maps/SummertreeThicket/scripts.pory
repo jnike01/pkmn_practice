@@ -1,0 +1,8 @@
+mapscripts SummertreeThicket_MapScripts{}
+
+script SummertreeThicket_SignScript_ForestSign{
+    lock
+    msgbox(format("Summertree Wood, a bountiful forest."))
+    release
+    end
+}

@@ -235,9 +235,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_CUT] =
     {
         .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 95,
+        .power = 60,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
         .pp = 30,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
