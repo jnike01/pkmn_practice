@@ -6,3 +6,12 @@ script SummertreeThicket_SignScript_ForestSign{
     release
     end
 }
+
+script SummertreeThicket_ItemScript_BallOne{
+    lock
+    giveitem(ITEM_SUPER_POTION, 1)
+    //goto_if_eq(VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull)
+    removeobject(3)
+    release
+    end
+}
