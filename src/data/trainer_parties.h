@@ -12059,12 +12059,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Terry_1[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Serena[] = {
     {
     .iv = 0,
-    .lvl = 4,
+    .lvl = 6,
     .species = SPECIES_ODDISH,
     },
     {
     .iv = 0,
-    .lvl = 5,
+    .lvl = 6,
     .species = SPECIES_PIKIPEK,
     }
 };
@@ -12072,12 +12072,12 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Serena[] = {
 static const struct TrainerMonNoItemDefaultMoves sParty_Jakob[] = {
     {
     .iv = 0,
-    .lvl = 4,
+    .lvl = 5,
     .species = SPECIES_PARAS,
     },
     {
     .iv = 0,
-    .lvl = 5,
+    .lvl = 6,
     .species = SPECIES_LEDYBA,
     }
 };
@@ -12228,5 +12228,75 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Oswald_1[] = {
     .iv = 0,
     .lvl = 14,
     .species = SPECIES_ELECTRIKE,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Caleb_1[] = {
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_VENIPEDE,
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_SWADLOON,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Lizzy_1[] = {
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_BELLSPROUT,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_WOOPER,
+    },
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_DUCKLETT,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Joshua_1[] = {
+    {
+    .iv = 0,
+    .lvl = 14,
+    .species = SPECIES_SKORUPI,
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_SKIPLOOM,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Tina_1[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_FLETCHINDER,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Summertree_Frost_Grunt[] = {
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_SNORUNT,
+    },
+    {
+    .iv = 0,
+    .lvl = 15,
+    .species = SPECIES_SLOWPOKE,
+    },
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_SMOOCHUM,
     }
 };

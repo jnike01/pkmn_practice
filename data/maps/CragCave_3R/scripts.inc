@@ -138,8 +138,8 @@ CragCave_3R_MovementScript_RivalExit2:
 	step_end
 
 CragCave_3R_TextScript_RivalIntro::
-	.string "This cave was very interesting and fun\n"
-	.string "to traverse. Did you find any good\l"
+	.string "Red: This cave was very interesting and\n"
+	.string "fun to traverse. Did you find any good\l"
 	.string "pokemon in here? I found myself a\l"
 	.string "strong one, so let's have a go like I\l"
 	.string "said at the entrance with our new\l"
@@ -151,9 +151,9 @@ CragCave_3R_TextScript_RivalOutro::
 	.string "again soon!$"
 
 CragCave_3R_TextScript_RivalAftermath::
-	.string "That was definitely a solid battle. I'll\n"
-	.string "have to continue training and improve\l"
-	.string "my team so I can try again to beat you.\l"
-	.string "I'm going to head to the first gym, so\l"
-	.string "wish me luck! Good luck on your own\l"
-	.string "challenge. See ya!$"
+	.string "Red: That was definitely a solid battle.\n"
+	.string "I'll have to continue training and\l"
+	.string "improve my team so I can try again to\l"
+	.string "beat you. I'm going to head to the first\l"
+	.string "gym, so wish me luck! Good luck on your\l"
+	.string "own challenge. See ya!$"

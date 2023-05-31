@@ -773,7 +773,7 @@
 #define TRAINER_MAY_RUSTBORO_TORCHIC        769
 #define TRAINER_JACKIE_1                    770
 #define TRAINER_OSWALD_1                    771
-#define TRAINER_UNUSED_772                  772
+#define TRAINER_SUMMERTREE_FROST_GRUNT      772
 #define TRAINER_UNUSED_773                  773
 #define TRAINER_BRAWLY_2                    774
 #define TRAINER_BRAWLY_3                    775
@@ -813,10 +813,10 @@
 #define TRAINER_NOLAND                      809
 #define TRAINER_LUCY                        810
 #define TRAINER_BRANDON                     811
-#define TRAINER_UNUSED_812                  812
-#define TRAINER_UNUSED_813                  813
-#define TRAINER_UNUSED_814                  814
-#define TRAINER_UNUSED_815                  815
+#define TRAINER_CALEB_1                     812
+#define TRAINER_LIZZY_1                     813
+#define TRAINER_JOSHUA_1                    814
+#define TRAINER_TINA_1                      815
 #define TRAINER_CORY_2                      816
 #define TRAINER_CORY_3                      817
 #define TRAINER_CORY_4                      818

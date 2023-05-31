@@ -87,13 +87,13 @@ JoyvaleCity_Gym_TextScript_LilyIntro::
 	.string "and get this show on the road!$"
 
 JoyvaleCity_Gym_TextScript_LilyOutro::
-	.string "Lily: You did a great job beating me.\n"
-	.string "Please accept the amazing Flare Badge!$"
+	.string "You did a great job beating me. Please\n"
+	.string "accept the amazing Flare Badge!$"
 
 JoyvaleCity_Gym_TextScript_LilyPostBattleDialogue::
-	.string "You should go back to route 3 and then\n"
-	.string "go east towards the next gym. Good\l"
-	.string "luck and keep an eye out for Team\l"
+	.string "Lily: You should go back to route 3 and\n"
+	.string "then go east towards the next gym.\l"
+	.string "Good luck and keep an eye out for Team\l"
 	.string "Frost!$"
 
 JoyvaleCity_Gym_TextScript_ReceivedFlareBadge::

@@ -19,7 +19,7 @@ script CragCave_TriggerScript_RivalSequence{
     applymovement(3, CragCave_MovementScript_RivalToPlayer)
     waitmovement(0)
     call(CragCave_MusicScript_RivalEncounter)
-    msgbox(format("This is our first dungeon! It's so cool to finally be experiencing the world in this new way! I'm going to go in first but when we get to the end, let's battle again to commemorate this moment."))
+    msgbox(format("Red: This is our first dungeon! It's so cool to finally be experiencing the world in this new way! I'm going to go in first but when we get to the end, let's battle again to commemorate this moment."))
     closemessage
     applymovement(3, CragCave_MovementScript_RivalAwayFromPlayer)
     waitmovement(0)

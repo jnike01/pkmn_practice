@@ -56,7 +56,7 @@ JoyvaleCity_SignScript_GymSign_Text_0:
 
 JoyvaleCity_PersonScript_GymExec_Text_0:
 	.string "The leader is out right now. If you go\n"
-	.string "north to route 3, you should find him in\l"
+	.string "north to route 3, you should find her in\l"
 	.string "due time.$"
 
 JoyvaleCity_PersonScript_NPC1_Text_0:
@@ -68,6 +68,3 @@ JoyvaleCity_PersonScript_NPC2_Text_0:
 	.string "The shade under these trees is really\n"
 	.string "comfortable. Do you like to relax under\l"
 	.string "the shade?$"
-
-JoyvaleCity_TextScript_GymSign::
-	.string "$"

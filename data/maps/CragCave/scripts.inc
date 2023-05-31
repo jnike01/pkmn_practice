@@ -55,10 +55,10 @@ CragCave_MovementScript_RivalAwayFromPlayer:
 	step_end
 
 CragCave_TriggerScript_RivalSequence_Text_0:
-	.string "This is our first dungeon! It's so cool\n"
-	.string "to finally be experiencing the world in\l"
-	.string "this new way! I'm going to go in first\l"
-	.string "but when we get to the end, let's\l"
+	.string "Red: This is our first dungeon! It's so\n"
+	.string "cool to finally be experiencing the\l"
+	.string "world in this new way! I'm going to go in\l"
+	.string "first but when we get to the end, let's\l"
 	.string "battle again to commemorate this\l"
 	.string "moment.$"
 

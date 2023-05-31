@@ -14,6 +14,8 @@ script Route3_DefaultScript_DefaultState{
 script Route3_SignScript_RouteSign{
     lock
     msgbox(format("Route 3, a calming path."))
+    release
+    end
 }
 
 script Route3_SignScript_SummertreeThicket{
@@ -302,7 +304,7 @@ text Route3_TextScript_OswaldOutro{
 }
 
 text Route3_TextScript_RivalCutGive{
-    format("Yo, {PLAYER}! I see you have the first gym badge now. I got mine before you came so now we both are ready to go to the next leg of our journey. I got two of these HM's though, so here you go...")
+    format("Red: Yo, {PLAYER}! I see you have the first gym badge now. I got mine before you came so now we both are ready to go to the next leg of our journey. I got two of these HM's though, so here you go...")
 }
 
 text Route3_TextScript_RivalDialogueEnd{

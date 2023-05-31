@@ -18,7 +18,8 @@ Route3_DefaultScript_DefaultState_2:
 Route3_SignScript_RouteSign::
 	lock
 	msgbox Route3_SignScript_RouteSign_Text_0
-	return
+	release
+	end
 
 
 Route3_SignScript_SummertreeThicket::
@@ -411,11 +412,12 @@ Route3_TextScript_OswaldOutro::
 	.string "I wish the best of luck to you sonny.$"
 
 Route3_TextScript_RivalCutGive::
-	.string "Yo, {PLAYER}! I see you have the first\n"
-	.string "gym badge now. I got mine before you\l"
-	.string "came so now we both are ready to go to\l"
-	.string "the next leg of our journey. I got two\l"
-	.string "of these HM's though, so here you go...$"
+	.string "Red: Yo, {PLAYER}! I see you have the\n"
+	.string "first gym badge now. I got mine before\l"
+	.string "you came so now we both are ready to go\l"
+	.string "to the next leg of our journey. I got\l"
+	.string "two of these HM's though, so here you\l"
+	.string "go...$"
 
 Route3_TextScript_RivalDialogueEnd::
 	.string "That HM contains Cut which is a solid\n"

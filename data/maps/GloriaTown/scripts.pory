@@ -23,7 +23,7 @@ script GloriaTown_SignScript_Player_House{
 
 script GloriaTown_SignScript_Rival_House{
     lock
-    msgbox("Professor's House")
+    msgbox("Red's House")
     release
     end
 }
@@ -170,7 +170,7 @@ movement GloriaTown_MovementScript_RivalLeaveAfterBattle{
 }
 
 text GloriaTown_TextScript_RivalIntro{
-    format("Now that you have your Pokemon, let's battle before we both head out! I've been looking forward to this for a long time, let's get it!")
+    format("Red: Now that you have your Pokemon, let's battle before we both head out! I've been looking forward to this for a long time, let's get it!")
 }
 
 text GloriaTown_TextScript_RivalOutro{
@@ -178,5 +178,5 @@ text GloriaTown_TextScript_RivalOutro{
 }
 
 text GloriaTown_TextScript_RivalBattleAftermath{
-    format("That was a very exhilarating battle and everything I was hoping for! Let's do this again when we get further along on our journeys. Now, let's go out and explore the world! Stay safe and see you around!")
+    format("Red: That was a very exhilarating battle and everything I was hoping for! Let's do this again when we get further along on our journeys. Now, let's go out and explore the world! Stay safe and see you around!")
 }

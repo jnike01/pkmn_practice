@@ -119,7 +119,7 @@ movement CragCave_3R_MovementScript_RivalExit2{
 }
 
 text CragCave_3R_TextScript_RivalIntro{
-    format("This cave was very interesting and fun to traverse. Did you find any good pokemon in here? I found myself a strong one, so let's have a go like I said at the entrance with our new experience! Prepare yourself!")
+    format("Red: This cave was very interesting and fun to traverse. Did you find any good pokemon in here? I found myself a strong one, so let's have a go like I said at the entrance with our new experience! Prepare yourself!")
 }
 
 text CragCave_3R_TextScript_RivalOutro{
@@ -127,5 +127,5 @@ text CragCave_3R_TextScript_RivalOutro{
 }
 
 text CragCave_3R_TextScript_RivalAftermath{
-    format("That was definitely a solid battle. I'll have to continue training and improve my team so I can try again to beat you. I'm going to head to the first gym, so wish me luck! Good luck on your own challenge. See ya!")
+    format("Red: That was definitely a solid battle. I'll have to continue training and improve my team so I can try again to beat you. I'm going to head to the first gym, so wish me luck! Good luck on your own challenge. See ya!")
 }

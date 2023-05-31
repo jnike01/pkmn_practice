@@ -50,7 +50,7 @@
 #define FLAG_RIVAL_BATTLE_CONTROL 0x26 
 #define FLAG_CRAG_RIVAL_TRIGGERED 0x27 
 #define FLAG_RIVAL_BATTLE_TWO    0x28
-#define FLAG_UNUSED_0x029        0x29
+#define FLAG_SUMMERTREE_CUTSCENE 0x29
 #define FLAG_ROUTE_3_EVIL_TEAM   0x2A
 #define FLAG_ROUTE_3_TRAINERS    0x2B
 #define FLAG_RIVAL_CUT_GIVE      0x2C
@@ -546,7 +546,7 @@
 #define FLAG_HIDDEN_ITEM_ROUTE_119_ULTRA_BALL                (FLAG_HIDDEN_ITEMS_START + 0x06)
 #define FLAG_HIDDEN_ITEM_ROUTE_123_SUPER_REPEL               (FLAG_HIDDEN_ITEMS_START + 0x07)
 #define FLAG_HIDDEN_ITEM_CRAG_CAVE_2R_EVERSTONE              (FLAG_HIDDEN_ITEMS_START + 0x08)
-#define FLAG_HIDDEN_ITEM_UNUSED_0x09                         (FLAG_HIDDEN_ITEMS_START + 0x09) // Unused Flag
+#define FLAG_HIDDEN_ITEM_SUMMERTREE_WOOD_TINY_MUSHROOM       (FLAG_HIDDEN_ITEMS_START + 0x09)
 #define FLAG_HIDDEN_ITEM_UNUSED_0x0A                         (FLAG_HIDDEN_ITEMS_START + 0x0A) // Unused Flag
 #define FLAG_HIDDEN_ITEM_UNUSED_0x0B                         (FLAG_HIDDEN_ITEMS_START + 0x0B) // Unused Flag
 #define FLAG_HIDDEN_ITEM_UNUSED_0x0C                         (FLAG_HIDDEN_ITEMS_START + 0x0C) // Unused Flag
@@ -1048,7 +1048,7 @@
 #define FLAG_ITEM_ROUTE_116_X_SPECIAL                               0x3E9
 #define FLAG_ITEM_ROUTE_104_PP_UP                                   0x3EA
 #define FLAG_ITEM_SUMMERTREE_WOOD_SUPER_POTION                      0x3EB
-#define FLAG_ITEM_UNUSED_0x3EC                                      0x3EC
+#define FLAG_ITEM_SUMMERTREE_WOOD_ANTIDOTE                          0x3EC
 #define FLAG_ITEM_ROUTE_109_PP_UP                                   0x3ED
 #define FLAG_ITEM_ROUTE_110_RARE_CANDY                              0x3EE
 #define FLAG_ITEM_ROUTE_110_DIRE_HIT                                0x3EF
@@ -1220,8 +1220,8 @@
 #define FLAG_ITEM_ROUTE_3_BURN_HEAL                                 0x495
 #define FLAG_ITEM_ROUTE_3_REVIVE                                    0x496
 #define FLAG_ITEM_ROUTE_3_TM_ROAR                                   0x497
+#define FLAG_ITEM_SUMMERTREE_WOOD_MIRACLE_SEED                      0x498
 
-#define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag
 #define FLAG_UNUSED_0x49A                                           0x49A // Unused Flag
 #define FLAG_UNUSED_0x49B                                           0x49B // Unused Flag

@@ -83,8 +83,8 @@ GloriaTown_Your_House_SignScript_TV_Text_0:
 	.string "Breaking Bad seems to be on, that show\nis great!$"
 
 GloriaTown_Your_House_PersonScript_Mom_Text_0:
-	.string "You and your Pokemon look tired. Please\n"
-	.string "take this opportunity to rest...$"
+	.string "Mom: You and your Pokemon look tired.\n"
+	.string "Please take this opportunity to rest...$"
 
 GloriaTown_Your_House_PersonScript_Mom_Text_1:
 	.string "You all look so much better now! If you\n"
@@ -93,17 +93,18 @@ GloriaTown_Your_House_PersonScript_Mom_Text_1:
 	.string "rest here. Stay safe out there honey!$"
 
 GloriaTown_Your_House_PersonScript_Mom_Text_2:
-	.string "Please go do your errands honey,\n"
+	.string "Mom: Please go do your errands honey,\n"
 	.string "they're very important.$"
 
 GloriaTown_Your_House_ControlScript_MomDialogueInit_Text_0:
-	.string "Hello, {PLAYER}{KUN}! Please come over and see me\nplease.$"
+	.string "Mom: Hello, {PLAYER}{KUN}! Please come over\n"
+	.string "and see me.$"
 
 GloriaTown_Your_House_TextScript_MomDialogueOne::
-	.string "The Professor came by this morning and\n"
-	.string "told me that he wants you to stop by\l"
-	.string "and see him to get your Starter and\l"
+	.string "Mom: The Professor came by this morning\n"
+	.string "and told me that he wants you to stop\l"
+	.string "by and see him to get your Starter and\l"
 	.string "pokedex. Please be safe doing so and I\l"
 	.string "love you {PLAYER}{KUN}. Also, make sure to\l"
-	.string "see your friend beforehand like you\l"
-	.string "said!$"
+	.string "see your friend Red beforehand like\l"
+	.string "you told him!$"

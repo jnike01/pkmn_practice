@@ -199,7 +199,7 @@ GloriaTown_SignScript_Player_House_Text_0:
 	.string "{PLAYER}{KUN}'s House$"
 
 GloriaTown_SignScript_Rival_House_Text_0:
-	.string "Professor's House$"
+	.string "Red's House$"
 
 GloriaTown_SignScript_Prof_Lab_Text_0:
 	.string "Professor's Lab$"
@@ -229,10 +229,10 @@ GloriaTown_TriggerScript_GotoRival_Text_0:
 	.string "You should go visit your rival first!$"
 
 GloriaTown_TextScript_RivalIntro::
-	.string "Now that you have your Pokemon, let's\n"
-	.string "battle before we both head out! I've\l"
-	.string "been looking forward to this for a long\l"
-	.string "time, let's get it!$"
+	.string "Red: Now that you have your Pokemon,\n"
+	.string "let's battle before we both head out!\l"
+	.string "I've been looking forward to this for a\l"
+	.string "long time, let's get it!$"
 
 GloriaTown_TextScript_RivalOutro::
 	.string "You are very good at this! It's\n"
@@ -240,9 +240,9 @@ GloriaTown_TextScript_RivalOutro::
 	.string "battle.$"
 
 GloriaTown_TextScript_RivalBattleAftermath::
-	.string "That was a very exhilarating battle and\n"
-	.string "everything I was hoping for! Let's do\l"
-	.string "this again when we get further along on\l"
-	.string "our journeys. Now, let's go out and\l"
-	.string "explore the world! Stay safe and see\l"
-	.string "you around!$"
+	.string "Red: That was a very exhilarating\n"
+	.string "battle and everything I was hoping\l"
+	.string "for! Let's do this again when we get\l"
+	.string "further along on our journeys. Now,\l"
+	.string "let's go out and explore the world!\l"
+	.string "Stay safe and see you around!$"

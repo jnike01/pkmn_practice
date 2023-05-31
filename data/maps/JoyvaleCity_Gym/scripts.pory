@@ -61,11 +61,11 @@ text JoyvaleCity_Gym_TextScript_LilyIntro{
 }
 
 text JoyvaleCity_Gym_TextScript_LilyOutro{
-    format("Lily: You did a great job beating me. Please accept the amazing Flare Badge!")
+    format("You did a great job beating me. Please accept the amazing Flare Badge!")
 }
 
 text JoyvaleCity_Gym_TextScript_LilyPostBattleDialogue{
-    format("You should go back to route 3 and then go east towards the next gym. Good luck and keep an eye out for Team Frost!")
+    format("Lily: You should go back to route 3 and then go east towards the next gym. Good luck and keep an eye out for Team Frost!")
 }
 
 text JoyvaleCity_Gym_TextScript_ReceivedFlareBadge{

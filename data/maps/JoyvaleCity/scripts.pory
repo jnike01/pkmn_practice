@@ -17,7 +17,7 @@ script JoyvaleCity_SignScript_GymSign{
 script JoyvaleCity_PersonScript_GymExec{
     lock
     faceplayer
-    msgbox(format("The leader is out right now. If you go north to route 3, you should find him in due time."))
+    msgbox(format("The leader is out right now. If you go north to route 3, you should find her in due time."))
     release
     end
 }
@@ -44,8 +44,4 @@ script JoyvaleCity_ItemScript_BallOne{
     removeobject(1)
     release
     end
-}
-
-text JoyvaleCity_TextScript_GymSign{
-    ""
 }

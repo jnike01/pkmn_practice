@@ -24,7 +24,7 @@ script GloriaTown_Your_House_PersonScript_Mom{
     lock
     faceplayer
     if(flag(FLAG_ADVENTURE_STARTED)){
-        msgbox(format("You and your Pokemon look tired. Please take this opportunity to rest..."))
+        msgbox(format("Mom: You and your Pokemon look tired. Please take this opportunity to rest..."))
         special(HealPlayerParty)
         fadescreen(FADE_TO_BLACK)
         playfanfare(MUS_HEAL)
@@ -33,7 +33,7 @@ script GloriaTown_Your_House_PersonScript_Mom{
         msgbox(format("You all look so much better now! If you feel fatigued and are in the area, remember you are always welcome to rest here. Stay safe out there honey!"))
     }
     else{
-        msgbox(format("Please go do your errands honey, they're very important."))
+        msgbox(format("Mom: Please go do your errands honey, they're very important."))
     }
     release
     end
@@ -55,7 +55,7 @@ script GloriaTown_Your_House_ControlScript_MomDialogueInit{
     setvar(VAR_YOUR_HOUSE_STATE, 2)
     applymovement(1, GloriaTown_Your_House_MovementScript_MomFaceRight)
     waitmovement(0)
-    msgbox("Hello, {PLAYER}{KUN}! Please come over and see me\nplease.")
+    msgbox(format("Mom: Hello, {PLAYER}{KUN}! Please come over and see me."))
     closemessage
     return
 }
@@ -74,5 +74,5 @@ movement GloriaTown_Your_House_MovementScript_ToMom{
 }
 
 text GloriaTown_Your_House_TextScript_MomDialogueOne{
-    format("The Professor came by this morning and told me that he wants you to stop by and see him to get your Starter and pokedex. Please be safe doing so and I love you {PLAYER}{KUN}. Also, make sure to see your friend beforehand like you said!")
+    format("Mom: The Professor came by this morning and told me that he wants you to stop by and see him to get your Starter and pokedex. Please be safe doing so and I love you {PLAYER}{KUN}. Also, make sure to see your friend Red beforehand like you told him!")
 }
