@@ -29,7 +29,6 @@
     "gMapGroup_IndoorRoute104Prototype",
     "gMapGroup_IndoorRoute109",
     "gMapGroup_IndoorRoute110",
-    "gMapGroup_IndoorRoute113",
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
@@ -63,7 +62,6 @@
     "Route110",
     "Route111",
     "Route112",
-    "Route113",
     "Route114",
     "Route115",
     "Route116",
@@ -592,9 +590,6 @@
     "Route110_TrickHousePuzzle8",
     "Route110_SeasideCyclingRoadNorthEntrance",
     "Route110_SeasideCyclingRoadSouthEntrance"
-  ],
-  "gMapGroup_IndoorRoute113": [
-    "Route113_GlassWorkshop"
   ],
   "gMapGroup_IndoorRoute123": [
     "Route123_BerryMastersHouse"
