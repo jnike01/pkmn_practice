@@ -1,0 +1,15 @@
+mapscripts Route4_MapScripts{}
+
+script Route4_SignScript_RouteSign{
+    lock
+    msgbox(format("Route 4, a vibrant road."))
+    release
+    end
+}
+
+script Route4_PersonScript_Nurse{
+    lock
+    faceplayer
+    release
+    end
+}
