@@ -47,7 +47,7 @@
 #define TRAINER_ROSE_5                       43
 #define TRAINER_DUSTY_1                      44
 #define TRAINER_CHIP                         45
-#define TRAINER_UNUSED_46                    46
+#define TRAINER_JOE_1                        46
 #define TRAINER_DUSTY_2                      47
 #define TRAINER_DUSTY_3                      48
 #define TRAINER_DUSTY_4                      49
@@ -152,7 +152,7 @@
 #define TRAINER_STEVE_3                     148
 #define TRAINER_STEVE_4                     149
 #define TRAINER_STEVE_5                     150
-#define TRAINER_UNUSED_151                  151
+#define TRAINER_EVA_1                       151
 #define TRAINER_UNUSED_152                  152
 #define TRAINER_UNUSED_153                  153
 #define TRAINER_DARRIN                      154

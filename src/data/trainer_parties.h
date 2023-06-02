@@ -12016,3 +12016,19 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Summertree_Frost_Grunt[]
     .species = SPECIES_SMOOCHUM,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Joe_1[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_NIDORINO,
+    }
+};
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Eva_1[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_NIDORINA,
+    }
+};

@@ -10,6 +10,50 @@ script Route4_SignScript_RouteSign{
 script Route4_PersonScript_Nurse{
     lock
     faceplayer
+    msgbox(format("Hey! Do you need your Pokemon healed? If so I'm your girl!"), MSGBOX_YESNO)
+    switch(var(VAR_RESULT)){
+        case YES: call(Route4_SequenceScript_NurseHeal)
+        case NO: msgbox(format("That's ok, just let me know if you do at any point. I'll be right here."))
+    }
     release
     end
+}
+
+script Route4_SequenceScript_NurseHeal{
+    msgbox(format("Please let me see your Pokemon for just a sec..."))
+    special(HealPlayerParty)
+    fadescreen(FADE_TO_BLACK)
+    playfanfare(MUS_HEAL)
+    delay(120)
+    fadescreen(FADE_FROM_BLACK)
+    msgbox(format("You're Pokemon are now fully healed. Come see me again if you need assistance!"))
+    return
+}
+
+script Route4_TrainerScript_Joe{
+    trainerbattle_single(TRAINER_JOE_1, Route4_TextScript_JoeIntro, Route4_TextScript_JoeOutro)
+    msgbox(format("If you ever need some good excercise, walking long distance is the way to do it."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+script Route4_TrainerScript_Eva{
+    trainerbattle_single(TRAINER_EVA_1, Route4_TextScript_EvaIntro, Route4_TextScript_EvaOutro)
+    msgbox(format("Always stay fed so you have the maximum amount of energy to deal with what comes your way."), MSGBOX_AUTOCLOSE)
+    end
+}
+
+text Route4_TextScript_JoeIntro{
+    format("Trekking through Summertree Wood is good excercise. My Nidorino loves the walk too.")
+}
+
+text Route4_TextScript_JoeOutro{
+    format("You beat us!? You and your Pokemon must be very fit.")
+}
+
+text Route4_TextScript_EvaIntro{
+    format("I made food for my Pokemon and I. Sorry, if you wanted some, you're too late. We can have a nice battle though.")
+}
+
+text Route4_TextScript_EvaOutro{
+    format("You and your Pokemon must already be well fed enough to beat us!")
 }
