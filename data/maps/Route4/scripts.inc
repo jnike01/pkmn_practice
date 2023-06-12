@@ -52,6 +52,12 @@ Route4_TrainerScript_Eva::
 	end
 
 
+Route4_TrainerScript_Laura::
+	trainerbattle_single TRAINER_LAURA_1, Route4_TextScript_LauraIntro, Route4_TextScript_LauraOutro
+	msgbox Route4_TrainerScript_Laura_Text_0, MSGBOX_AUTOCLOSE
+	end
+
+
 Route4_SignScript_RouteSign_Text_0:
 	.string "Route 4, a vibrant road.$"
 
@@ -82,6 +88,9 @@ Route4_TrainerScript_Eva_Text_0:
 	.string "maximum amount of energy to deal with\l"
 	.string "what comes your way.$"
 
+Route4_TrainerScript_Laura_Text_0:
+	.string "p$"
+
 Route4_TextScript_JoeIntro::
 	.string "Trekking through Summertree Wood is\n"
 	.string "good excercise. My Nidorino loves the\l"
@@ -99,3 +108,9 @@ Route4_TextScript_EvaIntro::
 Route4_TextScript_EvaOutro::
 	.string "You and your Pokemon must already be\n"
 	.string "well fed enough to beat us!$"
+
+Route4_TextScript_LauraIntro::
+	.string "p$"
+
+Route4_TextScript_LauraOutro::
+	.string "p$"

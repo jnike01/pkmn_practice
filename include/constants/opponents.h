@@ -153,7 +153,7 @@
 #define TRAINER_STEVE_4                     149
 #define TRAINER_STEVE_5                     150
 #define TRAINER_EVA_1                       151
-#define TRAINER_UNUSED_152                  152
+#define TRAINER_LAURA_1                     152
 #define TRAINER_UNUSED_153                  153
 #define TRAINER_DARRIN                      154
 #define TRAINER_TONY_1                      155

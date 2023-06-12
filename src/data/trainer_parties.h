@@ -12032,3 +12032,16 @@ static const struct TrainerMonNoItemDefaultMoves sParty_Eva_1[] = {
     .species = SPECIES_NIDORINA,
     }
 };
+
+static const struct TrainerMonNoItemDefaultMoves sParty_Laura_1[] = {
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_TRANQUILL,
+    },
+    {
+    .iv = 0,
+    .lvl = 16,
+    .species = SPECIES_SWADLOON,
+    }
+};

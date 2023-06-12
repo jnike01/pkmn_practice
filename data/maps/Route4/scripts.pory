@@ -42,6 +42,12 @@ script Route4_TrainerScript_Eva{
     end
 }
 
+script Route4_TrainerScript_Laura{
+    trainerbattle_single(TRAINER_LAURA_1, Route4_TextScript_LauraIntro, Route4_TextScript_LauraOutro)
+    msgbox(format("p"), MSGBOX_AUTOCLOSE)
+    end
+}
+
 text Route4_TextScript_JoeIntro{
     format("Trekking through Summertree Wood is good excercise. My Nidorino loves the walk too.")
 }
@@ -56,4 +62,12 @@ text Route4_TextScript_EvaIntro{
 
 text Route4_TextScript_EvaOutro{
     format("You and your Pokemon must already be well fed enough to beat us!")
+}
+
+text Route4_TextScript_LauraIntro{
+    format("p")
+}
+
+text Route4_TextScript_LauraOutro{
+    format("p")
 }
