@@ -3333,24 +3333,28 @@ static const struct TrainerMonItemCustomMoves sParty_Drake[] = {
     }
 };
 
-static const struct TrainerMonItemCustomMoves sParty_Lily_1[] = {
+static const struct TrainerMonCustomized sParty_Lily_1[] = {
     {
-    .iv = 100,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 12,
+    .nature = TRAINER_PARTY_NATURE(NATURE_TIMID),
     .species = SPECIES_VULPIX,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_EMBER, MOVE_CONFUSION, MOVE_QUICK_ATTACK, MOVE_BABY_DOLL_EYES}
     },
     {
-    .iv = 100,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 12,
+    .nature = TRAINER_PARTY_NATURE(NATURE_MODEST),
     .species = SPECIES_LITWICK,
     .heldItem = ITEM_NONE,
     .moves = {MOVE_EMBER, MOVE_HEX, MOVE_SMOG, MOVE_CONFUSE_RAY}
     },
     {
-    .iv = 200,
+    .iv = TRAINER_PARTY_IVS(31, 31, 31, 31, 31, 31),
     .lvl = 14,
+    .ball = ITEM_ULTRA_BALL,
+    .nature - TRAINER_PARTY_NATURE(NATURE_JOLLY),
     .species = SPECIES_CHARMANDER,
     .heldItem = ITEM_ORAN_BERRY,
     .moves = {MOVE_FLAME_CHARGE, MOVE_METAL_CLAW, MOVE_BITE, MOVE_SMOKESCREEN}
